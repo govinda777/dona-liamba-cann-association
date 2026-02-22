@@ -32,7 +32,8 @@ export function PrivyLoginButton() {
         <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-primary-100 hover:border-primary-300">
           <Avatar className="h-9 w-9">
             {/* Use user.linkedAccounts to find email or google image if available, otherwise fallback */}
-            <AvatarImage src={user?.linkedAccounts.find((a: any) => a.type === 'google_oauth')?.picture || undefined} />
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            <AvatarImage src={(user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any)?.picture || undefined} />
             <AvatarFallback className="bg-primary-100 text-primary-700 font-bold">
               {address ? address.slice(2, 4).toUpperCase() : 'U'}
             </AvatarFallback>

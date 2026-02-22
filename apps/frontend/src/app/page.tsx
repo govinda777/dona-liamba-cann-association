@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { StatCard } from '@/components/StatCard';
 import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-emerald-50">

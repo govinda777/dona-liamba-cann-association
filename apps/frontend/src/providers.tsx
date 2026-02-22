@@ -7,6 +7,9 @@ import { localhost } from 'viem/chains';
 import { http } from 'wagmi';
 import React from 'react';
 
+// Define the chain for Privy
+const chains = [localhost];
+
 export const config = createConfig({
   chains: [localhost],
   transports: {
@@ -23,13 +26,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       config={{
         loginMethods: ['email'],
         appearance: {
-          theme: 'dark',
-          accentColor: '#676FFF',
+          theme: 'light',
+          accentColor: '#22c55e', // Medical Green
+          logo: undefined, // Add logo URL here if available
         },
+        supportedChains: [localhost],
         embeddedWallets: {
-          ethereum: {
-            createOnLogin: 'all-users',
-          },
+          createOnLogin: 'all-users',
         },
       }}
     >

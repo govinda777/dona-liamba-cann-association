@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Providers from "../providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Dona Liamba Cann Association",
-  description: "Web3 Native Medicinal Cannabis Platform",
+  title: "Dona Liamba | Saúde Canábica Web3",
+  description: "Plataforma de prescrição e acesso seguro à cannabis medicinal.",
 };
 
 export default function RootLayout({
@@ -24,10 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
+    <html lang="pt-BR">
+      <body className={`${montserrat.variable} font-monserrat antialiased bg-background text-foreground`}>
         <Providers>
           {children}
         </Providers>

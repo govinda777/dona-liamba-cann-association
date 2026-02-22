@@ -32,7 +32,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         },
         supportedChains: [localhost],
         embeddedWallets: {
-          createOnLogin: 'all-users',
+          ethereum: {
+            createOnLogin: 'all-users',
+          },
         },
       }}
     >

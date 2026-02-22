@@ -3,6 +3,7 @@
 import { useAccount, useBalance } from 'wagmi';
 import { Card } from '@/components/ui/card';
 import { TrendingUp, Wallet } from 'lucide-react';
+import { formatEther } from 'viem';
 
 export function BalanceCard() {
   const { address } = useAccount();
@@ -19,7 +20,7 @@ export function BalanceCard() {
             {isLoading ? (
               <span className="animate-pulse">...</span>
             ) : balance ? (
-              `${parseFloat(balance.formatted).toFixed(4)}`
+              `${parseFloat(formatEther(balance.value)).toFixed(4)}`
             ) : (
               '0.0000'
             )}

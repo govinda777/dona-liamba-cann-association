@@ -1,0 +1,23 @@
+
+> frontend@0.1.0 dev /app/apps/frontend
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /app/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles:
+   * /app/apps/frontend/pnpm-lock.yaml
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1508ms
+ GET / 200 in 2.3s (compile: 1212ms, render: 1130ms)
+ HEAD / 200 in 171ms (compile: 41ms, render: 130ms)
+ HEAD / 200 in 140ms (compile: 27ms, render: 113ms)
+ GET / 200 in 121ms (compile: 32ms, render: 89ms)
+ HEAD / 200 in 84ms (compile: 23ms, render: 60ms)
+ HEAD / 200 in 102ms (compile: 32ms, render: 70ms)

@@ -11,7 +11,9 @@ apps/contracts/artifacts
 apps/contracts/cache
 apps/contracts/typechain-types
 apps/contracts/hardhat.log
+apps/contracts/hardhat_debug.log
 
 # Next.js
 .next
 out
+apps/frontend/dev.log

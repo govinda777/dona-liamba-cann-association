@@ -19,17 +19,23 @@ contract MedicalNFT is ERC721, AccessControl {
         _grantRole(DOCTOR_ROLE, msg.sender);
     }
 
+    /**
+     * @notice Mints a new Medical Record NFT.
+     * @param patient The address of the patient receiving the prescription.
+     * @param dataHashStr The IPFS hash or encrypted data reference.
+     * @param authorizedDoctors List of doctors initially authorized.
+     */
     function mintMedicalRecord(
         address patient,
         string memory dataHashStr,
         address[] memory authorizedDoctors
-    ) external {
-        // For demo, allowing msg.sender. In prod, check DOCTOR_ROLE.
-
+    ) external onlyRole(DOCTOR_ROLE) {
         uint256 tokenId = _nextTokenId++;
         _mint(patient, tokenId);
 
         coOwners[tokenId] = authorizedDoctors;
+        // Store the hash of the encrypted data reference.
+        // NOTE: Actual data encryption must happen off-chain before calling this.
         encryptedDataHash[tokenId] = keccak256(abi.encodePacked(dataHashStr));
 
         emit MedicalRecordMinted(tokenId, patient, msg.sender);
@@ -47,13 +53,21 @@ contract MedicalNFT is ERC721, AccessControl {
         return coOwners[tokenId];
     }
 
-    // Soulbound: Block transfers
+    // Soulbound: Block transfers and approvals
     function _update(address to, uint256 tokenId, address auth) internal override returns (address) {
         address from = _ownerOf(tokenId);
         if (from != address(0) && to != address(0)) {
             revert("MedicalNFT: Soulbound token, cannot transfer");
         }
         return super._update(to, tokenId, auth);
+    }
+
+    function approve(address, uint256) public virtual override {
+        revert("MedicalNFT: Soulbound token, cannot approve");
+    }
+
+    function setApprovalForAll(address, bool) public virtual override {
+        revert("MedicalNFT: Soulbound token, cannot approve for all");
     }
 
     // Check if a user has access (Owner or Co-owner)

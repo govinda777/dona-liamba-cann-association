@@ -1,0 +1,27 @@
+
+> frontend@0.1.0 dev /app/apps/frontend
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /app/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles:
+   * /app/apps/frontend/pnpm-lock.yaml
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1106ms
+○ Compiling / ...
+ GET / 200 in 29.0s (compile: 25.9s, render: 3.1s)
+ HEAD / 200 in 1357ms (compile: 296ms, render: 1061ms)
+ HEAD / 200 in 1732ms (compile: 958ms, render: 774ms)
+✓ Finished writing to filesystem cache in 12.3s
+ GET / 200 in 533ms (compile: 26ms, render: 507ms)
+ HEAD / 200 in 191ms (compile: 27ms, render: 164ms)
+ HEAD / 200 in 175ms (compile: 20ms, render: 155ms)
+ ELIFECYCLE  Command failed.
+[?25h

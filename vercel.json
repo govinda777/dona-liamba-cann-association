@@ -1,15 +1,17 @@
 {
-  "buildCommand": "pnpm build --filter=frontend",
-  "outputDirectory": "apps/frontend/.next",
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "functions": {
-    "apps/frontend/src/app/api/**": {
+    "src/app/api/**": {
       "memory": 1024,
       "maxDuration": 10
     }
   },
-  "regions": ["gru1"],
+  "regions": [
+    "gru1"
+  ],
   "headers": [
     {
       "source": "/(.*)",

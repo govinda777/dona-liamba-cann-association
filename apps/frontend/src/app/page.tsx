@@ -98,13 +98,17 @@ export default function Home() {
 
         {/* 1. Hero Section */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/hero-cannabis.jpg')" }}
+          {/* Background: fallback gradient + image */}
+          <div className="absolute inset-0 -z-20 bg-gradient-to-br from-primary-50 via-mint-50 to-turquoise-50" />
+          <Image
+            src="/hero-cannabis.jpg"
+            alt=""
+            fill
+            priority
+            className="absolute inset-0 -z-20 object-cover"
           />
           {/* Overlay for text readability */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/80 to-white/90" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 via-white/50 to-white/70" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">

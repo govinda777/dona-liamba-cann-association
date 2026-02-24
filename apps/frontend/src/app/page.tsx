@@ -21,6 +21,12 @@ import {
   ChevronDown,
   BookOpen,
   MapPin,
+  Menu,
+  DollarSign,
+  Shield,
+  HelpCircle,
+  Car,
+  CreditCard
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -29,6 +35,7 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { LeadCaptureForm } from '@/components/LeadCaptureForm';
+import Image from 'next/image';
 
 import { Header } from '@/components/Header';
 import { CostCalculator } from '@/components/CostCalculator';
@@ -43,6 +50,52 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-mint-200 selection:text-primary-900">
       <ExitIntentModal />
       <FloatingWhatsApp />
+      {/* Header */}
+      <header className="border-b border-primary-100 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-2 group cursor-pointer">
+              <div className="p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
+                <Leaf className="w-6 h-6 text-primary-600" />
+              </div>
+              <h1 className="text-xl sm:text-2xl font-extrabold text-primary-900 tracking-tight font-serif">
+                Dona Liamba
+              </h1>
+            </div>
+
+            {/* Menu Desktop */}
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#como-funciona" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Como Funciona
+              </a>
+              <a href="#para-quem" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Para Quem É
+              </a>
+              <a href="#associacoes" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Associações
+              </a>
+              <a href="#faq" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Dúvidas
+              </a>
+              <a href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Blog
+              </a>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex items-center gap-3">
+              <a
+                href="#lead-form"
+                className="hidden sm:inline-flex items-center justify-center h-10 px-6 text-sm font-semibold rounded-full text-white transition-all duration-200 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, #15803d, #166534)',
+                  boxShadow: '0 4px 14px -3px rgba(21, 128, 61, 0.4)',
+                }}
+              >
+                Entrar
+              </a>
+              <PrivyLoginButton />
 
       <Header />
 
@@ -50,13 +103,17 @@ export default function Home() {
 
         {/* 1. Hero Section */}
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          {/* Backgrounds */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/50 to-mint-50/30 -z-20" />
-          <div className="absolute inset-0 bg-organic-pattern opacity-[0.03] -z-10" />
-
-          {/* Decorative Orbs */}
-          <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-mint-200/20 rounded-full blur-[100px] -z-10 animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-turquoise-200/10 rounded-full blur-[80px] -z-10" />
+          {/* Background: fallback gradient + image */}
+          <div className="absolute inset-0 -z-20 bg-gradient-to-br from-primary-50 via-mint-50 to-turquoise-50" />
+          <Image
+            src="/hero-cannabis.jpg"
+            alt=""
+            fill
+            priority
+            className="absolute inset-0 -z-20 object-cover"
+          />
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 via-white/50 to-white/70" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -68,55 +125,70 @@ export default function Home() {
                   <span className="font-medium tracking-wide text-xs uppercase">Plataforma Oficial Cannabis Medicinal Brasil</span>
                 </Badge>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-primary-950 mb-8 leading-[1.1]">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-primary-950 mb-8 leading-[1.1] tracking-tight">
                   Conectando <span className="text-primary-600 relative whitespace-nowrap">
                     <span className="relative z-10">saúde</span>
                     <span className="absolute bottom-2 left-0 w-full h-3 bg-mint-200/60 -z-10 skew-x-12"></span>
                   </span> e bem-estar em um só lugar
                 </h1>
 
-                <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                <p className="text-lg lg:text-xl text-slate-700 mb-12 max-w-prose mx-auto lg:mx-0 leading-loose font-light">
                   A plataforma mais completa do Brasil unindo pacientes, médicos prescritores e associações de cannabis medicinal com segurança e acolhimento.
                 </p>
 
                 <div className="flex flex-col items-center lg:items-start gap-6">
                   {/* CTA Principal - Destaque Máximo */}
-                  <Link href="/cadastro-paciente">
-                    <Button
-                      size="lg"
-                      className="w-full sm:w-auto px-12 py-8 text-2xl font-bold rounded-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-2xl shadow-primary-600/40 transform hover:scale-105 transition-all duration-300 text-white animate-pulse-subtle"
-                    >
-                      <User className="w-7 h-7 mr-3" />
-                      Começar Tratamento Agora
-                      <ArrowRight className="w-6 h-6 ml-3" />
-                    </Button>
-                  </Link>
+                  <a
+                    href="#lead-form"
+                    className="group relative inline-flex items-center justify-center w-full sm:w-auto px-14 py-7 text-2xl font-bold rounded-full text-white transition-all duration-300 transform hover:scale-105 min-h-14 overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                      boxShadow: '0 20px 60px -10px rgba(21, 128, 61, 0.55), 0 8px 24px -4px rgba(21, 128, 61, 0.3)',
+                    }}
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                    <User className="w-7 h-7 mr-3 relative z-10" />
+                    <span className="relative z-10">Começar Tratamento Agora</span>
+                    <ArrowRight className="w-6 h-6 ml-3 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  </a>
 
                   {/* Urgência Social Proof */}
-                  <div className="flex items-center gap-2 text-sm text-slate-600 bg-white/60 px-4 py-2 rounded-full backdrop-blur-sm">
+                  <div className="flex items-center gap-3 text-sm text-slate-700 bg-white/60 px-4 py-2 rounded-full backdrop-blur-sm">
                     <div className="flex -space-x-2">
-                      {/* Avatares genéricos */}
-                      {[1,2,3,4].map(i => (
-                        <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-white"></div>
+                      {/* IMAGEM IA: Avatares de pacientes - Caminho: /avatars/ */}
+                      {[
+                        { src: '/avatars/maria.jpg', alt: 'Maria' },
+                        { src: '/avatars/joao.jpg', alt: 'João' },
+                        { src: '/avatars/ana.jpg', alt: 'Ana' },
+                      ].map((avatar, i) => (
+                        <Image
+                          key={i}
+                          src={avatar.src}
+                          alt={avatar.alt}
+                          width={32}
+                          height={32}
+                          className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                        />
                       ))}
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">+</div>
                     </div>
                     <span className="font-medium">+127 pacientes iniciaram esta semana</span>
                   </div>
 
                   {/* CTAs Secundários - Menor destaque */}
                   <div className="flex gap-3 mt-4">
-                    <Button size="sm" variant="ghost" className="text-medical hover:bg-medical/10 border border-medical/20">
+                    <Button size="sm" variant="ghost" className="text-medical hover:bg-medical/10 border border-medical/20 min-h-12">
                       <Stethoscope className="w-4 h-4 mr-2" />
                       Área Médica
                     </Button>
-                    <Button size="sm" variant="ghost" className="text-yellow-700 hover:bg-gold/10 border border-gold/20">
+                    <Button size="sm" variant="ghost" className="text-yellow-700 hover:bg-gold/10 border border-gold/20 min-h-12">
                       <Building2 className="w-4 h-4 mr-2" />
                       Área Associação
                     </Button>
                   </div>
                 </div>
 
-                <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-slate-500 font-medium">
+                <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-slate-600 font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-primary-500" />
                     <span>100% Legal e Seguro</span>
@@ -128,45 +200,35 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Illustration / Visual */}
+              {/* Illustration / Visual - Hero com Imagem IA */}
               <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
                 <div className="relative aspect-square">
-                  {/* Abstract Composition */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-100 to-mint-50 rounded-[3rem] rotate-3 opacity-60 mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-turquoise-50 to-white rounded-[3rem] -rotate-2 opacity-60 mix-blend-multiply shadow-2xl shadow-primary-900/5" />
+                  {/* IMAGEM IA: Folhas de cannabis medicinal - Caminho: /hero-cannabis.jpg */}
+                  <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl shadow-primary-900/10">
+                    <Image
+                      src="/hero-cannabis.jpg"
+                      alt="Cannabis medicinal - folhas verdes em luz natural"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-primary-900/30" />
+                  </div>
 
-                  {/* Central Hub Visualization */}
-                  <div className="absolute inset-4 bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white/50 shadow-inner flex items-center justify-center overflow-hidden">
-                     <div className="absolute inset-0 bg-organic-pattern opacity-10" />
+                  {/* Floating Elements with backdrop-blur */}
+                  <div className="absolute top-12 left-12 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[3000ms]">
+                    <User className="w-8 h-8 text-primary-500" />
+                    <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
+                  </div>
 
-                     {/* Floating Elements */}
-                     <div className="relative w-full h-full p-8">
-                        {/* Center - Logo Mark */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-2xl shadow-primary-500/30 z-20">
-                          <Leaf className="w-16 h-16 text-white" />
-                        </div>
+                  <div className="absolute bottom-20 right-10 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[4000ms]">
+                    <Stethoscope className="w-8 h-8 text-turquoise-500" />
+                    <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
+                  </div>
 
-                        {/* Orbiting Elements */}
-                        <div className="absolute top-12 left-12 p-4 bg-white rounded-2xl shadow-lg border border-slate-100 animate-bounce duration-[3000ms]">
-                          <User className="w-8 h-8 text-primary-500" />
-                          <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
-                        </div>
-
-                        <div className="absolute bottom-20 right-10 p-4 bg-white rounded-2xl shadow-lg border border-slate-100 animate-bounce duration-[4000ms]">
-                          <Stethoscope className="w-8 h-8 text-turquoise-500" />
-                          <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
-                        </div>
-
-                        <div className="absolute top-20 right-8 p-4 bg-white rounded-2xl shadow-lg border border-slate-100 animate-bounce duration-[3500ms]">
-                          <Building2 className="w-8 h-8 text-gold-500" />
-                          <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
-                        </div>
-
-                        {/* Connecting Lines (SVG) */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 100 100">
-                           <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" className="text-slate-400 animate-spin-slow" />
-                        </svg>
-                     </div>
+                  <div className="absolute top-20 right-8 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[3500ms]">
+                    <Building2 className="w-8 h-8 text-gold-500" />
+                    <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
                   </div>
                 </div>
               </div>
@@ -177,9 +239,9 @@ export default function Home() {
         {/* 2. Social Proof Section */}
         <AnimatedSection>
         <section className="max-w-7xl mx-auto px-6 -mt-8 relative z-20">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 lg:p-10">
             {/* Métricas de Impacto */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
               {[
                 { value: "12.500+", label: "Pacientes Atendidos", icon: User },
                 { value: "340+", label: "Médicos Credenciados", icon: Stethoscope },
@@ -188,54 +250,62 @@ export default function Home() {
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <stat.icon className="w-6 h-6 mx-auto mb-2 text-primary-600" />
-                  <div className="text-3xl font-bold text-primary-900">{stat.value}</div>
-                  <div className="text-sm text-slate-600 mt-1">{stat.label}</div>
+                  <div className="text-3xl font-extrabold text-primary-900 tracking-tight">{stat.value}</div>
+                  <div className="text-sm text-slate-700 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Depoimentos Reais */}
             <div className="border-t border-slate-200 pt-8">
-              <h3 className="text-xl font-bold text-center mb-6 text-slate-900">
+              <h3 className="text-xl font-extrabold text-center mb-8 text-slate-900 tracking-tight">
                 Histórias Reais de Quem Transformou o Tratamento
               </h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
                     name: "Maria Silva",
                     condition: "Ansiedade Crônica",
                     location: "São Paulo, SP",
                     quote: "Em 2 dias encontrei médico e associação. Minha qualidade de vida mudou completamente.",
-                    avatar: "MS"
+                    avatar: "MS",
+                    photo: "/avatars/maria.jpg"
                   },
                   {
                     name: "João Santos",
                     condition: "Dor Crônica",
                     location: "Rio de Janeiro, RJ",
                     quote: "Finalmente um lugar que organiza tudo. Não precisei mais buscar informação sozinho.",
-                    avatar: "JS"
+                    avatar: "JS",
+                    photo: "/avatars/joao.jpg"
                   },
                   {
                     name: "Ana Costa",
                     condition: "Insônia Severa",
                     location: "Belo Horizonte, MG",
                     quote: "Transparência total nos custos e produtos. Me sinto segura e acolhida.",
-                    avatar: "AC"
+                    avatar: "AC",
+                    photo: "/avatars/ana.jpg"
                   }
                 ].map((testimonial, i) => (
                   <Card key={i} className="border-primary-100 hover:shadow-lg transition-shadow card-hover">
-                    <CardContent className="pt-6">
+                    <CardContent className="pt-6 p-8">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white font-bold">
-                          {testimonial.avatar}
-                        </div>
+                        {/* IMAGEM IA: Foto do depoimento - Caminho: /avatars/ */}
+                        <Image
+                          src={testimonial.photo}
+                          alt={testimonial.name}
+                          width={48}
+                          height={48}
+                          className="w-12 h-12 rounded-full object-cover border-2 border-primary-100"
+                        />
                         <div>
                           <div className="font-semibold text-slate-900">{testimonial.name}</div>
-                          <div className="text-xs text-slate-500">{testimonial.location}</div>
+                          <div className="text-xs text-slate-600">{testimonial.location}</div>
                         </div>
                       </div>
                       <Badge variant="outline" className="mb-3 text-xs">{testimonial.condition}</Badge>
-                      <p className="text-sm text-slate-600 italic leading-relaxed">"{testimonial.quote}"</p>
+                      <p className="text-sm text-slate-700 italic leading-relaxed max-w-prose">{`"${testimonial.quote}"`}</p>
                       <div className="flex gap-1 mt-3">
                         {[1,2,3,4,5].map(star => (
                           <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -249,18 +319,18 @@ export default function Home() {
 
             {/* Selos de Confiança */}
             <div className="border-t border-slate-200 mt-8 pt-6">
-              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-primary-600" />
-                  <span className="text-sm font-medium">Conforme ANVISA</span>
+                  <span className="text-sm font-medium text-slate-700">Conforme ANVISA</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Lock className="w-5 h-5 text-primary-600" />
-                  <span className="text-sm font-medium">LGPD Certificado</span>
+                  <span className="text-sm font-medium text-slate-700">LGPD Certificado</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Building2 className="w-5 h-5 text-primary-600" />
-                  <span className="text-sm font-medium">85 Associações Verificadas</span>
+                  <span className="text-sm font-medium text-slate-700">85 Associações Verificadas</span>
                 </div>
               </div>
             </div>
@@ -270,13 +340,13 @@ export default function Home() {
 
         {/* 3. Timeline / How It Works */}
         <AnimatedSection>
-        <section id="como-funciona" className="max-w-7xl mx-auto px-6 py-24">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4 bg-primary-50 text-primary-700 border-primary-200">Passo a Passo</Badge>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4 font-serif">
-              Seu Tratamento em <span className="text-primary-600">4 Passos Simples</span>
+        <section id="como-funciona" className="max-w-7xl mx-auto px-6 py-32">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium mb-4" style={{ background: '#dcfce7', color: '#15803d' }}>Passo a Passo</span>
+            <h2 className="text-4xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
+              Seu Tratamento em <span style={{ color: '#15803d' }}>4 Passos Simples</span>
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-700 max-w-prose mx-auto leading-loose">
               Veja como é fácil organizar tudo, da busca pelo médico até o recebimento dos produtos
             </p>
           </div>
@@ -284,7 +354,7 @@ export default function Home() {
           {/* Timeline Vertical com Previews */}
           <div className="relative">
             {/* Linha vertical conectora */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full" style={{ background: 'linear-gradient(to bottom, #86efac, #15803d, #86efac)' }} />
 
             {[
               {
@@ -292,24 +362,30 @@ export default function Home() {
                 title: "Cadastro Rápido (2 minutos)",
                 description: "Preencha suas necessidades, sintomas que deseja tratar e localização. Nosso sistema já sugere médicos e associações compatíveis.",
                 icon: User,
-                time: "⏱ 2 minutos",
-                highlight: "Grátis e sem compromisso"
+                time: "2 minutos",
+                highlight: "Grátis e sem compromisso",
+                image: "/steps/step-1.jpg",
+                imageAlt: "Pessoa preenchendo formulário digital"
               },
               {
                 step: "02",
                 title: "Encontre Seu Médico Prescritor",
                 description: "Filtre por especialidade, avaliações, disponibilidade e valor de consulta. Agende online ou presencial com confirmação instantânea.",
                 icon: Search,
-                time: "⏱ 5 minutos para agendar",
-                highlight: "340+ médicos especializados"
+                time: "5 minutos para agendar",
+                highlight: "340+ médicos especializados",
+                image: "/steps/step-2.jpg",
+                imageAlt: "Médico consultando paciente com tablet"
               },
               {
                 step: "03",
                 title: "Conecte-se à Associação Ideal",
                 description: "Com sua prescrição em mãos, veja associações que atendem seu perfil, compare planos mensais, catálogo e avaliações de outros pacientes.",
                 icon: Building2,
-                time: "⏱ 10 minutos para escolher",
-                highlight: "A partir de R$ 50/mês"
+                time: "10 minutos para escolher",
+                highlight: "A partir de R$ 50/mês",
+                image: "/steps/step-3.jpg",
+                imageAlt: "Produto cannabis medicinal com embalagem profissional"
               },
               {
                 step: "04",
@@ -317,46 +393,56 @@ export default function Home() {
                 description: "Dashboard personalizado com suas prescrições NFT, histórico de pedidos, lembretes de dosagem e chat direto com sua associação.",
                 icon: ShoppingBag,
                 time: "Acesso 24/7",
-                highlight: "Seus dados 100% criptografados"
+                highlight: "Seus dados 100% criptografados",
+                image: "/steps/step-4.jpg",
+                imageAlt: "Dashboard de saúde no aplicativo mobile"
               }
             ].map((step, idx) => {
               const isEven = idx % 2 === 0;
               return (
-                <div key={idx} className={`relative flex items-center mb-16 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div key={idx} className={`relative flex items-center mb-20 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Número do passo - Centro da timeline */}
-                  <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-lg z-10 border-4 border-white">
+                  <div
+                    className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl z-10"
+                    style={{
+                      background: 'linear-gradient(135deg, #15803d, #166534)',
+                      color: '#ffffff',
+                      boxShadow: '0 4px 14px rgba(21, 128, 61, 0.4), 0 0 0 4px #ffffff',
+                    }}
+                  >
                     {step.step}
                   </div>
 
                   {/* Conteúdo - Desktop: alternado; Mobile: sempre à direita */}
                   <div className={`w-full md:w-5/12 ml-24 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                    <Card className="bg-white border-primary-200 shadow-lg hover:shadow-xl transition-all card-hover">
-                      <CardHeader>
-                        <div className={`inline-flex p-3 rounded-lg bg-primary-100 text-primary-600 mb-3 ${isEven ? 'md:ml-auto' : ''}`}>
+                    <Card className="bg-white shadow-lg hover:shadow-xl transition-all card-hover" style={{ borderColor: '#bbf7d0' }}>
+                      <CardHeader className="p-8">
+                        <div className={`inline-flex p-3 rounded-lg mb-3 ${isEven ? 'md:ml-auto' : ''}`} style={{ background: '#dcfce7', color: '#15803d' }}>
                           <step.icon className="w-6 h-6" />
                         </div>
-                        <CardTitle className="text-2xl mb-2 font-serif">{step.title}</CardTitle>
+                        <CardTitle className="text-2xl mb-2 font-serif font-extrabold tracking-tight">{step.title}</CardTitle>
                         <div className={`flex gap-2 flex-wrap ${isEven ? 'md:justify-end' : ''}`}>
-                          <Badge variant="outline" className="text-xs">{step.time}</Badge>
-                          <Badge className="text-xs bg-primary-600 text-white">{step.highlight}</Badge>
+                          <Badge variant="outline" className="text-xs border-slate-300 text-slate-600">{step.time}</Badge>
+                          <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style={{ background: '#15803d', color: '#ffffff' }}>{step.highlight}</span>
                         </div>
                       </CardHeader>
-                      <CardContent>
-                        <p className="text-slate-600 leading-relaxed">{step.description}</p>
+                      <CardContent className="px-8 pb-8">
+                        <p className="text-slate-700 leading-loose max-w-prose">{step.description}</p>
                       </CardContent>
                     </Card>
                   </div>
 
                   {/* Preview visual - Desktop: alternado; Mobile: oculto */}
                   <div className={`hidden md:block w-5/12 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}>
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary-100 transform hover:scale-105 transition-transform bg-white">
-                      {/* Placeholder até ter screenshots reais */}
-                      <div className="aspect-video bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-organic-pattern opacity-10" />
-                        <div className="text-center relative z-10">
-                          <step.icon className="w-16 h-16 mx-auto mb-3 text-slate-300 group-hover:text-primary-300 transition-colors" />
-                          <p className="text-sm text-slate-400 font-medium uppercase tracking-widest">Preview da Interface</p>
-                        </div>
+                    {/* IMAGEM IA: Ilustração do passo - Caminho: /steps/ */}
+                    <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-white" style={{ border: '4px solid #bbf7d0' }}>
+                      <div className="aspect-video relative">
+                        <Image
+                          src={step.image}
+                          alt={step.imageAlt}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                     </div>
                   </div>
@@ -366,78 +452,108 @@ export default function Home() {
           </div>
 
           {/* CTA no final do fluxo */}
-          <div className="text-center mt-12 bg-gradient-to-r from-primary-50 to-emerald-50 rounded-2xl p-8 border border-primary-200">
-            <h3 className="text-2xl font-bold mb-4 text-slate-900 font-serif">Pronto para começar?</h3>
-            <Link href="/cadastro-paciente">
-              <Button size="lg" className="px-10 py-6 text-lg bg-primary-700 hover:bg-primary-800 text-white shadow-xl shadow-primary-900/10">
-                Criar Minha Conta Grátis
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <p className="text-xs text-slate-500 mt-3">Sem cartão de crédito • Sem compromisso</p>
+          <div className="text-center mt-16 rounded-2xl p-10" style={{ background: 'linear-gradient(135deg, #f0fdf4, #ecfdf5)', border: '1px solid #bbf7d0' }}>
+            <h3 className="text-2xl font-extrabold mb-4 text-slate-900 font-serif tracking-tight">Pronto para começar?</h3>
+            <a
+              href="#lead-form"
+              className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white transition-all hover:scale-105"
+              style={{ background: 'linear-gradient(135deg, #15803d, #166534)', boxShadow: '0 10px 30px -5px rgba(21, 128, 61, 0.4)' }}
+            >
+              Criar Minha Conta Grátis
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+            <p className="text-xs text-slate-600 mt-3">Sem cartão de crédito -- Sem compromisso</p>
           </div>
         </section>
         </AnimatedSection>
 
-        {/* 3a. Education Section (Novo) */}
+        {/* 3a. Education Section (FAQ) */}
         <AnimatedSection>
-        <section id="faq" className="bg-gradient-to-br from-emerald-50 to-primary-50 py-16">
+        <section id="faq" className="bg-gradient-to-br from-emerald-50 to-primary-50 py-32">
           <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <Badge variant="secondary" className="mb-4 bg-white/50 backdrop-blur-sm">Para Iniciantes</Badge>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4 font-serif">
+              <h2 className="text-3xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
                 Novo em Cannabis Medicinal? <span className="text-primary-600">Você Não Está Sozinho</span>
               </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-700 max-w-prose mx-auto leading-loose">
                 Tire suas principais dúvidas sobre o tratamento legal no Brasil
               </p>
             </div>
 
             {/* Vídeo Explicativo */}
-            <VideoPlayer />
+            <div className="mb-16">
+              <Card className="overflow-hidden border-primary-200 shadow-lg">
+                <div className="aspect-video bg-slate-900 flex items-center justify-center relative group cursor-pointer">
+                  {/* Placeholder - substituir por iframe do YouTube */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-slate-900/80 group-hover:opacity-90 transition-opacity"></div>
+                  <Button size="lg" className="relative z-10 rounded-full w-20 h-20 bg-white hover:bg-white/90 text-primary-700 shadow-xl transition-transform group-hover:scale-110">
+                    <Play className="w-10 h-10 ml-1 fill-current" />
+                  </Button>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="font-bold text-lg">Cannabis Medicinal Legal: Guia Completo 2024</h3>
+                    <p className="text-sm opacity-90">3:45 minutos</p>
+                  </div>
+                </div>
+                <CardContent className="p-8 bg-white">
+                  <p className="text-slate-700 text-base leading-loose max-w-prose">
+                    Entenda como funciona o processo legal, quais condições podem ser tratadas e os passos para iniciar seu tratamento com segurança.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
 
-            {/* FAQ Colapsável */}
-            <div className="space-y-3">
+            {/* FAQ Colapsável com Ícones */}
+            <div className="space-y-4">
               {[
                 {
                   q: "É legal usar cannabis medicinal no Brasil?",
-                  a: "Sim! Desde 2015 a ANVISA regula cannabis medicinal. Pacientes com prescrição médica podem importar produtos ou acessar através de associações autorizadas."
+                  a: "Sim! Desde 2015 a ANVISA regula cannabis medicinal. Pacientes com prescrição médica podem importar produtos ou acessar através de associações autorizadas.",
+                  icon: Shield
                 },
                 {
                   q: "Quais condições podem ser tratadas?",
-                  a: "Dor crônica, ansiedade, depressão, insônia, epilepsia, autismo, Parkinson, Alzheimer, câncer (efeitos colaterais da quimioterapia), fibromialgia, artrite, entre outras."
+                  a: "Dor crônica, ansiedade, depressão, insônia, epilepsia, autismo, Parkinson, Alzheimer, câncer (efeitos colaterais da quimioterapia), fibromialgia, artrite, entre outras.",
+                  icon: Stethoscope
                 },
                 {
                   q: "Preciso de receita médica?",
-                  a: "Sim, sempre. Apenas médicos podem prescrever cannabis medicinal. Nossa plataforma conecta você a médicos especializados."
+                  a: "Sim, sempre. Apenas médicos podem prescrever cannabis medicinal. Nossa plataforma conecta você a médicos especializados.",
+                  icon: BookOpen
                 },
                 {
                   q: "Quanto custa o tratamento?",
-                  a: "Varia conforme o caso. Consultas médicas: R$ 200-600. Planos de associação: R$ 50-300/mês. Produtos: R$ 150-800/frasco (dura 1-2 meses)."
+                  a: "Varia conforme o caso. Consultas médicas: R$ 200-600. Planos de associação: R$ 50-300/mês. Produtos: R$ 150-800/frasco (dura 1-2 meses).",
+                  icon: DollarSign
                 },
                 {
                   q: "Cannabis medicinal dá 'barato'?",
-                  a: "Não. Produtos medicinais têm dosagens controladas de CBD (não psicoativo) e baixos níveis de THC. O objetivo é terapêutico, não recreativo."
+                  a: "Não. Produtos medicinais têm dosagens controladas de CBD (não psicoativo) e baixos níveis de THC. O objetivo é terapêutico, não recreativo.",
+                  icon: HelpCircle
                 },
                 {
                   q: "Como funcionam as associações?",
-                  a: "São organizações sem fins lucrativos autorizadas a cultivar e distribuir cannabis para pacientes associados com prescrição médica válida."
+                  a: "São organizações sem fins lucrativos autorizadas a cultivar e distribuir cannabis para pacientes associados com prescrição médica válida.",
+                  icon: Building2
                 },
                 {
                   q: "Posso dirigir usando cannabis medicinal?",
-                  a: "Sim, se o produto for autorizado para uso e você seguir a dosagem prescrita. Recomenda-se sempre consultar seu médico sobre atividades específicas."
+                  a: "Sim, se o produto for autorizado para uso e você seguir a dosagem prescrita. Recomenda-se sempre consultar seu médico sobre atividades específicas.",
+                  icon: Car
                 },
                 {
                   q: "Meu convênio cobre?",
-                  a: "Atualmente poucos convênios cobrem. A maioria dos pacientes paga diretamente, mas há movimentos para inclusão futura na cobertura obrigatória."
+                  a: "Atualmente poucos convênios cobrem. A maioria dos pacientes paga diretamente, mas há movimentos para inclusão futura na cobertura obrigatória.",
+                  icon: CreditCard
                 }
               ].map((faq, i) => (
                 <details key={i} className="group bg-white rounded-lg border border-slate-200 hover:border-primary-300 transition-colors open:shadow-md">
-                  <summary className="cursor-pointer p-5 flex justify-between items-center font-semibold text-slate-900 group-open:text-primary-700 select-none">
-                    <span>{faq.q}</span>
-                    <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-primary-600" />
+                  <summary className="cursor-pointer p-6 flex items-center gap-3 font-semibold text-slate-900 group-open:text-primary-700 select-none">
+                    <faq.icon className="w-5 h-5 text-primary-500 shrink-0" />
+                    <span className="flex-1">{faq.q}</span>
+                    <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-primary-600 shrink-0" />
                   </summary>
-                  <div className="px-5 pb-5 pt-2 text-slate-600 leading-relaxed border-t border-slate-100 animate-slide-up">
+                  <div className="px-6 pb-6 pt-2 text-slate-700 leading-loose border-t border-slate-100 animate-slide-up ml-8 max-w-prose">
                     {faq.a}
                   </div>
                 </details>
@@ -445,56 +561,164 @@ export default function Home() {
             </div>
 
             {/* CTA Educacional */}
-            <div className="mt-8 text-center">
-              <Button variant="outline" size="lg" className="border-primary-300 text-primary-700 hover:bg-primary-50">
+            <div className="mt-12 text-center">
+              <Button variant="outline" size="lg" className="border-primary-300 text-primary-700 hover:bg-primary-50 min-h-12">
                 <BookOpen className="w-5 h-5 mr-2" />
                 Baixar Guia Completo em PDF
               </Button>
-              <p className="text-xs text-slate-500 mt-2">Material gratuito com tudo que você precisa saber</p>
+              <p className="text-xs text-slate-600 mt-2">Material gratuito com tudo que você precisa saber</p>
             </div>
           </div>
         </section>
         </AnimatedSection>
 
-        {/* 3b. Cost Calculator Section (Novo) */}
+        {/* 3b. Cost Calculator Section */}
         <AnimatedSection>
-        <section className="max-w-4xl mx-auto px-6 py-16">
-          <div className="text-center mb-8">
+        <section className="max-w-4xl mx-auto px-6 py-32">
+          <div className="text-center mb-12">
             <Badge variant="secondary" className="mb-4">Planejamento Financeiro</Badge>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 font-serif">
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
               Quanto Custa Meu Tratamento?
             </h2>
-            <p className="text-slate-600">
+            <p className="text-lg text-slate-700 leading-loose">
               Calcule uma estimativa personalizada em menos de 1 minuto
             </p>
           </div>
 
-          <CostCalculator />
+          <Card className="border-primary-200 shadow-xl bg-white">
+            <CardContent className="p-8 lg:p-10">
+              {/* Perguntas interativas */}
+              <div className="space-y-8">
+                {/* 1. Primeira consulta médica */}
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    1. Já tem prescrição médica?
+                  </label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button className="p-5 border-2 border-slate-200 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all text-left group focus:ring-2 focus:ring-primary-500">
+                      <div className="font-semibold group-hover:text-primary-700">Sim</div>
+                      <div className="text-xs text-slate-600 mt-1">Posso pular esta etapa</div>
+                    </button>
+                    <button className="p-5 border-2 border-primary-500 bg-primary-50 rounded-lg text-left shadow-inner ring-1 ring-primary-200">
+                      <div className="font-semibold text-primary-900">Não</div>
+                      <div className="text-xs text-primary-600 mt-1">Vou precisar de consulta</div>
+                      <div className="text-sm font-bold mt-2 text-primary-800">+ R$ 350</div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Tipo de associação */}
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    2. Qual tipo de plano de associação?
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {[
+                      { name: 'Básico', price: 80, desc: 'Produtos padrão' },
+                      { name: 'Intermediário', price: 150, desc: 'Mais variedade' },
+                      { name: 'Premium', price: 280, desc: 'Catálogo completo' }
+                    ].map((plan, i) => (
+                      <button key={plan.name} className={`p-5 border-2 rounded-lg transition-all text-center ${i === 0 ? 'border-primary-500 bg-primary-50' : 'border-slate-200 hover:border-primary-500 hover:bg-primary-50'}`}>
+                        <div className="font-semibold">{plan.name}</div>
+                        <div className="text-xs text-slate-600 mt-1">{plan.desc}</div>
+                        <div className="text-lg font-bold text-primary-700 mt-2">R$ {plan.price}/mês</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Frequência de uso */}
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    3. Frequência estimada de uso:
+                  </label>
+                  <div className="relative">
+                    <select className="w-full px-5 py-4 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-white text-slate-900">
+                      <option>{'Uso diário (produtos duram ~1 mês) - R$ 350/mês'}</option>
+                      <option>{'Uso moderado (produtos duram ~2 meses) - R$ 175/mês'}</option>
+                      <option>{'Uso esporádico (produtos duram ~3 meses) - R$ 117/mês'}</option>
+                    </select>
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Resultado */}
+              <div className="mt-10 pt-10 border-t-2 border-slate-200">
+                <div className="bg-gradient-to-br from-primary-50 to-emerald-50 rounded-xl p-8 border-2 border-primary-200">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="text-sm font-semibold text-slate-700 mb-1">Custo Inicial (1o mês):</div>
+                      <div className="text-4xl font-extrabold text-slate-900 tracking-tight">R$ 780</div>
+                    </div>
+                    <Badge className="bg-primary-600 text-white hover:bg-primary-700">Estimativa</Badge>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-slate-700">Consulta médica:</span>
+                      <span className="font-semibold text-slate-800">R$ 350</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-700">Mensalidade associação:</span>
+                      <span className="font-semibold text-slate-800">R$ 80</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-700">Produtos (1o mês):</span>
+                      <span className="font-semibold text-slate-800">R$ 350</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-primary-300">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-semibold text-slate-700">Meses seguintes (média):</span>
+                      <span className="text-2xl font-extrabold text-primary-700 tracking-tight">R$ 430/mês</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <Button className="flex-1 bg-primary-700 hover:bg-primary-800 text-white h-14 text-lg font-bold">
+                    Criar Conta e Começar
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                  <Button variant="outline" className="flex-1 border-slate-300 h-14">
+                    <Download className="mr-2 w-5 h-5" />
+                    Salvar Cálculo em PDF
+                  </Button>
+                </div>
+
+                <p className="text-xs text-center text-slate-600 mt-4 max-w-prose mx-auto">
+                  * Valores são estimativas baseadas em médias de mercado. O custo real varia conforme prescrição e produto escolhido.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </section>
         </AnimatedSection>
 
         {/* 4. Target Audience Section */}
         <AnimatedSection>
-        <section id="para-quem" className="py-24 bg-white relative">
+        <section id="para-quem" className="py-32 bg-white relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-950 mb-4">Um espaço para todo o ecossistema</h2>
-              <p className="text-slate-600 text-lg">Soluções integradas para cada papel fundamental na terapia canábica.</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-primary-950 mb-4 tracking-tight">Um espaço para todo o ecossistema</h2>
+              <p className="text-slate-700 text-lg leading-loose max-w-prose mx-auto">Soluções integradas para cada papel fundamental na terapia canábica.</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-12">
               {/* Patient Card */}
               <Card className="border-0 bg-gradient-to-b from-primary-50/50 to-white shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                 <div className="h-2 bg-primary-500 w-full" />
-                <CardHeader>
+                <CardHeader className="p-8">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary-600 mb-4 group-hover:scale-110 transition-transform">
                     <User className="w-7 h-7" />
                   </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-primary-900">Pacientes</CardTitle>
-                  <CardDescription className="text-base">Jornada simplificada e segura</CardDescription>
+                  <CardTitle className="text-2xl font-serif font-extrabold text-primary-900 tracking-tight">Pacientes</CardTitle>
+                  <CardDescription className="text-base text-slate-700">Jornada simplificada e segura</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
+                <CardContent className="px-8 pb-4">
+                  <ul className="space-y-4">
                     {[
                       "Encontre médicos experientes",
                       "Descubra associações confiáveis",
@@ -510,7 +734,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="p-8 pt-4">
                   <Button className="w-full rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/15 h-12">
                     Ver jornada do paciente
                   </Button>
@@ -520,15 +744,15 @@ export default function Home() {
               {/* Doctor Card */}
               <Card className="border-0 bg-gradient-to-b from-turquoise-50/30 to-white shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                 <div className="h-2 bg-turquoise-500 w-full" />
-                <CardHeader>
+                <CardHeader className="p-8">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-turquoise-600 mb-4 group-hover:scale-110 transition-transform">
                     <Stethoscope className="w-7 h-7" />
                   </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-slate-900">Médicos</CardTitle>
-                  <CardDescription className="text-base">Gestão eficiente</CardDescription>
+                  <CardTitle className="text-2xl font-serif font-extrabold text-slate-900 tracking-tight">Médicos</CardTitle>
+                  <CardDescription className="text-base text-slate-700">Gestão eficiente</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
+                <CardContent className="px-8 pb-4">
+                  <ul className="space-y-4">
                     {[
                       "Pacientes qualificados",
                       "Organização de prescrições",
@@ -544,7 +768,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="p-8 pt-4">
                   <Button variant="outline" className="w-full rounded-xl border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 h-12">
                     Ver jornada do médico
                   </Button>
@@ -554,20 +778,20 @@ export default function Home() {
               {/* Association Card */}
               <Card className="border-0 bg-gradient-to-b from-gold-50/30 to-white shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                 <div className="h-2 bg-gold-500 w-full" />
-                <CardHeader>
+                <CardHeader className="p-8">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gold-600 mb-4 group-hover:scale-110 transition-transform">
                     <Building2 className="w-7 h-7" />
                   </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-slate-900">Associações</CardTitle>
-                  <CardDescription className="text-base">Visibilidade e gestão</CardDescription>
+                  <CardTitle className="text-2xl font-serif font-extrabold text-slate-900 tracking-tight">Associações</CardTitle>
+                  <CardDescription className="text-base text-slate-700">Visibilidade e gestão</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
+                <CardContent className="px-8 pb-4">
+                  <ul className="space-y-4">
                     {[
-                      "Divulgação de planos",
-                      "Novos associados",
-                      "Organização de pedidos",
-                      "Relacionamento médico"
+                      "Vitrine de produtos e planos",
+                      "Gestão de associados",
+                      "Avaliações transparentes",
+                      "Ferramentas de comunicação"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-slate-700">
                         <div className="w-6 h-6 rounded-full bg-gold-100 flex items-center justify-center shrink-0">
@@ -578,7 +802,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="p-8 pt-4">
                   <Button variant="outline" className="w-full rounded-xl border-gold-200 text-gold-700 hover:bg-gold-50 h-12">
                     Ver jornada da associação
                   </Button>
@@ -589,21 +813,22 @@ export default function Home() {
         </section>
         </AnimatedSection>
 
-        {/* 5. Association Catalog Preview */}
+        {/* 5. Associations Section */}
         <AnimatedSection>
-        <section id="associacoes" className="py-24 bg-slate-50 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col sm:flex-row justify-between items-end mb-12 gap-4">
+        <section id="associacoes" className="py-32 bg-slate-50 relative">
+          <div className="absolute inset-0 bg-organic-pattern opacity-[0.02]"></div>
+          <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="flex flex-col sm:flex-row justify-between items-end mb-16 gap-4">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-slate-900 mb-2">Associações Parceiras</h2>
-                <p className="text-slate-600 text-lg">Conheça algumas das organizações presentes no hub.</p>
+                <h2 className="text-3xl font-serif font-extrabold text-slate-900 mb-2 tracking-tight">Associações Parceiras</h2>
+                <p className="text-slate-700 text-lg leading-loose">Conheça algumas das organizações presentes no hub.</p>
               </div>
               <Button variant="ghost" className="text-primary-700 hover:text-primary-800 hover:bg-primary-50 font-medium">
                 Ver todas <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-12">
               {[
                 {
                   name: "AMA-ME Cannabis",
@@ -637,10 +862,17 @@ export default function Home() {
                 }
               ].map((assoc, i) => (
                 <Card key={i} className="group cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white rounded-2xl overflow-hidden card-hover">
-                  <CardHeader className="pb-3 border-b border-slate-100 bg-slate-50/50">
+                  {/* Banner hero da associação */}
+                  <div className="aspect-[3/1] bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-organic-pattern opacity-20" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Leaf className="w-12 h-12 text-primary-400/40" />
+                    </div>
+                  </div>
+                  <CardHeader className="pb-3 border-b border-slate-100 p-8">
                     <div className="flex justify-between items-start mb-4">
-                      {/* Logo real ou inicial */}
-                      <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                      {/* Logo */}
+                      <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-md -mt-10 border-4 border-white relative z-10">
                         {assoc.name.charAt(0)}
                       </div>
                       <div className="flex flex-col gap-1 items-end">
@@ -654,18 +886,18 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <CardTitle className="text-lg mb-1 group-hover:text-primary-700 transition-colors">
+                    <CardTitle className="text-lg mb-1 group-hover:text-primary-700 transition-colors font-extrabold tracking-tight">
                       {assoc.name}
                     </CardTitle>
-                    <CardDescription className="flex items-center gap-1 text-xs">
+                    <CardDescription className="flex items-center gap-1 text-xs text-slate-600">
                       <MapPin className="w-3 h-3" />
                       {assoc.city}, {assoc.state}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-4 pb-4 space-y-3">
+                  <CardContent className="pt-4 pb-4 px-8 space-y-4">
                     {/* Especialidades */}
                     <div>
-                      <div className="text-xs font-semibold text-slate-500 mb-2">Especialidades:</div>
+                      <div className="text-xs font-semibold text-slate-600 mb-2">Especialidades:</div>
                       <div className="flex flex-wrap gap-1">
                         {assoc.specialties.map((spec, idx) => (
                           <Badge key={idx} variant="outline" className="text-xs border-primary-200 text-primary-700 bg-primary-50">
@@ -676,7 +908,7 @@ export default function Home() {
                     </div>
 
                     {/* Membros ativos */}
-                    <div className="flex items-center gap-2 text-xs text-slate-600">
+                    <div className="flex items-center gap-2 text-xs text-slate-700">
                       <Users className="w-4 h-4 text-primary-600" />
                       <span>{assoc.members.toLocaleString('pt-BR')} associados ativos</span>
                     </div>
@@ -684,16 +916,16 @@ export default function Home() {
                     {/* Preço */}
                     <div className="pt-2 border-t border-slate-100">
                       <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-bold text-slate-900">R$ {assoc.price}</span>
-                        <span className="text-sm text-slate-500">/mês</span>
+                        <span className="text-2xl font-extrabold text-slate-900 tracking-tight">R$ {assoc.price}</span>
+                        <span className="text-sm text-slate-600">/mês</span>
                       </div>
-                      <p className="text-xs text-slate-500 mt-1">+ produtos conforme prescrição</p>
+                      <p className="text-xs text-slate-600 mt-1">+ produtos conforme prescrição</p>
                     </div>
                   </CardContent>
-                  <CardFooter className="pt-0 pb-6">
+                  <CardFooter className="pt-0 pb-8 px-8">
                     <Button
                       size="sm"
-                      className="w-full bg-white border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg"
+                      className="w-full bg-white border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
                     >
                       Ver Catálogo Completo
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -704,8 +936,8 @@ export default function Home() {
             </div>
 
             {/* Mapa de Cobertura Simples */}
-            <div className="mt-16 bg-white rounded-xl p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-xl font-bold text-center mb-6 text-slate-900">
+            <div className="mt-20 bg-white rounded-xl p-10 border border-slate-200 shadow-sm">
+              <h3 className="text-xl font-extrabold text-center mb-8 text-slate-900 tracking-tight">
                 Cobertura Nacional
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -721,13 +953,13 @@ export default function Home() {
                   { state: "PE", count: 3 },
                   { state: "CE", count: 2 }
                 ].map(region => (
-                  <div key={region.state} className="flex items-center justify-between p-3 bg-primary-50 rounded-lg border border-primary-100 hover:bg-primary-100 transition-colors cursor-default">
+                  <div key={region.state} className="flex items-center justify-between p-4 bg-primary-50 rounded-lg border border-primary-100 hover:bg-primary-100 transition-colors cursor-default">
                     <span className="font-bold text-primary-900">{region.state}</span>
                     <Badge variant="secondary" className="text-xs bg-white">{region.count}</Badge>
                   </div>
                 ))}
               </div>
-              <p className="text-center text-sm text-slate-500 mt-4">
+              <p className="text-center text-sm text-slate-600 mt-6">
                 Novas associações sendo adicionadas semanalmente
               </p>
             </div>
@@ -737,68 +969,96 @@ export default function Home() {
 
         {/* 6. General Benefits */}
         <AnimatedSection>
-        <section className="bg-primary-950 text-white py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-950 to-primary-900/50"></div>
+        <section className="relative py-32 overflow-hidden">
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #052e16 0%, #14532d 50%, #1a3a2a 100%)' }} />
+          <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-overlay" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid md:grid-cols-3 gap-16 text-center">
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <ShieldCheck className="w-8 h-8 text-mint-400" />
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight" style={{ color: '#ffffff' }}>
+                Por Que Escolher a Dona Liamba?
+              </h2>
+              <div className="w-20 h-1 mx-auto mt-4 rounded-full" style={{ background: 'linear-gradient(90deg, #4ade80, #2dd4bf)' }} />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-10">
+              {[
+                {
+                  icon: ShieldCheck,
+                  title: "Segurança e Legalidade",
+                  description: "Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.",
+                  color: "#4ade80"
+                },
+                {
+                  icon: HeartPulse,
+                  title: "Acolhimento Real",
+                  description: "Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.",
+                  color: "#2dd4bf"
+                },
+                {
+                  icon: Leaf,
+                  title: "Qualidade Garantida",
+                  description: "Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.",
+                  color: "#a3e635"
+                }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  <div
+                    className="inline-flex p-4 rounded-2xl mb-6"
+                    style={{ background: `${item.color}15`, border: `1px solid ${item.color}30` }}
+                  >
+                    <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                  </div>
+                  <h3 className="text-2xl font-serif font-extrabold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-white">Segurança e Legalidade</h3>
-                <p className="text-primary-100/80 leading-relaxed">
-                  Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.
-                </p>
-              </div>
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <HeartPulse className="w-8 h-8 text-mint-400" />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-white">Acolhimento Real</h3>
-                <p className="text-primary-100/80 leading-relaxed">
-                  Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.
-                </p>
-              </div>
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <Leaf className="w-8 h-8 text-mint-400" />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-white">Qualidade Garantida</h3>
-                <p className="text-primary-100/80 leading-relaxed">
-                  Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
         </AnimatedSection>
 
-        {/* 6b. Lead Capture (Novo) */}
+        {/* 6b. Lead Capture */}
         <AnimatedSection>
-        <section className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20">
-          <Card className="bg-gradient-to-br from-primary-600 to-primary-800 text-white border-0 shadow-2xl relative overflow-hidden">
+        <section id="lead-form" className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20">
+          <div
+            className="rounded-3xl shadow-2xl relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%)',
+            }}
+          >
             {/* Elementos decorativos */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24 blur-2xl"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full -mr-32 -mt-32 blur-3xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full -ml-24 -mb-24 blur-2xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
 
-            <CardContent className="p-8 md:p-12 relative z-10">
+            <div className="p-8 md:p-12 relative z-10">
               <div className="flex items-center justify-center mb-4">
-                <div className="p-3 bg-white/20 rounded-full backdrop-blur-sm shadow-inner">
-                  <Gift className="w-8 h-8 text-white" />
+                <div className="p-3 rounded-full backdrop-blur-sm shadow-inner" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <Gift className="w-8 h-8" style={{ color: '#ffffff' }} />
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-center mb-3 font-serif">
+              <h3 className="text-3xl font-extrabold text-center mb-3 font-serif tracking-tight" style={{ color: '#ffffff' }}>
                 Guia Gratuito: Como Iniciar Seu Tratamento
               </h3>
-              <p className="text-center text-primary-100 mb-8 max-w-2xl mx-auto text-lg">
+              <p className="text-center mb-8 max-w-prose mx-auto text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Receba por email um guia completo com checklist, lista de documentos necessários, custos médios e direitos do paciente
               </p>
 
               <LeadCaptureForm />
 
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm text-primary-100 font-medium">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4" />
                   <span>100% Gratuito</span>
@@ -813,39 +1073,95 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-center text-xs text-primary-200 mt-6 opacity-80">
+              <p className="text-center text-xs mt-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 +3.847 pessoas já receberam este guia esta semana
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </section>
         </AnimatedSection>
 
         {/* 7. Final CTA */}
-        <section className="pt-40 pb-24 bg-white">
+        <section className="pt-40 pb-32 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary-950 mb-8">
+            <h2 className="text-4xl sm:text-5xl font-serif font-extrabold text-primary-950 mb-8 tracking-tight text-balance">
               Pronto para organizar seu tratamento?
             </h2>
-            <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-slate-700 mb-12 max-w-prose mx-auto font-light leading-loose">
               Junte-se a milhares de pacientes que já encontraram o caminho para uma vida com mais qualidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Link href="/cadastro-paciente">
-                <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-600/20 text-white hover:scale-105 transition-all duration-300">
-                  Criar conta Grátis
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-2 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300">
+              <a
+                href="#lead-form"
+                className="group relative inline-flex items-center justify-center h-16 px-12 text-lg font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden"
+                style={{
+                  background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                  boxShadow: '0 12px 40px -8px rgba(21, 128, 61, 0.45)',
+                }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                <span className="relative z-10">Criar Conta Gratis</span>
+                <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#lead-form"
+                className="inline-flex items-center justify-center h-16 px-12 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                style={{
+                  background: '#ffffff',
+                  color: '#1e293b',
+                  border: '2px solid #1e293b',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                }}
+              >
                 Sou Profissional
-              </Button>
+              </a>
             </div>
           </div>
         </section>
 
       </main>
 
-      <Footer />
+      {/* Footer */}
+      <footer className="border-t border-slate-100 bg-slate-50 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-6">
+           <div className="grid md:grid-cols-4 gap-12 mb-12">
+              <div className="col-span-1 md:col-span-2">
+                 <div className="flex items-center gap-2 mb-6">
+                    <Leaf className="w-6 h-6 text-primary-600" />
+                    <span className="text-xl font-serif font-extrabold text-primary-900 tracking-tight">Dona Liamba</span>
+                 </div>
+                 <p className="text-slate-600 max-w-xs leading-loose">
+                    Conectando pacientes, médicos e associações para democratizar o acesso à saúde canábica no Brasil.
+                 </p>
+              </div>
+              <div>
+                 <h4 className="font-extrabold text-slate-900 mb-6 tracking-tight">Plataforma</h4>
+                 <ul className="space-y-4 text-slate-700">
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Pacientes</a></li>
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Médicos</a></li>
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Associações</a></li>
+                 </ul>
+              </div>
+              <div>
+                 <h4 className="font-extrabold text-slate-900 mb-6 tracking-tight">Legal</h4>
+                 <ul className="space-y-4 text-slate-700">
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Termos de Uso</a></li>
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Privacidade</a></li>
+                    <li><a href="#" className="hover:text-primary-600 transition-colors">Sobre Nós</a></li>
+                 </ul>
+              </div>
+           </div>
+
+           <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-sm">
+             <p>© 2024 Dona Liamba. Todos os direitos reservados.</p>
+             <div className="flex gap-6">
+                <a href="#" className="hover:text-primary-600">Instagram</a>
+                <a href="#" className="hover:text-primary-600">LinkedIn</a>
+                <a href="#" className="hover:text-primary-600">Twitter</a>
+             </div>
+           </div>
+        </div>
+      </footer>
     </div>
   );
 }

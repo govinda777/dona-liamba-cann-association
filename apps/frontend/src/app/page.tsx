@@ -31,6 +31,10 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { LeadCaptureForm } from '@/components/LeadCaptureForm';
+import { Header } from '@/components/Header';
+import { CostCalculator } from '@/components/CostCalculator';
+import { VideoPlayer } from '@/components/VideoPlayer';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
@@ -39,54 +43,8 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-mint-200 selection:text-primary-900">
       <ExitIntentModal />
       <FloatingWhatsApp />
-      {/* Header */}
-      <header className="border-b border-primary-100 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center space-x-2 group cursor-pointer">
-              <div className="p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
-                <Leaf className="w-6 h-6 text-primary-600" />
-              </div>
-              <h1 className="text-xl sm:text-2xl font-bold text-primary-900 tracking-tight font-serif">
-                Dona Liamba
-              </h1>
-            </div>
 
-            {/* Menu Desktop */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#como-funciona" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Como Funciona
-              </a>
-              <a href="#para-quem" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Para Quem É
-              </a>
-              <a href="#associacoes" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Associações
-              </a>
-              <a href="#faq" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Dúvidas
-              </a>
-              <a href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Blog
-              </a>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" className="hidden sm:flex text-slate-600 hover:text-primary-700">
-                Entrar
-              </Button>
-              <PrivyLoginButton />
-
-              {/* Menu Mobile */}
-              <Button variant="ghost" size="sm" className="md:hidden">
-                <Menu className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex flex-col">
 
@@ -123,14 +81,16 @@ export default function Home() {
 
                 <div className="flex flex-col items-center lg:items-start gap-6">
                   {/* CTA Principal - Destaque Máximo */}
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto px-12 py-8 text-2xl font-bold rounded-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-2xl shadow-primary-600/40 transform hover:scale-105 transition-all duration-300 text-white animate-pulse-subtle"
-                  >
-                    <User className="w-7 h-7 mr-3" />
-                    Começar Tratamento Agora
-                    <ArrowRight className="w-6 h-6 ml-3" />
-                  </Button>
+                  <Link href="/cadastro-paciente">
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto px-12 py-8 text-2xl font-bold rounded-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-2xl shadow-primary-600/40 transform hover:scale-105 transition-all duration-300 text-white animate-pulse-subtle"
+                    >
+                      <User className="w-7 h-7 mr-3" />
+                      Começar Tratamento Agora
+                      <ArrowRight className="w-6 h-6 ml-3" />
+                    </Button>
+                  </Link>
 
                   {/* Urgência Social Proof */}
                   <div className="flex items-center gap-2 text-sm text-slate-600 bg-white/60 px-4 py-2 rounded-full backdrop-blur-sm">
@@ -408,10 +368,12 @@ export default function Home() {
           {/* CTA no final do fluxo */}
           <div className="text-center mt-12 bg-gradient-to-r from-primary-50 to-emerald-50 rounded-2xl p-8 border border-primary-200">
             <h3 className="text-2xl font-bold mb-4 text-slate-900 font-serif">Pronto para começar?</h3>
-            <Button size="lg" className="px-10 py-6 text-lg bg-primary-700 hover:bg-primary-800 text-white shadow-xl shadow-primary-900/10">
-              Criar Minha Conta Grátis
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="/cadastro-paciente">
+              <Button size="lg" className="px-10 py-6 text-lg bg-primary-700 hover:bg-primary-800 text-white shadow-xl shadow-primary-900/10">
+                Criar Minha Conta Grátis
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <p className="text-xs text-slate-500 mt-3">Sem cartão de crédito • Sem compromisso</p>
           </div>
         </section>
@@ -432,26 +394,7 @@ export default function Home() {
             </div>
 
             {/* Vídeo Explicativo */}
-            <div className="mb-12">
-              <Card className="overflow-hidden border-primary-200 shadow-lg">
-                <div className="aspect-video bg-slate-900 flex items-center justify-center relative group cursor-pointer">
-                  {/* Placeholder - substituir por iframe do YouTube */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-slate-900/80 group-hover:opacity-90 transition-opacity"></div>
-                  <Button size="lg" className="relative z-10 rounded-full w-20 h-20 bg-white hover:bg-white/90 text-primary-700 shadow-xl transition-transform group-hover:scale-110">
-                    <Play className="w-10 h-10 ml-1 fill-current" />
-                  </Button>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="font-bold text-lg">Cannabis Medicinal Legal: Guia Completo 2024</h3>
-                    <p className="text-sm opacity-90">⏱ 3:45 minutos</p>
-                  </div>
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <p className="text-slate-600 text-sm">
-                    Entenda como funciona o processo legal, quais condições podem ser tratadas e os passos para iniciar seu tratamento com segurança.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <VideoPlayer />
 
             {/* FAQ Colapsável */}
             <div className="space-y-3">
@@ -526,115 +469,7 @@ export default function Home() {
             </p>
           </div>
 
-          <Card className="border-primary-200 shadow-xl bg-white">
-            <CardContent className="p-8">
-              {/* Perguntas interativas (Visual Only for now) */}
-              <div className="space-y-6">
-                {/* 1. Primeira consulta médica */}
-                <div>
-                  <label className="block text-sm font-semibold text-slate-900 mb-3">
-                    1. Já tem prescrição médica?
-                  </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button className="p-4 border-2 border-slate-200 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all text-left group focus:ring-2 focus:ring-primary-500">
-                      <div className="font-semibold group-hover:text-primary-700">Sim</div>
-                      <div className="text-xs text-slate-500 mt-1">Posso pular esta etapa</div>
-                    </button>
-                    <button className="p-4 border-2 border-primary-500 bg-primary-50 rounded-lg text-left shadow-inner ring-1 ring-primary-200">
-                      <div className="font-semibold text-primary-900">Não</div>
-                      <div className="text-xs text-primary-600 mt-1">Vou precisar de consulta</div>
-                      <div className="text-sm font-bold mt-2 text-primary-800">+ R$ 350</div>
-                    </button>
-                  </div>
-                </div>
-
-                {/* 2. Tipo de associação */}
-                <div>
-                  <label className="block text-sm font-semibold text-slate-900 mb-3">
-                    2. Qual tipo de plano de associação?
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    {[
-                      { name: 'Básico', price: 80, desc: 'Produtos padrão' },
-                      { name: 'Intermediário', price: 150, desc: 'Mais variedade' },
-                      { name: 'Premium', price: 280, desc: 'Catálogo completo' }
-                    ].map((plan, i) => (
-                      <button key={plan.name} className={`p-4 border-2 rounded-lg transition-all text-center ${i === 0 ? 'border-primary-500 bg-primary-50' : 'border-slate-200 hover:border-primary-500 hover:bg-primary-50'}`}>
-                        <div className="font-semibold">{plan.name}</div>
-                        <div className="text-xs text-slate-500 mt-1">{plan.desc}</div>
-                        <div className="text-lg font-bold text-primary-700 mt-2">R$ {plan.price}/mês</div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 3. Frequência de uso */}
-                <div>
-                  <label className="block text-sm font-semibold text-slate-900 mb-3">
-                    3. Frequência estimada de uso:
-                  </label>
-                  <div className="relative">
-                    <select className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-white">
-                      <option>Uso diário (produtos duram ~1 mês) - R$ 350/mês</option>
-                      <option>Uso moderado (produtos duram ~2 meses) - R$ 175/mês</option>
-                      <option>Uso esporádico (produtos duram ~3 meses) - R$ 117/mês</option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Resultado */}
-              <div className="mt-8 pt-8 border-t-2 border-slate-200">
-                <div className="bg-gradient-to-br from-primary-50 to-emerald-50 rounded-xl p-6 border-2 border-primary-200">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <div className="text-sm font-semibold text-slate-600 mb-1">Custo Inicial (1º mês):</div>
-                      <div className="text-4xl font-bold text-slate-900">R$ 780</div>
-                    </div>
-                    <Badge className="bg-primary-600 text-white hover:bg-primary-700">Estimativa</Badge>
-                  </div>
-
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Consulta médica:</span>
-                      <span className="font-semibold text-slate-800">R$ 350</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Mensalidade associação:</span>
-                      <span className="font-semibold text-slate-800">R$ 80</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Produtos (1º mês):</span>
-                      <span className="font-semibold text-slate-800">R$ 350</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 pt-4 border-t border-primary-300">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold text-slate-700">Meses seguintes (média):</span>
-                      <span className="text-2xl font-bold text-primary-700">R$ 430/mês</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <Button className="flex-1 bg-primary-700 hover:bg-primary-800 text-white h-12 text-lg font-bold">
-                    Criar Conta e Começar
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                  <Button variant="outline" className="flex-1 border-slate-300 h-12">
-                    <Download className="mr-2 w-5 h-5" />
-                    Salvar Cálculo em PDF
-                  </Button>
-                </div>
-
-                <p className="text-xs text-center text-slate-500 mt-4">
-                  * Valores são estimativas baseadas em médias de mercado. O custo real varia conforme prescrição e produto escolhido.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <CostCalculator />
         </section>
         </AnimatedSection>
 
@@ -996,9 +831,11 @@ export default function Home() {
               Junte-se a milhares de pacientes que já encontraram o caminho para uma vida com mais qualidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-600/20 text-white hover:scale-105 transition-all duration-300">
-                Criar conta Grátis
-              </Button>
+              <Link href="/cadastro-paciente">
+                <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-600/20 text-white hover:scale-105 transition-all duration-300">
+                  Criar conta Grátis
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-2 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300">
                 Sou Profissional
               </Button>

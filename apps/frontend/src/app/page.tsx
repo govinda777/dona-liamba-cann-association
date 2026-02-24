@@ -337,9 +337,9 @@ export default function Home() {
         <AnimatedSection>
         <section id="como-funciona" className="max-w-7xl mx-auto px-6 py-32">
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4 bg-primary-50 text-primary-700 border-primary-200">Passo a Passo</Badge>
+            <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium mb-4" style={{ background: '#dcfce7', color: '#15803d' }}>Passo a Passo</span>
             <h2 className="text-4xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
-              Seu Tratamento em <span className="text-primary-600">4 Passos Simples</span>
+              Seu Tratamento em <span style={{ color: '#15803d' }}>4 Passos Simples</span>
             </h2>
             <p className="text-lg text-slate-700 max-w-prose mx-auto leading-loose">
               Veja como é fácil organizar tudo, da busca pelo médico até o recebimento dos produtos
@@ -349,7 +349,7 @@ export default function Home() {
           {/* Timeline Vertical com Previews */}
           <div className="relative">
             {/* Linha vertical conectora */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full" style={{ background: 'linear-gradient(to bottom, #86efac, #15803d, #86efac)' }} />
 
             {[
               {
@@ -397,21 +397,28 @@ export default function Home() {
               return (
                 <div key={idx} className={`relative flex items-center mb-20 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Número do passo - Centro da timeline */}
-                  <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-lg z-10 border-4 border-white">
+                  <div
+                    className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl z-10"
+                    style={{
+                      background: 'linear-gradient(135deg, #15803d, #166534)',
+                      color: '#ffffff',
+                      boxShadow: '0 4px 14px rgba(21, 128, 61, 0.4), 0 0 0 4px #ffffff',
+                    }}
+                  >
                     {step.step}
                   </div>
 
                   {/* Conteúdo - Desktop: alternado; Mobile: sempre à direita */}
                   <div className={`w-full md:w-5/12 ml-24 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                    <Card className="bg-white border-primary-200 shadow-lg hover:shadow-xl transition-all card-hover">
+                    <Card className="bg-white shadow-lg hover:shadow-xl transition-all card-hover" style={{ borderColor: '#bbf7d0' }}>
                       <CardHeader className="p-8">
-                        <div className={`inline-flex p-3 rounded-lg bg-primary-100 text-primary-600 mb-3 ${isEven ? 'md:ml-auto' : ''}`}>
+                        <div className={`inline-flex p-3 rounded-lg mb-3 ${isEven ? 'md:ml-auto' : ''}`} style={{ background: '#dcfce7', color: '#15803d' }}>
                           <step.icon className="w-6 h-6" />
                         </div>
                         <CardTitle className="text-2xl mb-2 font-serif font-extrabold tracking-tight">{step.title}</CardTitle>
                         <div className={`flex gap-2 flex-wrap ${isEven ? 'md:justify-end' : ''}`}>
-                          <Badge variant="outline" className="text-xs">{step.time}</Badge>
-                          <Badge className="text-xs bg-primary-600 text-white">{step.highlight}</Badge>
+                          <Badge variant="outline" className="text-xs border-slate-300 text-slate-600">{step.time}</Badge>
+                          <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style={{ background: '#15803d', color: '#ffffff' }}>{step.highlight}</span>
                         </div>
                       </CardHeader>
                       <CardContent className="px-8 pb-8">
@@ -423,7 +430,7 @@ export default function Home() {
                   {/* Preview visual - Desktop: alternado; Mobile: oculto */}
                   <div className={`hidden md:block w-5/12 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}>
                     {/* IMAGEM IA: Ilustração do passo - Caminho: /steps/ */}
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary-100 transform hover:scale-105 transition-transform bg-white">
+                    <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-white" style={{ border: '4px solid #bbf7d0' }}>
                       <div className="aspect-video relative">
                         <Image
                           src={step.image}
@@ -440,12 +447,16 @@ export default function Home() {
           </div>
 
           {/* CTA no final do fluxo */}
-          <div className="text-center mt-16 bg-gradient-to-r from-primary-50 to-emerald-50 rounded-2xl p-10 border border-primary-200">
+          <div className="text-center mt-16 rounded-2xl p-10" style={{ background: 'linear-gradient(135deg, #f0fdf4, #ecfdf5)', border: '1px solid #bbf7d0' }}>
             <h3 className="text-2xl font-extrabold mb-4 text-slate-900 font-serif tracking-tight">Pronto para começar?</h3>
-            <Button size="lg" className="px-10 py-6 text-lg bg-primary-700 hover:bg-primary-800 text-white shadow-xl shadow-primary-900/10 min-h-12">
+            <a
+              href="#lead-form"
+              className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white transition-all hover:scale-105"
+              style={{ background: 'linear-gradient(135deg, #15803d, #166534)', boxShadow: '0 10px 30px -5px rgba(21, 128, 61, 0.4)' }}
+            >
               Criar Minha Conta Grátis
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            </a>
             <p className="text-xs text-slate-600 mt-3">Sem cartão de crédito -- Sem compromisso</p>
           </div>
         </section>

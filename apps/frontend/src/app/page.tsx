@@ -129,14 +129,19 @@ export default function Home() {
 
                 <div className="flex flex-col items-center lg:items-start gap-6">
                   {/* CTA Principal - Destaque Máximo */}
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto px-12 py-8 text-2xl font-bold rounded-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-[0_20px_70px_-10px_rgba(34,197,94,0.5)] transform hover:scale-105 transition-all duration-300 text-white animate-pulse-subtle min-h-12"
+                  <a
+                    href="#lead-form"
+                    className="group relative inline-flex items-center justify-center w-full sm:w-auto px-14 py-7 text-2xl font-bold rounded-full text-white transition-all duration-300 transform hover:scale-105 min-h-14 overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                      boxShadow: '0 20px 60px -10px rgba(21, 128, 61, 0.55), 0 8px 24px -4px rgba(21, 128, 61, 0.3)',
+                    }}
                   >
-                    <User className="w-7 h-7 mr-3" />
-                    Começar Tratamento Agora
-                    <ArrowRight className="w-6 h-6 ml-3" />
-                  </Button>
+                    <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                    <User className="w-7 h-7 mr-3 relative z-10" />
+                    <span className="relative z-10">Começar Tratamento Agora</span>
+                    <ArrowRight className="w-6 h-6 ml-3 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  </a>
 
                   {/* Urgência Social Proof */}
                   <div className="flex items-center gap-3 text-sm text-slate-700 bg-white/60 px-4 py-2 rounded-full backdrop-blur-sm">

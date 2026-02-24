@@ -21,20 +21,20 @@ import {
   ChevronDown,
   BookOpen,
   MapPin,
-  Menu
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { LeadCaptureForm } from '@/components/LeadCaptureForm';
+
 import { Header } from '@/components/Header';
 import { CostCalculator } from '@/components/CostCalculator';
 import { VideoPlayer } from '@/components/VideoPlayer';
 import Link from 'next/link';
+import { Footer } from '@/components/layout/Footer';
 
 export const revalidate = 3600;
 
@@ -845,47 +845,7 @@ export default function Home() {
 
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-100 bg-slate-50 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6">
-           <div className="grid md:grid-cols-4 gap-12 mb-12">
-              <div className="col-span-1 md:col-span-2">
-                 <div className="flex items-center gap-2 mb-6">
-                    <Leaf className="w-6 h-6 text-primary-600" />
-                    <span className="text-xl font-serif font-bold text-primary-900">Dona Liamba</span>
-                 </div>
-                 <p className="text-slate-500 max-w-xs leading-relaxed">
-                    Conectando pacientes, médicos e associações para democratizar o acesso à saúde canábica no Brasil.
-                 </p>
-              </div>
-              <div>
-                 <h4 className="font-bold text-slate-900 mb-6">Plataforma</h4>
-                 <ul className="space-y-4 text-slate-600">
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Pacientes</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Médicos</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Associações</a></li>
-                 </ul>
-              </div>
-              <div>
-                 <h4 className="font-bold text-slate-900 mb-6">Legal</h4>
-                 <ul className="space-y-4 text-slate-600">
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Termos de Uso</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Privacidade</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Sobre Nós</a></li>
-                 </ul>
-              </div>
-           </div>
-
-           <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-             <p>© 2024 Dona Liamba. Todos os direitos reservados.</p>
-             <div className="flex gap-6">
-                <a href="#" className="hover:text-primary-600">Instagram</a>
-                <a href="#" className="hover:text-primary-600">LinkedIn</a>
-                <a href="#" className="hover:text-primary-600">Twitter</a>
-             </div>
-           </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

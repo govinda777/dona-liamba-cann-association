@@ -1086,12 +1086,30 @@ export default function Home() {
               Junte-se a milhares de pacientes que já encontraram o caminho para uma vida com mais qualidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-600/20 text-white hover:scale-105 transition-all duration-300 min-h-12">
-                Criar conta Grátis
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-2 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 min-h-12">
+              <a
+                href="#lead-form"
+                className="group relative inline-flex items-center justify-center h-16 px-12 text-lg font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden"
+                style={{
+                  background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
+                  boxShadow: '0 12px 40px -8px rgba(21, 128, 61, 0.45)',
+                }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                <span className="relative z-10">Criar Conta Gratis</span>
+                <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#lead-form"
+                className="inline-flex items-center justify-center h-16 px-12 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                style={{
+                  background: '#ffffff',
+                  color: '#1e293b',
+                  border: '2px solid #1e293b',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                }}
+              >
                 Sou Profissional
-              </Button>
+              </a>
             </div>
           </div>
         </section>

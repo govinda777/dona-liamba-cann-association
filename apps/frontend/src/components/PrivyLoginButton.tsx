@@ -26,16 +26,23 @@ export function PrivyLoginButton() {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const googleAccount = user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any;
+  const displayName = googleAccount?.name || user?.email?.address || (address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Usuário');
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-primary-100 hover:border-primary-300">
           <Avatar className="h-9 w-9">
             {/* Use user.linkedAccounts to find email or google image if available, otherwise fallback */}
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            <AvatarImage src={(user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any)?.picture || undefined} />
+            <AvatarImage src={googleAccount?.picture || undefined} />
             <AvatarFallback className="bg-primary-100 text-primary-700 font-bold">
-              {address ? address.slice(2, 4).toUpperCase() : 'U'}
+              {user?.email?.address
+                ? user.email.address.slice(0, 2).toUpperCase()
+                : address
+                  ? address.slice(2, 4).toUpperCase()
+                  : 'U'}
             </AvatarFallback>
           </Avatar>
         </Button>
@@ -43,9 +50,14 @@ export function PrivyLoginButton() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <div className="flex items-center justify-start gap-2 p-2">
           <div className="flex flex-col space-y-1 leading-none">
-            {user?.email?.address && <p className="font-medium">{user.email.address}</p>}
-            {address && (
+            <p className="font-medium">{displayName}</p>
+            {user?.email?.address && googleAccount?.name && (
               <p className="w-[200px] truncate text-xs text-muted-foreground">
+                {user.email.address}
+              </p>
+            )}
+            {address && (
+              <p className="w-[200px] truncate text-xs text-muted-foreground mt-1">
                 {address}
               </p>
             )}

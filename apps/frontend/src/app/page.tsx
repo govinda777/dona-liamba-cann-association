@@ -31,12 +31,17 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { LeadCaptureForm } from '@/components/LeadCaptureForm';
 import Image from 'next/image';
+
+import { Header } from '@/components/Header';
+import { CostCalculator } from '@/components/CostCalculator';
+import { VideoPlayer } from '@/components/VideoPlayer';
+import Link from 'next/link';
+import { Footer } from '@/components/layout/Footer';
 
 export const revalidate = 3600;
 
@@ -92,14 +97,7 @@ export default function Home() {
               </a>
               <PrivyLoginButton />
 
-              {/* Menu Mobile */}
-              <Button variant="ghost" size="sm" className="md:hidden">
-                <Menu className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex flex-col">
 

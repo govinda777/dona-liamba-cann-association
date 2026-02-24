@@ -19,7 +19,7 @@ export function PrivyLoginButton() {
 
   if (!authenticated) {
     return (
-      <Button onClick={login} className="bg-primary-600 hover:bg-primary-700 text-white font-medium px-6 shadow-md transition-all">
+      <Button onClick={login} className="bg-[#15803d] hover:bg-[#166534] text-white font-medium px-6 shadow-md transition-all">
         <Wallet className="w-4 h-4 mr-2" />
         Entrar com Wallet
       </Button>

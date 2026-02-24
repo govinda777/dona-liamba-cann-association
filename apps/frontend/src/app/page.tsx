@@ -80,9 +80,16 @@ export default function Home() {
 
             {/* CTAs */}
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" className="hidden sm:flex text-slate-600 hover:text-primary-700">
+              <a
+                href="#lead-form"
+                className="hidden sm:inline-flex items-center justify-center h-10 px-6 text-sm font-semibold rounded-full text-white transition-all duration-200 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, #15803d, #166534)',
+                  boxShadow: '0 4px 14px -3px rgba(21, 128, 61, 0.4)',
+                }}
+              >
                 Entrar
-              </Button>
+              </a>
               <PrivyLoginButton />
 
               {/* Menu Mobile */}

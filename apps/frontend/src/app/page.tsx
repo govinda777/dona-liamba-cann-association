@@ -953,39 +953,62 @@ export default function Home() {
 
         {/* 6. General Benefits */}
         <AnimatedSection>
-        <section className="bg-primary-950 text-white py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-overlay"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-950 to-primary-900/50"></div>
+        <section className="relative py-32 overflow-hidden">
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #052e16 0%, #14532d 50%, #1a3a2a 100%)' }} />
+          <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-overlay" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid md:grid-cols-3 gap-16 text-center">
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <ShieldCheck className="w-8 h-8 text-mint-400" />
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight" style={{ color: '#ffffff' }}>
+                Por Que Escolher a Dona Liamba?
+              </h2>
+              <div className="w-20 h-1 mx-auto mt-4 rounded-full" style={{ background: 'linear-gradient(90deg, #4ade80, #2dd4bf)' }} />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-10">
+              {[
+                {
+                  icon: ShieldCheck,
+                  title: "Segurança e Legalidade",
+                  description: "Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.",
+                  color: "#4ade80"
+                },
+                {
+                  icon: HeartPulse,
+                  title: "Acolhimento Real",
+                  description: "Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.",
+                  color: "#2dd4bf"
+                },
+                {
+                  icon: Leaf,
+                  title: "Qualidade Garantida",
+                  description: "Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.",
+                  color: "#a3e635"
+                }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  <div
+                    className="inline-flex p-4 rounded-2xl mb-6"
+                    style={{ background: `${item.color}15`, border: `1px solid ${item.color}30` }}
+                  >
+                    <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                  </div>
+                  <h3 className="text-2xl font-serif font-extrabold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-serif font-extrabold mb-4 text-white tracking-tight">Segurança e Legalidade</h3>
-                <p className="text-primary-100/80 leading-loose max-w-prose mx-auto">
-                  Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.
-                </p>
-              </div>
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <HeartPulse className="w-8 h-8 text-mint-400" />
-                </div>
-                <h3 className="text-2xl font-serif font-extrabold mb-4 text-white tracking-tight">Acolhimento Real</h3>
-                <p className="text-primary-100/80 leading-loose max-w-prose mx-auto">
-                  Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.
-                </p>
-              </div>
-              <div>
-                <div className="inline-flex p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                  <Leaf className="w-8 h-8 text-mint-400" />
-                </div>
-                <h3 className="text-2xl font-serif font-extrabold mb-4 text-white tracking-tight">Qualidade Garantida</h3>
-                <p className="text-primary-100/80 leading-loose max-w-prose mx-auto">
-                  Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -993,28 +1016,33 @@ export default function Home() {
 
         {/* 6b. Lead Capture */}
         <AnimatedSection>
-        <section className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20">
-          <Card className="bg-gradient-to-br from-primary-600 to-primary-800 text-white border-0 shadow-2xl relative overflow-hidden">
+        <section id="lead-form" className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20">
+          <div
+            className="rounded-3xl shadow-2xl relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%)',
+            }}
+          >
             {/* Elementos decorativos */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24 blur-2xl"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full -mr-32 -mt-32 blur-3xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full -ml-24 -mb-24 blur-2xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
 
-            <CardContent className="p-8 md:p-12 relative z-10">
+            <div className="p-8 md:p-12 relative z-10">
               <div className="flex items-center justify-center mb-4">
-                <div className="p-3 bg-white/20 rounded-full backdrop-blur-sm shadow-inner">
-                  <Gift className="w-8 h-8 text-white" />
+                <div className="p-3 rounded-full backdrop-blur-sm shadow-inner" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <Gift className="w-8 h-8" style={{ color: '#ffffff' }} />
                 </div>
               </div>
-              <h3 className="text-3xl font-extrabold text-center mb-3 font-serif tracking-tight">
+              <h3 className="text-3xl font-extrabold text-center mb-3 font-serif tracking-tight" style={{ color: '#ffffff' }}>
                 Guia Gratuito: Como Iniciar Seu Tratamento
               </h3>
-              <p className="text-center text-primary-100 mb-8 max-w-prose mx-auto text-lg leading-loose">
+              <p className="text-center mb-8 max-w-prose mx-auto text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Receba por email um guia completo com checklist, lista de documentos necessários, custos médios e direitos do paciente
               </p>
 
               <LeadCaptureForm />
 
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm text-primary-100 font-medium">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4" />
                   <span>100% Gratuito</span>
@@ -1029,11 +1057,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-center text-xs text-primary-200 mt-6 opacity-80">
+              <p className="text-center text-xs mt-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 +3.847 pessoas já receberam este guia esta semana
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </section>
         </AnimatedSection>
 

@@ -22,24 +22,48 @@ describe("MedicalNFT", function () {
   });
 
   describe("Minting", function () {
-    it("Should allow a doctor to mint a medical record", async function () {
-      await expect(medicalNFT.connect(doctor).mintMedicalRecord(patient.address, "QmHash", []))
-        .to.emit(medicalNFT, "MedicalRecordMinted")
-        .withArgs(0, patient.address, doctor.address);
+    it("Should allow a doctor to mint a prescription", async function () {
+      // mintPrescription(patient, ipfsHash, validityDays)
+      const validityDays = 30;
+      await expect(medicalNFT.connect(doctor).mintPrescription(patient.address, "QmHash", validityDays))
+        .to.emit(medicalNFT, "PrescriptionMinted")
+        .withArgs(0, patient.address, doctor.address, (val: any) => val > 0); // Expiration date check
 
       expect(await medicalNFT.ownerOf(0)).to.equal(patient.address);
+
+      const prescription = await medicalNFT.prescriptions(0);
+      expect(prescription.isActive).to.be.true;
+      expect(prescription.doctor).to.equal(doctor.address);
     });
 
     it("Should revert if a non-doctor tries to mint", async function () {
       await expect(
-        medicalNFT.connect(otherAccount).mintMedicalRecord(patient.address, "QmHash", [])
-      ).to.be.reverted; // AccessControl revert message varies
+        medicalNFT.connect(otherAccount).mintPrescription(patient.address, "QmHash", 30)
+      ).to.be.reverted;
+    });
+  });
+
+  describe("Validation", function () {
+    it("Should return true for valid prescription", async function () {
+        await medicalNFT.connect(doctor).mintPrescription(patient.address, "QmHash", 30);
+        expect(await medicalNFT.validatePrescription(0)).to.be.true;
+    });
+
+    it("Should return false for expired prescription", async function () {
+        // Mint with 0 days validity
+        await medicalNFT.connect(doctor).mintPrescription(patient.address, "QmHash", 0);
+
+        // Increase time by 1 day (86400 seconds)
+        await ethers.provider.send("evm_increaseTime", [86400]);
+        await ethers.provider.send("evm_mine");
+
+        expect(await medicalNFT.validatePrescription(0)).to.be.false;
     });
   });
 
   describe("Soulbound", function () {
     beforeEach(async function () {
-      await medicalNFT.connect(doctor).mintMedicalRecord(patient.address, "QmHash", []);
+      await medicalNFT.connect(doctor).mintPrescription(patient.address, "QmHash", 30);
     });
 
     it("Should revert on transfer", async function () {

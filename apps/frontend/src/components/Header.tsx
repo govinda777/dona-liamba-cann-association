@@ -6,10 +6,12 @@ import { Button } from '@/components/ui/button';
 import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { usePrivy } from '@privy-io/react-auth';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
+  const { authenticated } = usePrivy();
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
@@ -44,18 +46,25 @@ export function Header() {
             <Link href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
               Blog
             </Link>
+            {authenticated && (
+              <Link href="/dashboard" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
+                Dashboard
+              </Link>
+            )}
           </div>
 
           {/* CTAs */}
           <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hidden sm:flex text-slate-600 hover:text-primary-700"
-              onClick={() => router.push('/login')}
-            >
-              Entrar
-            </Button>
+            {!authenticated && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden sm:flex text-slate-600 hover:text-primary-700"
+                onClick={() => router.push('/login')}
+              >
+                Entrar
+              </Button>
+            )}
             <PrivyLoginButton />
 
             {/* Menu Mobile Button */}
@@ -84,11 +93,18 @@ export function Header() {
               <Link href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700" onClick={() => setMobileMenuOpen(false)}>
                 Blog
               </Link>
-              <div className="pt-2 flex flex-col gap-2">
-                <Button variant="outline" onClick={() => router.push('/login')} className="w-full justify-center">
-                  Entrar
-                </Button>
-              </div>
+              {authenticated && (
+                <Link href="/dashboard" className="text-sm font-medium text-slate-700 hover:text-primary-700" onClick={() => setMobileMenuOpen(false)}>
+                  Dashboard
+                </Link>
+              )}
+              {!authenticated && (
+                <div className="pt-2 flex flex-col gap-2">
+                  <Button variant="outline" onClick={() => router.push('/login')} className="w-full justify-center">
+                    Entrar
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         )}

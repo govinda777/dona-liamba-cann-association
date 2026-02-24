@@ -50,53 +50,6 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-mint-200 selection:text-primary-900">
       <ExitIntentModal />
       <FloatingWhatsApp />
-      {/* Header */}
-      <header className="border-b border-primary-100 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
-                <Leaf className="w-6 h-6 text-primary-600" />
-              </div>
-              <h1 className="text-xl sm:text-2xl font-extrabold text-primary-900 tracking-tight font-serif">
-                Dona Liamba
-              </h1>
-            </div>
-
-            {/* Menu Desktop */}
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#como-funciona" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Como Funciona
-              </a>
-              <a href="#para-quem" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Para Quem É
-              </a>
-              <a href="#associacoes" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Associações
-              </a>
-              <a href="#faq" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Dúvidas
-              </a>
-              <a href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
-                Blog
-              </a>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex items-center gap-3">
-              <a
-                href="#lead-form"
-                className="hidden sm:inline-flex items-center justify-center h-10 px-6 text-sm font-semibold rounded-full text-white transition-all duration-200 hover:scale-105"
-                style={{
-                  background: 'linear-gradient(135deg, #15803d, #166534)',
-                  boxShadow: '0 4px 14px -3px rgba(21, 128, 61, 0.4)',
-                }}
-              >
-                Entrar
-              </a>
-              <PrivyLoginButton />
-
       <Header />
 
       <main className="flex flex-col">

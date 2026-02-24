@@ -34,6 +34,10 @@ export default function Dashboard() {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const googleAccount = user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any;
+  const displayName = googleAccount?.name || user?.email?.address?.split('@')[0] || 'Paciente';
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-primary-50/30">
       {/* Header Dashboard */}
@@ -43,15 +47,18 @@ export default function Dashboard() {
             <div className="flex items-center space-x-4 w-full sm:w-auto">
               <Avatar className="w-12 h-12 border-2 border-primary-200 shadow-sm">
                 {/* Use user.linkedAccounts to find email or google image if available */}
-                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                <AvatarImage src={(user.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any)?.picture || undefined} />
+                <AvatarImage src={googleAccount?.picture || undefined} />
                 <AvatarFallback className="bg-primary-100 text-primary-700 font-bold">
-                  {address ? address.slice(2, 4).toUpperCase() : 'U'}
+                  {user?.email?.address
+                    ? user.email.address.slice(0, 2).toUpperCase()
+                    : address
+                      ? address.slice(2, 4).toUpperCase()
+                      : 'U'}
                 </AvatarFallback>
               </Avatar>
               <div>
                 <h2 className="text-lg sm:text-xl font-bold text-primary-900">
-                  Olá, {user.google?.name || user.email?.address?.split('@')[0] || 'Paciente'}
+                  Olá, {displayName}
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-500 font-mono bg-gray-100 px-2 py-0.5 rounded-md inline-block">
                   {user.wallet?.address ? `${user.wallet.address.slice(0, 6)}...${user.wallet.address.slice(-4)}` : 'Sem carteira'}

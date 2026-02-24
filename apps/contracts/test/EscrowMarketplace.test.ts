@@ -23,7 +23,8 @@ describe("EscrowMarketplace", function () {
     await medicalNFT.grantRole(DOCTOR_ROLE, doctor.address);
 
     // Mint NFT to patient
-    await medicalNFT.connect(doctor).mintMedicalRecord(patient.address, "QmHash", []);
+    // mintPrescription(patient, ipfsHash, validityDays)
+    await medicalNFT.connect(doctor).mintPrescription(patient.address, "QmHash", 30);
 
     // Deploy Marketplace
     const MarketplaceFactory = await ethers.getContractFactory("EscrowMarketplace");
@@ -33,22 +34,27 @@ describe("EscrowMarketplace", function () {
 
   it("Should create an order successfully", async function () {
     const price = ethers.parseEther("1.0");
+    // createOrder(prescriptionTokenId, productId, pharmacy)
     await expect(
       marketplace.connect(patient).createOrder(0, 1, pharmacy.address, { value: price })
     )
       .to.emit(marketplace, "OrderCreated")
-      .withArgs(0, 0, patient.address, pharmacy.address, price);
+      .withArgs(0, patient.address, pharmacy.address, price);
   });
 
-  it("Should confirm delivery and distribute fees", async function () {
+  it("Should confirm delivery by buyer and distribute fees", async function () {
     const price = ethers.parseEther("100"); // Easy math
     await marketplace.connect(patient).createOrder(0, 1, pharmacy.address, { value: price });
+
+    // Mark as shipped by pharmacy
+    await marketplace.connect(pharmacy).markShipped(0);
 
     const initialTreasuryBalance = await ethers.provider.getBalance(treasury.address);
     const initialPharmacyBalance = await ethers.provider.getBalance(pharmacy.address);
 
-    await expect(marketplace.connect(pharmacy).confirmDelivery(0))
-      .to.emit(marketplace, "OrderFulfilled");
+    // Buyer confirms delivery
+    await expect(marketplace.connect(patient).confirmDelivery(0))
+      .to.emit(marketplace, "OrderDelivered");
 
     const finalTreasuryBalance = await ethers.provider.getBalance(treasury.address);
     const finalPharmacyBalance = await ethers.provider.getBalance(pharmacy.address);
@@ -57,27 +63,25 @@ describe("EscrowMarketplace", function () {
     const expectedFee = (price * 2n) / 100n;
     const expectedPharmacyAmount = price - expectedFee;
 
-    // Check Treasury balance change (Treasury doesn't pay gas)
+    // Check Treasury balance change
     expect(finalTreasuryBalance - initialTreasuryBalance).to.equal(expectedFee);
 
-    // Check Pharmacy balance change (Pharmacy PAYS gas, so we check "close to" or just check contract drained)
-    // To make it exact, we would need to calculate gasUsed. For simplicity, we assume pharmacy receives amount minus gas.
-    expect(finalPharmacyBalance).to.be.gt(initialPharmacyBalance);
+    // Check Pharmacy balance change (Pharmacy didn't pay gas for confirmation, Buyer did)
+    expect(finalPharmacyBalance - initialPharmacyBalance).to.equal(expectedPharmacyAmount);
+
     // Contract should be empty
     expect(await ethers.provider.getBalance(await marketplace.getAddress())).to.equal(0);
   });
 
-  it("Should allow refund by pharmacy", async function () {
+  it("Should allow dispute by buyer or pharmacy", async function () {
     const price = ethers.parseEther("1.0");
     await marketplace.connect(patient).createOrder(0, 1, pharmacy.address, { value: price });
 
-    const initialPatientBalance = await ethers.provider.getBalance(patient.address);
+    await expect(marketplace.connect(patient).disputeOrder(0))
+        .to.emit(marketplace, "OrderDisputed")
+        .withArgs(0);
 
-    // Pharmacy refunds
-    const tx = await marketplace.connect(pharmacy).refundOrder(0);
-    await tx.wait();
-
-    // Patient should get money back (ignoring gas for simplicity check, we can check contract balance is 0)
-    expect(await ethers.provider.getBalance(await marketplace.getAddress())).to.equal(0);
+    const order = await marketplace.orders(0);
+    expect(order.status).to.equal(3); // OrderStatus.Disputed = 3
   });
 });

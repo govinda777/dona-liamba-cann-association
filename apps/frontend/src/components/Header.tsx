@@ -5,13 +5,11 @@ import { Leaf, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { usePrivy } from '@privy-io/react-auth';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const router = useRouter();
-  const { authenticated } = usePrivy();
+  const { authenticated, login } = usePrivy();
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
@@ -60,7 +58,7 @@ export function Header() {
                 variant="ghost"
                 size="sm"
                 className="hidden sm:flex text-slate-600 hover:text-primary-700"
-                onClick={() => router.push('/login')}
+                onClick={() => login()}
               >
                 Entrar
               </Button>
@@ -100,7 +98,7 @@ export function Header() {
               )}
               {!authenticated && (
                 <div className="pt-2 flex flex-col gap-2">
-                  <Button variant="outline" onClick={() => router.push('/login')} className="w-full justify-center">
+                  <Button variant="outline" onClick={() => login()} className="w-full justify-center">
                     Entrar
                   </Button>
                 </div>

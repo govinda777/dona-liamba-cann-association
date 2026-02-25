@@ -7,7 +7,12 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { Wallet, LogOut, LayoutDashboard, Settings } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-export function PrivyLoginButton() {
+interface PrivyLoginButtonProps {
+  minimal?: boolean;
+  className?: string;
+}
+
+export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) {
   const { ready, authenticated, login, logout, user } = usePrivy();
   const { wallets } = useWallets();
   const router = useRouter();
@@ -18,8 +23,21 @@ export function PrivyLoginButton() {
   if (!ready) return <Button disabled variant="ghost">Carregando...</Button>;
 
   if (!authenticated) {
+    if (minimal) {
+      return (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={login}
+          className={className}
+        >
+          Entrar
+        </Button>
+      );
+    }
+
     return (
-      <Button onClick={login} className="bg-[#15803d] hover:bg-[#166534] text-white font-medium px-6 shadow-md transition-all">
+      <Button onClick={login} className={className || "bg-[#15803d] hover:bg-[#166534] text-white font-medium px-6 shadow-md transition-all"}>
         <Wallet className="w-4 h-4 mr-2" />
         Entrar com Wallet
       </Button>

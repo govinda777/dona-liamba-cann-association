@@ -7,13 +7,15 @@ coverage
 .nyc_output
 
 # Hardhat
-apps/contracts/artifacts
-apps/contracts/cache
-apps/contracts/typechain-types
-apps/contracts/hardhat.log
-apps/contracts/hardhat_debug.log
+contracts/artifacts
+contracts/cache
+contracts/typechain-types
+contracts/coverage
+contracts/hardhat.log
+contracts/hardhat_debug.log
 
 # Next.js
 .next
 out
-apps/frontend/dev.log
+apps/fe/dev.log
+docs/deploy-previews.md

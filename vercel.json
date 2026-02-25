@@ -1,24 +1,37 @@
 {
-  "buildCommand": "cd ../.. && pnpm turbo run build --filter=frontend",
-  "outputDirectory": ".next",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "monorepo": true,
+  "buildCommand": false,
   "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "functions": {
-    "apps/frontend/src/app/api/**": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "regions": ["gru1"],
-  "headers": [
+  "devCommand": "pnpm turbo dev",
+  "framework": null,
+  "projects": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "name": "dona-liamba-cann-association-frontend",
+      "root": "apps/fe",
+      "buildCommand": "pnpm turbo build --filter=dona-liamba-cann-association-frontend",
+      "outputDirectory": "apps/fe/.next",
+      "env": {
+        "NEXT_PUBLIC_API_URL": "https://dona-liamba-api.vercel.app/api"
+      }
+    },
+    {
+      "name": "dona-liamba-cann-association-api",
+      "root": "apps/api",
+      "buildCommand": "pnpm turbo build --filter=dona-liamba-cann-association-api",
+      "outputDirectory": "apps/api/.next"
+    },
+    {
+      "name": "dona-liamba-cann-association-admin",
+      "root": "apps/admin",
+      "buildCommand": "pnpm turbo build --filter=dona-liamba-cann-association-admin",
+      "outputDirectory": "apps/admin/.next"
+    },
+    {
+      "name": "dona-liamba-cann-association-docs",
+      "root": "apps/docs",
+      "buildCommand": "pnpm turbo build --filter=dona-liamba-cann-association-docs",
+      "outputDirectory": "apps/docs/.next"
     }
   ]
 }

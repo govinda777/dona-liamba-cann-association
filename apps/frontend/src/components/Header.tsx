@@ -44,6 +44,10 @@ export function Header() {
             <Link href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
               Blog
             </Link>
+            <Link href="/membro" className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-yellow-500 text-white text-sm font-bold hover:shadow-lg transition-all hover:scale-105 group">
+              <span>Seja Membro</span>
+              <span className="bg-white/20 px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wider group-hover:bg-white/30 transition-colors">🚀 Novo</span>
+            </Link>
             {authenticated && (
               <Link href="/dashboard" className="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">
                 Dashboard
@@ -90,6 +94,10 @@ export function Header() {
               </a>
               <Link href="/blog" className="text-sm font-medium text-slate-700 hover:text-primary-700" onClick={() => setMobileMenuOpen(false)}>
                 Blog
+              </Link>
+              <Link href="/membro" className="flex items-center w-fit gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-yellow-500 text-white text-sm font-bold" onClick={() => setMobileMenuOpen(false)}>
+                <span>Seja Membro</span>
+                <span className="bg-white/20 px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wider">🚀 Novo</span>
               </Link>
               {authenticated && (
                 <Link href="/dashboard" className="text-sm font-medium text-slate-700 hover:text-primary-700" onClick={() => setMobileMenuOpen(false)}>

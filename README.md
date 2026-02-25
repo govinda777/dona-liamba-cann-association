@@ -77,6 +77,10 @@ cd apps/contracts
 npx hardhat run scripts/deploy.ts --network amoy
 ```
 
+## Documentação Oficial
+
+*   [**Protocolo Oceano Azul Web3**](docs/BLUE_OCEAN_PROTOCOL.md): Detalhes sobre o modelo de governança tokenizada, taxas geométricas e estratégia de crescimento viral.
+
 ## Funcionalidades MVP
 
 1.  **Login**: Autenticação via Email (Privy) com criação automática de carteira.

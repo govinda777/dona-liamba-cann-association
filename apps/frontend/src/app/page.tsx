@@ -8,9 +8,7 @@ import {
   ArrowRight,
   ShieldCheck,
   HeartPulse,
-  Activity,
   Users,
-  Calendar,
   CheckCircle2,
   Star,
   Lock,
@@ -21,7 +19,6 @@ import {
   ChevronDown,
   BookOpen,
   MapPin,
-  Menu,
   DollarSign,
   Shield,
   HelpCircle,
@@ -38,10 +35,6 @@ import { LeadCaptureForm } from '@/components/LeadCaptureForm';
 import Image from 'next/image';
 
 import { Header } from '@/components/Header';
-import { CostCalculator } from '@/components/CostCalculator';
-import { VideoPlayer } from '@/components/VideoPlayer';
-import Link from 'next/link';
-import { Footer } from '@/components/layout/Footer';
 
 export const revalidate = 3600;
 

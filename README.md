@@ -80,6 +80,7 @@ npx hardhat run scripts/deploy.ts --network amoy
 ## Documentação Oficial
 
 *   [**Protocolo Oceano Azul Web3**](docs/BLUE_OCEAN_PROTOCOL.md): Detalhes sobre o modelo de governança tokenizada, taxas geométricas e estratégia de crescimento viral.
+*   [**Casos de Uso**](docs/CASOS_DE_USO.md): Detalhamento da experiência e jornada de cada ator na plataforma.
 
 ## Funcionalidades MVP
 

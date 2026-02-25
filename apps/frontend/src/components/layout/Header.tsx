@@ -39,10 +39,7 @@ export function Header() {
 
             {/* CTAs */}
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" className="hidden sm:flex text-slate-600 hover:text-primary-700">
-                Entrar
-              </Button>
-              <PrivyLoginButton />
+              <PrivyLoginButton minimal={true} className="text-slate-600 hover:text-primary-700" />
 
               {/* Menu Mobile */}
               <Button variant="ghost" size="sm" className="md:hidden">

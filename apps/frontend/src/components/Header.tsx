@@ -57,17 +57,7 @@ export function Header() {
 
           {/* CTAs */}
           <div className="flex items-center gap-3">
-            {!authenticated && (
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hidden sm:flex text-slate-600 hover:text-primary-700"
-                onClick={() => login()}
-              >
-                Entrar
-              </Button>
-            )}
-            <PrivyLoginButton />
+            <PrivyLoginButton minimal={true} className="text-slate-600 hover:text-primary-700" />
 
             {/* Menu Mobile Button */}
             <Button variant="ghost" size="sm" className="md:hidden" onClick={toggleMenu}>

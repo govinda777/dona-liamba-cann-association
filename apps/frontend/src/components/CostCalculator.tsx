@@ -77,7 +77,7 @@ export function CostCalculator() {
               {Object.entries(plans).map(([key, p]) => (
                 <button
                   key={key}
-                  onClick={() => setPlan(key as any)}
+                  onClick={() => setPlan(key as 'basic' | 'intermediate' | 'premium')}
                   className={`p-4 border-2 rounded-lg transition-all text-center ${
                     plan === key
                       ? 'border-primary-500 bg-primary-50'
@@ -100,7 +100,7 @@ export function CostCalculator() {
             <div className="relative">
               <select
                 value={frequency}
-                onChange={(e) => setFrequency(e.target.value as any)}
+                onChange={(e) => setFrequency(e.target.value as 'daily' | 'moderate' | 'sporadic')}
                 className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-white"
               >
                 {Object.entries(frequencies).map(([key, f]) => (

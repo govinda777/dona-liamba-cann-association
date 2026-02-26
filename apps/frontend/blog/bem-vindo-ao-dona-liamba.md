@@ -23,7 +23,7 @@ Se você é paciente, aqui você pode:
 
 ### Para Médicos
 
-Oferecemos ferramentas para gerenciar seus pacientes e acompanhar a evolução do tratamento de forma eficiente.
+Oferecemos um omboarding completo com cursos e passo a passo para a obtenção de certificados de especialização e a utilização das ferramentas para gerenciar seus pacientes e acompanhar a evolução do tratamento de forma eficiente.
 
 ### Para Associações
 

@@ -552,6 +552,3 @@ Vou detalhar os principais fluxos simplificados para o MVP:
 3. Simulador de custo
 4. FAQs
 
-***
-
-Quer que eu detalhe algum fluxo específico ou comece a mapear a estrutura de pastas/componentes do Next.js para implementação?

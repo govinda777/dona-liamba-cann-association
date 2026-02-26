@@ -194,9 +194,6 @@ Metadados IPFS + notificação ao paciente
    - IPFS (Pinata, Web3.Storage)
    - AWS S3 ou similar
 
-5. **Certificado Digital** (futura integração)
-   - ICP-Brasil para assinatura de prescrições [prescricaoeletronica.cfm.org](https://prescricaoeletronica.cfm.org.br)
-
 ***
 
 ## **SEGURANÇA E CONFORMIDADE**

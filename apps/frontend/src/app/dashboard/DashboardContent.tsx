@@ -1,7 +1,8 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { usePrivy } from '@privy-io/react-auth';
-import { useAccount, useWriteContract } from 'wagmi';
+import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -10,13 +11,34 @@ import { BalanceCard } from '@/components/BalanceCard';
 import { PrescriptionCard } from '@/components/PrescriptionCard';
 import { PrescriptionGridSkeleton } from '@/components/PrescriptionGridSkeleton';
 import { PrivyLoginButton } from '@/components/PrivyLoginButton';
-import { FileText, ShoppingCart, History, Plus } from 'lucide-react';
+import { FileText, ShoppingCart, History, Plus, Loader2 } from 'lucide-react';
 import { parseEther } from 'viem';
 import contractsConfig from '@/abis/contracts-config.json';
 
 export default function Dashboard() {
   const { user, ready, authenticated } = usePrivy();
   const { address } = useAccount();
+  const [prescriptions, setPrescriptions] = useState<any[]>([]);
+  const [txHistory, setTxHistory] = useState<any[]>([]);
+  const [loadingData, setLoadingData] = useState(true);
+
+  useEffect(() => {
+    if (authenticated && address) {
+      Promise.all([
+        fetch(`/api/prescriptions?patientAddress=${address}`).then(res => res.json()),
+        fetch(`/api/transactions?userAddress=${address}`).then(res => res.json())
+      ]).then(([prescData, txData]) => {
+        setPrescriptions(Array.isArray(prescData) ? prescData : []);
+        setTxHistory(Array.isArray(txData) ? txData : []);
+        setLoadingData(false);
+      }).catch(err => {
+        console.error("Error loading dashboard data", err);
+        setLoadingData(false);
+      });
+    } else if (ready) {
+      setLoadingData(false);
+    }
+  }, [authenticated, address, ready]);
 
   if (!ready) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -100,27 +122,56 @@ export default function Dashboard() {
           <TabsContent value="minhas-prescricoes" className="mt-8 outline-none">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-semibold text-gray-800">Suas Receitas Digitais</h3>
-                <MintPrescriptionButton address={address} />
+                <MintPrescriptionButton address={address} onMint={() => {
+                  // Refresh data
+                  fetch(`/api/prescriptions?patientAddress=${address}`)
+                    .then(res => res.json())
+                    .then(data => setPrescriptions(data));
+                }} />
             </div>
-            {/* Mock Data for UI */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-               <PrescriptionCard tokenId={1} doctor="Silva" date={new Date().toISOString()} status="ativa" coOwners={2} />
-               <PrescriptionCard tokenId={2} doctor="Santos" date="2023-12-01" status="usada" coOwners={1} />
-               <PrescriptionGridSkeleton />
+               {prescriptions.map((p: any) => (
+                 <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Especialista" date={p.createdAt} status={p.status} coOwners={1} />
+               ))}
+               {prescriptions.length === 0 && !loadingData && (
+                 <p className="col-span-full text-center text-gray-500 py-12">Nenhuma prescrição encontrada.</p>
+               )}
+               {loadingData && <PrescriptionGridSkeleton />}
             </div>
           </TabsContent>
 
           {/* Marketplace */}
           <TabsContent value="comprar" className="mt-8 outline-none">
             <h3 className="text-xl font-semibold text-gray-800 mb-6">Farmácia Credenciada</h3>
-            <MarketplaceGrid />
+            <MarketplaceGrid address={address} onPurchase={() => {
+               fetch(`/api/transactions?userAddress=${address}`)
+               .then(res => res.json())
+               .then(data => setTxHistory(data));
+            }} />
           </TabsContent>
 
            {/* Histórico */}
            <TabsContent value="historico" className="mt-8 outline-none">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center text-gray-500">
-                    <History className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                    <p>Seu histórico de transações aparecerá aqui.</p>
+                <div className="space-y-4">
+                  {txHistory.map((tx: any) => (
+                    <Card key={tx.id} className="p-4 flex justify-between items-center">
+                       <div>
+                          <p className="font-bold text-gray-800">{tx.type === 'purchase' ? 'Compra de Produto' : 'Nova Prescricao'}</p>
+                          <p className="text-sm text-gray-500">{new Date(tx.createdAt).toLocaleDateString()}</p>
+                       </div>
+                       <div className="text-right">
+                          <p className="font-mono text-sm text-primary-600">{tx.amount ? `${tx.amount} ETH` : '-'}</p>
+                          <p className="text-xs text-gray-400">{tx.details}</p>
+                       </div>
+                    </Card>
+                  ))}
+                  {txHistory.length === 0 && (
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center text-gray-500">
+                        <History className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                        <p>Seu histórico de transações aparecerá aqui.</p>
+                    </div>
+                  )}
                 </div>
            </TabsContent>
         </Tabs>
@@ -129,8 +180,35 @@ export default function Dashboard() {
   );
 }
 
-function MintPrescriptionButton({ address }: { address?: `0x${string}` }) {
-    const { writeContract, isPending } = useWriteContract();
+function MintPrescriptionButton({ address, onMint }: { address?: `0x${string}`, onMint: () => void }) {
+    const { data: hash, writeContract, isPending } = useWriteContract();
+    const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+
+    useEffect(() => {
+      if (isSuccess && address) {
+        fetch('/api/prescriptions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tokenId: Math.floor(Math.random() * 1000),
+            patientAddress: address,
+            doctorAddress: '0x0000000000000000000000000000000000000000',
+            metadataUri: 'ipfs://demo'
+          })
+        }).then(() => {
+          fetch('/api/transactions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              userAddress: address,
+              type: 'mint',
+              details: 'Nova Prescricao Gerada'
+            })
+          });
+          onMint();
+        });
+      }
+    }, [isSuccess, address, onMint]);
 
     const mint = () => {
       if (!address) return;
@@ -143,17 +221,35 @@ function MintPrescriptionButton({ address }: { address?: `0x${string}` }) {
     };
 
     return (
-      <Button onClick={mint} disabled={isPending} size="sm" className="bg-primary-600 hover:bg-primary-700">
-        <Plus className="w-4 h-4 mr-1" />
+      <Button onClick={mint} disabled={isPending || isConfirming} size="sm" className="bg-primary-600 hover:bg-primary-700">
+        {(isPending || isConfirming) ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : <Plus className="w-4 h-4 mr-1" />}
         Nova Prescrição (Demo)
       </Button>
     );
 }
 
-function MarketplaceGrid() {
-    const { writeContract, isPending } = useWriteContract();
+function MarketplaceGrid({ address, onPurchase }: { address?: string, onPurchase: () => void }) {
+    const { data: hash, writeContract, isPending } = useWriteContract();
+    const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+    const [lastBought, setLastBought] = useState<{title: string, price: string} | null>(null);
 
-    const buyProduct = (price: string) => {
+    useEffect(() => {
+      if (isSuccess && address && lastBought) {
+        fetch('/api/transactions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userAddress: address,
+            type: 'purchase',
+            details: lastBought.title,
+            amount: lastBought.price
+          })
+        }).then(() => onPurchase());
+      }
+    }, [isSuccess, address, lastBought, onPurchase]);
+
+    const buyProduct = (title: string, price: string) => {
+        setLastBought({ title, price });
         writeContract({
           address: contractsConfig.EscrowMarketplace.address as `0x${string}`,
           abi: contractsConfig.EscrowMarketplace.abi,
@@ -165,9 +261,9 @@ function MarketplaceGrid() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ProductCard title="Óleo CBD Full Spectrum 5%" price="0.01" onBuy={() => buyProduct("0.01")} loading={isPending} />
-            <ProductCard title="Gummies CBD 300mg" price="0.005" onBuy={() => buyProduct("0.005")} loading={isPending} />
-            <ProductCard title="Creme Tópico Canabidiol" price="0.008" onBuy={() => buyProduct("0.008")} loading={isPending} />
+            <ProductCard title="Óleo CBD Full Spectrum 5%" price="0.01" onBuy={() => buyProduct("Óleo CBD Full Spectrum 5%", "0.01")} loading={isPending || isConfirming} />
+            <ProductCard title="Gummies CBD 300mg" price="0.005" onBuy={() => buyProduct("Gummies CBD 300mg", "0.005")} loading={isPending || isConfirming} />
+            <ProductCard title="Creme Tópico Canabidiol" price="0.008" onBuy={() => buyProduct("Creme Tópico Canabidiol", "0.008")} loading={isPending || isConfirming} />
         </div>
     );
 }

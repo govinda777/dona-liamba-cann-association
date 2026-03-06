@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import { jsPDF } from 'jspdf';
 
 export function CostCalculator() {
   const [hasPrescription, setHasPrescription] = useState<boolean | null>(null);
@@ -30,6 +31,30 @@ export function CostCalculator() {
 
   const initialCost = (hasPrescription === false ? consultationPrice : 0) + planPrice + productPrice;
   const monthlyCost = planPrice + productPrice;
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(22);
+    doc.setTextColor(21, 128, 61); // Primary Green
+    doc.text('Estimativa de Tratamento - Dona Liamba', 20, 20);
+
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Custo Inicial (1o mes): R$ ${initialCost}`, 20, 40);
+    doc.text(`Custos Mensais (media): R$ ${monthlyCost}`, 20, 50);
+
+    doc.setFontSize(12);
+    doc.text('Detalhamento:', 20, 70);
+    doc.text(`- Prescricao Medica: ${hasPrescription === false ? 'R$ ' + consultationPrice : 'Ja possui'}`, 20, 80);
+    doc.text(`- Plano de Associacao (${plans[plan].name}): R$ ${planPrice}/mes`, 20, 90);
+    doc.text(`- Produtos (${frequencies[frequency].label}): R$ ${productPrice}/mes`, 20, 100);
+
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('* Valores sao estimativas baseadas em medias de mercado.', 20, 120);
+
+    doc.save('estimativa-custo-liamba.pdf');
+  };
 
   return (
     <Card className="border-primary-200 shadow-xl bg-white">
@@ -157,9 +182,9 @@ export function CostCalculator() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button variant="outline" className="flex-1 border-slate-300 h-12">
+            <Button variant="outline" onClick={generatePDF} className="flex-1 border-slate-300 h-12">
               <Download className="mr-2 w-5 h-5" />
-              Salvar Cálculo em PDF
+              Salvar Calculo em PDF
             </Button>
           </div>
 

@@ -35,6 +35,7 @@ import { LeadCaptureForm } from '@/components/LeadCaptureForm';
 import Image from 'next/image';
 
 import { Header } from '@/components/Header';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
@@ -123,14 +124,18 @@ export default function Home() {
 
                   {/* CTAs Secundários - Menor destaque */}
                   <div className="flex gap-3 mt-4">
-                    <Button size="sm" variant="ghost" className="text-medical hover:bg-medical/10 border border-medical/20 min-h-12">
-                      <Stethoscope className="w-4 h-4 mr-2" />
-                      Área Médica
-                    </Button>
-                    <Button size="sm" variant="ghost" className="text-yellow-700 hover:bg-gold/10 border border-gold/20 min-h-12">
-                      <Building2 className="w-4 h-4 mr-2" />
-                      Área Associação
-                    </Button>
+                    <Link href="/onboarding/doctor">
+                      <Button size="sm" variant="ghost" className="text-medical hover:bg-medical/10 border border-medical/20 min-h-12 w-full">
+                        <Stethoscope className="w-4 h-4 mr-2" />
+                        Área Médica
+                      </Button>
+                    </Link>
+                    <Link href="/onboarding/association">
+                      <Button size="sm" variant="ghost" className="text-yellow-700 hover:bg-gold/10 border border-gold/20 min-h-12 w-full">
+                        <Building2 className="w-4 h-4 mr-2" />
+                        Área Associação
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -430,18 +435,19 @@ export default function Home() {
             {/* Vídeo Explicativo */}
             <div className="mb-16">
               <Card className="overflow-hidden border-primary-200 shadow-lg">
-                <div className="aspect-video bg-slate-900 flex items-center justify-center relative group cursor-pointer">
-                  {/* Placeholder - substituir por iframe do YouTube */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-slate-900/80 group-hover:opacity-90 transition-opacity"></div>
-                  <Button size="lg" className="relative z-10 rounded-full w-20 h-20 bg-white hover:bg-white/90 text-primary-700 shadow-xl transition-transform group-hover:scale-110">
-                    <Play className="w-10 h-10 ml-1 fill-current" />
-                  </Button>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="font-bold text-lg">Cannabis Medicinal Legal: Guia Completo 2024</h3>
-                    <p className="text-sm opacity-90">3:45 minutos</p>
-                  </div>
+                <div className="aspect-video bg-slate-900">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/Ssh_G2F_L-0"
+                    title="Guia Cannabis Medicinal"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 <CardContent className="p-8 bg-white">
+                  <h3 className="font-bold text-xl mb-2">Como funciona a Cannabis Medicinal no Brasil?</h3>
                   <p className="text-slate-700 text-base leading-loose max-w-prose">
                     Entenda como funciona o processo legal, quais condições podem ser tratadas e os passos para iniciar seu tratamento com segurança.
                   </p>
@@ -681,9 +687,11 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter className="p-8 pt-4">
-                  <Button className="w-full rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/15 h-12">
-                    Ver jornada do paciente
-                  </Button>
+                  <Link href="/cadastro-paciente" className="w-full">
+                    <Button className="w-full rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/15 h-12">
+                      Ver jornada do paciente
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
 
@@ -715,9 +723,11 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter className="p-8 pt-4">
-                  <Button variant="outline" className="w-full rounded-xl border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 h-12">
-                    Ver jornada do médico
-                  </Button>
+                  <Link href="/onboarding/doctor" className="w-full">
+                    <Button variant="outline" className="w-full rounded-xl border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 h-12">
+                      Ver jornada do médico
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
 
@@ -749,9 +759,11 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter className="p-8 pt-4">
-                  <Button variant="outline" className="w-full rounded-xl border-gold-200 text-gold-700 hover:bg-gold-50 h-12">
-                    Ver jornada da associação
-                  </Button>
+                  <Link href="/onboarding/association" className="w-full">
+                    <Button variant="outline" className="w-full rounded-xl border-gold-200 text-gold-700 hover:bg-gold-50 h-12">
+                      Ver jornada da associação
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             </div>
@@ -777,6 +789,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-12">
               {[
                 {
+                  id: "ama-me",
                   name: "AMA-ME Cannabis",
                   city: "São Paulo",
                   state: "SP",
@@ -787,6 +800,7 @@ export default function Home() {
                   members: 2500
                 },
                 {
+                  id: "cultive-saude",
                   name: "Cultive Saúde",
                   city: "Rio de Janeiro",
                   state: "RJ",
@@ -797,6 +811,7 @@ export default function Home() {
                   members: 1800
                 },
                 {
+                  id: "cannativa",
                   name: "Cannativa Brasil",
                   city: "Belo Horizonte",
                   state: "MG",
@@ -869,13 +884,15 @@ export default function Home() {
                     </div>
                   </CardContent>
                   <CardFooter className="pt-0 pb-8 px-8">
-                    <Button
-                      size="sm"
-                      className="w-full bg-white border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
-                    >
-                      Ver Catálogo Completo
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href={`/associations/${assoc.id}`} className="w-full">
+                      <Button
+                        size="sm"
+                        className="w-full bg-white border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
+                      >
+                        Ver Catálogo Completo
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}
@@ -1049,8 +1066,8 @@ export default function Home() {
                 <span className="relative z-10">Criar Conta Gratis</span>
                 <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href="#lead-form"
+              <Link
+                href="/onboarding/doctor"
                 className="inline-flex items-center justify-center h-16 px-12 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
                 style={{
                   background: '#ffffff',
@@ -1060,7 +1077,7 @@ export default function Home() {
                 }}
               >
                 Sou Profissional
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -1083,9 +1100,9 @@ export default function Home() {
               <div>
                  <h4 className="font-extrabold text-slate-900 mb-6 tracking-tight">Plataforma</h4>
                  <ul className="space-y-4 text-slate-700">
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Pacientes</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Médicos</a></li>
-                    <li><a href="#" className="hover:text-primary-600 transition-colors">Para Associações</a></li>
+                    <li><Link href="/cadastro-paciente" className="hover:text-primary-600 transition-colors">Para Pacientes</Link></li>
+                    <li><Link href="/onboarding/doctor" className="hover:text-primary-600 transition-colors">Para Médicos</Link></li>
+                    <li><Link href="/onboarding/association" className="hover:text-primary-600 transition-colors">Para Associações</Link></li>
                  </ul>
               </div>
               <div>

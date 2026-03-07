@@ -20,6 +20,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(data);
   } catch (error) {
+    console.error('Fetch transactions error:', error);
     return NextResponse.json({ error: 'Failed to fetch transactions' }, { status: 500 });
   }
 }
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
     await db.insert(transactions).values(body);
     return NextResponse.json({ message: 'Transaction saved' });
   } catch (error) {
+    console.error('Save transaction error:', error);
     return NextResponse.json({ error: 'Failed to save transaction' }, { status: 500 });
   }
 }

@@ -8,7 +8,6 @@ import { http } from 'wagmi';
 import React from 'react';
 
 // Define the chain for Privy
-const chains = [localhost];
 
 export const config = createConfig({
   chains: [localhost],

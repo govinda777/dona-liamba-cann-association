@@ -25,6 +25,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(user[0] || null);
   } catch (error) {
+    console.error('Fetch onboarding error:', error);
     return NextResponse.json({ error: 'Failed to fetch onboarding status' }, { status: 500 });
   }
 }

@@ -7,6 +7,7 @@ import { useAccount, useBalance } from 'wagmi';
 import { formatEther, parseEther } from 'viem';
 import { usePrivy } from '@privy-io/react-auth';
 import { useState } from 'react';
+import Image from 'next/image';
 
 type ModalView = 'main' | 'send' | 'receive';
 
@@ -176,9 +177,11 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                             <div className="bg-slate-50 p-6 rounded-3xl inline-block border-2 border-slate-100 mb-8">
                                 {/* QR Code Placeholder (Using a standard QR API) */}
                                 <div className="w-48 h-48 bg-white rounded-xl flex items-center justify-center border border-slate-200 overflow-hidden">
-                                    <img
+                                    <Image
                                         src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${address}`}
                                         alt="QR Code Carteira"
+                                        width={192}
+                                        height={192}
                                         className="w-full h-full"
                                     />
                                 </div>

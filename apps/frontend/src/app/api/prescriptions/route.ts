@@ -20,6 +20,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(data);
   } catch (error) {
+    console.error('Fetch prescriptions error:', error);
     return NextResponse.json({ error: 'Failed to fetch prescriptions' }, { status: 500 });
   }
 }
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
     await db.insert(prescriptionsMetadata).values(body);
     return NextResponse.json({ message: 'Prescription metadata saved' });
   } catch (error) {
+    console.error('Save prescription error:', error);
     return NextResponse.json({ error: 'Failed to save prescription' }, { status: 500 });
   }
 }

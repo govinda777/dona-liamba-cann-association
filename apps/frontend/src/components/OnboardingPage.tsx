@@ -42,7 +42,7 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
     }
   }, [ready, authenticated, walletAddress, role]);
 
-  const updateOnboarding = async (nextStep: number, newData: any) => {
+  const updateOnboarding = async (nextStep: number, newData: Record<string, string>) => {
     setLoading(true);
     try {
       await fetch('/api/onboarding', {

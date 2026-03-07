@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { usePrivy } from '@privy-io/react-auth';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -20,8 +19,8 @@ import Link from 'next/link';
 export default function Dashboard() {
   const { user, ready, authenticated } = usePrivy();
   const { address } = useAccount();
-  const [prescriptions, setPrescriptions] = useState<any[]>([]);
-  const [txHistory, setTxHistory] = useState<any[]>([]);
+  const [prescriptions, setPrescriptions] = useState<Array<{ id: string; tokenId: number; createdAt: string; status: string }>>([]);
+  const [txHistory, setTxHistory] = useState<Array<{ id: string; type: string; createdAt: string; amount?: string; details: string }>>([]);
   const [loadingData, setLoadingData] = useState(true);
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
 
@@ -38,10 +37,10 @@ export default function Dashboard() {
         console.error("Error loading dashboard data", err);
         setLoadingData(false);
       });
-    } else if (ready) {
-      setLoadingData(false);
+    } else if (ready && loadingData) {
+      setTimeout(() => setLoadingData(false), 0);
     }
-  }, [authenticated, address, ready]);
+  }, [authenticated, address, ready, loadingData]);
 
   if (!ready) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -59,8 +58,7 @@ export default function Dashboard() {
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const googleAccount = user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any;
+  const googleAccount = user?.linkedAccounts.find((a) => a.type === 'google_oauth') as { name?: string } | undefined;
   const displayName = googleAccount?.name || user?.email?.address?.split('@')[0] || 'Paciente';
 
   return (
@@ -153,7 +151,7 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {prescriptions.map((p: any) => (
+              {prescriptions.map((p) => (
                 <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Especialista" date={p.createdAt} status={p.status} coOwners={1} />
               ))}
               {prescriptions.length === 0 && !loadingData && (
@@ -176,7 +174,7 @@ export default function Dashboard() {
           {/* Histórico */}
           <TabsContent value="historico" className="mt-8 outline-none">
             <div className="space-y-4">
-              {txHistory.map((tx: any) => (
+              {txHistory.map((tx) => (
                 <Card key={tx.id} className="p-4 flex justify-between items-center">
                   <div>
                     <p className="font-bold text-gray-800">{tx.type === 'purchase' ? 'Compra de Produto' : 'Nova Prescricao'}</p>

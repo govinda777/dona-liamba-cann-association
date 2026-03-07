@@ -18,3 +18,5 @@ apps/contracts/hardhat_debug.log
 out
 apps/frontend/dev.log
 .turbo
+apps/frontend/.turbo
+apps/frontend/lint_output.txt

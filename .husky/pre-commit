@@ -1,0 +1,2 @@
+pnpm install --lockfile-only
+pnpm lint

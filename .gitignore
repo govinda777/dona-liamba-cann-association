@@ -17,3 +17,4 @@ apps/contracts/hardhat_debug.log
 .next
 out
 apps/frontend/dev.log
+.turbo

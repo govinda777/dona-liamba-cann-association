@@ -3,6 +3,8 @@ import { onboardingUsers } from '@/lib/schema';
 import { NextResponse } from 'next/server';
 import { eq, and } from 'drizzle-orm';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const walletAddress = searchParams.get('walletAddress');

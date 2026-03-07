@@ -152,7 +152,7 @@ export default function Dashboard() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {prescriptions.map((p) => (
-                <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Especialista" date={p.createdAt} status={p.status} coOwners={1} />
+                <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Especialista" date={p.createdAt} status={p.status as "ativa" | "usada" | "expirada"} coOwners={1} />
               ))}
               {prescriptions.length === 0 && !loadingData && (
                 <p className="col-span-full text-center text-gray-500 py-12">Nenhuma prescrição encontrada.</p>

@@ -20,3 +20,5 @@ apps/frontend/dev.log
 .turbo
 apps/frontend/.turbo
 apps/frontend/lint_output.txt
+apps/frontend/.turbo/turbo-build.log
+apps/frontend/build_log.txt

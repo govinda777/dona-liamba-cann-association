@@ -21,7 +21,7 @@ export function PatientRegistrationForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
+    console.log('Form data:', formData);
     setSubmitted(true);
   };
 
@@ -34,7 +34,7 @@ export function PatientRegistrationForm() {
           </div>
           <h3 className="text-2xl font-bold text-slate-900">Cadastro Recebido!</h3>
           <p className="text-slate-600">
-            Obrigado, {formData.name}. Entraremos em contato em breve pelo email {formData.email} para dar continuidade ao seu tratamento.
+            Obrigado, {formData.name}. Em breve entraremos em contato no e-mail {formData.email} para seguir com sua jornada terapêutica.
           </p>
           <Button onClick={() => setSubmitted(false)} variant="outline" className="mt-4">
             Voltar
@@ -72,7 +72,7 @@ export function PatientRegistrationForm() {
 
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium text-slate-700 flex items-center gap-2">
-              <Mail className="w-4 h-4 text-primary-500" /> Email
+              <Mail className="w-4 h-4 text-primary-500" /> E-mail
             </label>
             <input
               id="email"

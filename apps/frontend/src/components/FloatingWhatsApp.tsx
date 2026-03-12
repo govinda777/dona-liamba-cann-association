@@ -38,7 +38,7 @@ export function FloatingWhatsApp() {
 
           <div className="p-4 space-y-3">
             <div className="bg-slate-100 rounded-lg p-3 text-sm">
-              <p className="mb-2">👋 Olá! Como posso ajudar você hoje?</p>
+              <p className="mb-2">👋 Olá! Como podemos ajudar hoje?</p>
               <p className="text-xs text-slate-600">Tempo médio de resposta: 2 minutos</p>
             </div>
 
@@ -60,7 +60,7 @@ export function FloatingWhatsApp() {
             </div>
 
             <a
-              href="https://wa.me/5511999999999?text=Olá! Vim do site Dona Liamba e gostaria de ajuda"
+              href="https://wa.me/5511999999999?text=Olá! Estava no site da Dona Liamba e gostaria de uma ajuda"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full"

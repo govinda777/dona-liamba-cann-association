@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { CheckCircle2, User, FileText, ClipboardCheck, Loader2 } from 'lucide-react';
 
 interface OnboardingPageProps {
-  role: 'doctor' | 'association';
+  role: 'doctor' | 'association' | 'patient';
   title: string;
 }
 
@@ -16,7 +16,7 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
   const { user, authenticated, login, ready } = usePrivy();
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({ name: '', registration: '', description: '' });
+  const [formData, setFormData] = useState({ name: '', registration: '', description: '', phone: '', email: '', hasPrescription: false });
   const [loading, setLoading] = useState(false);
   const [dbLoading, setDbLoading] = useState(true);
 
@@ -42,7 +42,7 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
     }
   }, [ready, authenticated, walletAddress, role]);
 
-  const updateOnboarding = async (nextStep: number, newData: Record<string, string>) => {
+  const updateOnboarding = async (nextStep: number, newData: Record<string, unknown>) => {
     setLoading(true);
     try {
       await fetch('/api/onboarding', {
@@ -68,23 +68,23 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
   if (!authenticated) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4">Onboarding {title}</h1>
-        <p className="text-slate-600 mb-8 text-center max-w-md">Para iniciar seu cadastro como {role === 'doctor' ? 'medico' : 'associacao'}, conecte sua carteira com segurança.</p>
-        <Button onClick={login} size="lg" className="bg-primary-600 hover:bg-primary-700">Conectar para Começar</Button>
+        <h1 className="text-3xl font-bold text-slate-900 mb-4">{title} Onboarding</h1>
+        <p className="text-slate-600 mb-8 text-center max-w-md">To start your registration as a {role}, please connect your wallet securely.</p>
+        <Button onClick={login} size="lg" className="bg-primary-600 hover:bg-primary-700">Connect to Start</Button>
       </div>
     );
   }
 
   const steps = [
-    { id: 1, label: 'Dados Basicos', icon: User },
-    { id: 2, label: role === 'doctor' ? 'CRM' : 'CNPJ', icon: FileText },
-    { id: 3, label: 'Aprovacao', icon: ClipboardCheck },
+    { id: 1, label: 'Basic Data', icon: User },
+    { id: 2, label: role === 'doctor' ? 'CRM' : role === 'association' ? 'CNPJ' : 'Details', icon: FileText },
+    { id: 3, label: 'Approval', icon: ClipboardCheck },
   ];
 
   return (
     <div className="min-h-screen bg-slate-50 py-16 px-6">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-slate-900 mb-8 text-center">Cadastro de {title}</h1>
+        <h1 className="text-3xl font-bold text-slate-900 mb-8 text-center">{title} Registration</h1>
 
         {/* Progress Bar */}
         <div className="flex justify-between items-center mb-12">
@@ -104,43 +104,81 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
         <Card className="shadow-xl border-primary-100">
           <CardHeader>
             <CardTitle>{steps[step - 1].label}</CardTitle>
-            <CardDescription>Passo {step} de 3</CardDescription>
+            <CardDescription>Step {step} of 3</CardDescription>
           </CardHeader>
           <CardContent>
             {step === 1 && (
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Nome Completo / Razao Social</label>
+                  <label className="block text-sm font-medium mb-1">Full Name / Business Name</label>
                   <input
                     type="text"
                     className="w-full p-2 border rounded-md"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Ex: Dr. Joao Silva ou Associacao XYZ"
+                    placeholder="Ex: Dr. John Doe or Association XYZ"
                   />
                 </div>
+                {role === 'patient' && (
+                  <>
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Email</label>
+                      <input
+                        type="email"
+                        className="w-full p-2 border rounded-md"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Phone / WhatsApp</label>
+                      <input
+                        type="tel"
+                        className="w-full p-2 border rounded-md"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="(11) 99999-9999"
+                      />
+                    </div>
+                  </>
+                )}
                 <Button onClick={() => updateOnboarding(2, formData)} className="w-full" disabled={!formData.name || loading}>
-                  {loading ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : 'Proximo Passo'}
+                  {loading ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : 'Next Step'}
                 </Button>
               </div>
             )}
 
             {step === 2 && (
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1">{role === 'doctor' ? 'CRM' : 'CNPJ'}</label>
-                  <input
-                    type="text"
-                    className="w-full p-2 border rounded-md"
-                    value={formData.registration}
-                    onChange={(e) => setFormData({ ...formData, registration: e.target.value })}
-                    placeholder={role === 'doctor' ? 'CRM-UF XXXXXX' : 'XX.XXX.XXX/XXXX-XX'}
-                  />
-                </div>
+                {role !== 'patient' ? (
+                  <div>
+                    <label className="block text-sm font-medium mb-1">{role === 'doctor' ? 'CRM' : 'CNPJ'}</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border rounded-md"
+                      value={formData.registration}
+                      onChange={(e) => setFormData({ ...formData, registration: e.target.value })}
+                      placeholder={role === 'doctor' ? 'CRM-UF XXXXXX' : 'XX.XXX.XXX/XXXX-XX'}
+                    />
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <label className="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-slate-50">
+                      <input
+                        type="checkbox"
+                        checked={formData.hasPrescription}
+                        onChange={(e) => setFormData({ ...formData, hasPrescription: e.target.checked })}
+                        className="w-5 h-5 text-primary-600"
+                      />
+                      <span className="text-slate-700 font-medium">I already have a medical prescription</span>
+                    </label>
+                  </div>
+                )}
                 <div className="flex gap-4">
-                  <Button variant="outline" onClick={() => setStep(1)} className="flex-1">Voltar</Button>
-                  <Button onClick={() => updateOnboarding(3, formData)} className="flex-1" disabled={!formData.registration || loading}>
-                    {loading ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : 'Finalizar Cadastro'}
+                  <Button variant="outline" onClick={() => setStep(1)} className="flex-1">Back</Button>
+                  <Button onClick={() => updateOnboarding(3, formData)} className="flex-1" disabled={(role !== 'patient' && !formData.registration) || loading}>
+                    {loading ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : 'Finish Registration'}
                   </Button>
                 </div>
               </div>
@@ -151,9 +189,9 @@ export default function OnboardingPage({ role, title }: OnboardingPageProps) {
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <ClipboardCheck className="w-8 h-8 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Cadastro em Analise</h3>
-                <p className="text-slate-600 mb-6">Recebemos seus documentos. Nossa equipe verificara seu {role === 'doctor' ? 'CRM' : 'CNPJ'} em ate 48 horas uteis.</p>
-                <Button variant="outline" onClick={() => router.push('/')}>Voltar ao Inicio</Button>
+                <h3 className="text-xl font-bold mb-2">Registration Under Review</h3>
+                <p className="text-slate-600 mb-6">We have received your details. Our team will verify your information within 48 business hours.</p>
+                <Button variant="outline" onClick={() => router.push('/')}>Back to Home</Button>
               </div>
             )}
           </CardContent>

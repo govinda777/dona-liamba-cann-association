@@ -15,7 +15,6 @@ import {
   Gift,
   Download,
   Check,
-  Play,
   ChevronDown,
   BookOpen,
   MapPin,

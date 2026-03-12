@@ -11,7 +11,7 @@ import { PrescriptionCard } from '@/components/PrescriptionCard';
 import { PrescriptionGridSkeleton } from '@/components/PrescriptionGridSkeleton';
 import { PrivyLoginButton } from '@/components/PrivyLoginButton';
 import { WalletModal } from '@/components/WalletModal';
-import { FileText, ShoppingCart, History, Plus, Loader2, Leaf, ArrowLeft, LayoutDashboard } from 'lucide-react';
+import { FileText, ShoppingCart, History, Plus, Loader2, Leaf, LayoutDashboard } from 'lucide-react';
 import { parseEther } from 'viem';
 import contractsConfig from '@/abis/contracts-config.json';
 import Link from 'next/link';
@@ -59,7 +59,7 @@ export default function Dashboard() {
   }
 
   const googleAccount = user?.linkedAccounts.find((a) => a.type === 'google_oauth') as { name?: string } | undefined;
-  const displayName = googleAccount?.name || user?.email?.address?.split('@')[0] || 'Paciente';
+  const displayName = googleAccount?.name || user?.email?.address?.split('@')[0] || 'Patient';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-primary-50/30">
@@ -82,7 +82,7 @@ export default function Dashboard() {
 
               <div className="flex items-center text-sm font-medium text-slate-500">
                 <LayoutDashboard className="w-4 h-4 mr-2 text-primary-600" />
-                <span className="hidden sm:inline">Painel do Paciente</span>
+                <span className="hidden sm:inline">Dashboard do Paciente</span>
               </div>
             </div>
 
@@ -105,43 +105,43 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Hero Welcome (Moved from Header to Main Content for better hierarchy) */}
+      {/* Hero Welcome */}
       <div className="bg-white border-b border-slate-100 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-1">
             <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               Olá, {displayName} 👋
             </h1>
-            <p className="text-slate-500">Bem-vindo ao seu centro de saúde canábica.</p>
+            <p className="text-slate-500">Bem-vindo ao seu centro de saúde cannábica.</p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <Tabs defaultValue="minhas-prescricoes" className="w-full space-y-8">
+        <Tabs defaultValue="my-prescriptions" className="w-full space-y-8">
           <TabsList className="grid w-full grid-cols-3 h-auto p-1 bg-white border border-primary-100 rounded-xl shadow-sm">
-            <TabsTrigger value="minhas-prescricoes" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger value="my-prescriptions" className="py-3 rounded-lg transition-all duration-300">
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Minhas Prescrições</span>
               <span className="sm:hidden">Prescrições</span>
             </TabsTrigger>
-            <TabsTrigger value="comprar" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger value="shop" className="py-3 rounded-lg transition-all duration-300">
               <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Comprar Produtos</span>
               <span className="sm:hidden">Loja</span>
             </TabsTrigger>
-            <TabsTrigger value="historico" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger value="history" className="py-3 rounded-lg transition-all duration-300">
               <History className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Histórico</span>
               <span className="sm:hidden">Histórico</span>
             </TabsTrigger>
           </TabsList>
 
-          {/* Minhas Prescrições */}
-          <TabsContent value="minhas-prescricoes" className="mt-8 outline-none">
+          {/* My Prescriptions */}
+          <TabsContent value="my-prescriptions" className="mt-8 outline-none">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold text-gray-800">Suas Receitas Digitais</h3>
+              <h3 className="text-xl font-semibold text-gray-800">Suas Prescrições Digitais</h3>
               <MintPrescriptionButton address={address} onMint={() => {
                 // Refresh data
                 fetch(`/api/prescriptions?patientAddress=${address}`)
@@ -152,7 +152,7 @@ export default function Dashboard() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {prescriptions.map((p) => (
-                <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Especialista" date={p.createdAt} status={p.status as "ativa" | "usada" | "expirada"} coOwners={1} />
+                <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Specialist" date={p.createdAt} status={p.status as "active" | "used" | "expired"} coOwners={1} />
               ))}
               {prescriptions.length === 0 && !loadingData && (
                 <p className="col-span-full text-center text-gray-500 py-12">Nenhuma prescrição encontrada.</p>
@@ -162,7 +162,7 @@ export default function Dashboard() {
           </TabsContent>
 
           {/* Marketplace */}
-          <TabsContent value="comprar" className="mt-8 outline-none">
+          <TabsContent value="shop" className="mt-8 outline-none">
             <h3 className="text-xl font-semibold text-gray-800 mb-6">Farmácia Credenciada</h3>
             <MarketplaceGrid address={address} onPurchase={() => {
               fetch(`/api/transactions?userAddress=${address}`)
@@ -171,13 +171,13 @@ export default function Dashboard() {
             }} />
           </TabsContent>
 
-          {/* Histórico */}
-          <TabsContent value="historico" className="mt-8 outline-none">
+          {/* History */}
+          <TabsContent value="history" className="mt-8 outline-none">
             <div className="space-y-4">
               {txHistory.map((tx) => (
                 <Card key={tx.id} className="p-4 flex justify-between items-center">
                   <div>
-                    <p className="font-bold text-gray-800">{tx.type === 'purchase' ? 'Compra de Produto' : 'Nova Prescricao'}</p>
+                    <p className="font-bold text-gray-800">{tx.type === 'purchase' ? 'Compra de Produto' : 'Nova Prescrição'}</p>
                     <p className="text-sm text-gray-500">{new Date(tx.createdAt).toLocaleDateString()}</p>
                   </div>
                   <div className="text-right">
@@ -286,9 +286,9 @@ function MarketplaceGrid({ address, onPurchase }: { address?: string, onPurchase
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <ProductCard title="Óleo CBD Full Spectrum 5%" price="0.01" onBuy={() => buyProduct("Óleo CBD Full Spectrum 5%", "0.01")} loading={isPending || isConfirming} />
-      <ProductCard title="Gummies CBD 300mg" price="0.005" onBuy={() => buyProduct("Gummies CBD 300mg", "0.005")} loading={isPending || isConfirming} />
-      <ProductCard title="Creme Tópico Canabidiol" price="0.008" onBuy={() => buyProduct("Creme Tópico Canabidiol", "0.008")} loading={isPending || isConfirming} />
+      <ProductCard title="CBD Oil Full Spectrum 5%" price="0.01" onBuy={() => buyProduct("CBD Oil Full Spectrum 5%", "0.01")} loading={isPending || isConfirming} />
+      <ProductCard title="CBD Gummies 300mg" price="0.005" onBuy={() => buyProduct("CBD Gummies 300mg", "0.005")} loading={isPending || isConfirming} />
+      <ProductCard title="Cannabidiol Topical Cream" price="0.008" onBuy={() => buyProduct("Cannabidiol Topical Cream", "0.008")} loading={isPending || isConfirming} />
     </div>
   );
 }

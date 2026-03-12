@@ -39,10 +39,10 @@ export function ExitIntentModal() {
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mb-3">
-            Espere! Leve Seu Guia Grátis
+            Espere! Receba Seu Guia Gratuito
           </h3>
           <p className="text-slate-600 mb-6">
-            Antes de sair, receba nosso <strong>Guia Completo de Cannabis Medicinal</strong> com tudo que você precisa saber para iniciar seu tratamento de forma segura e legal.
+            Antes de ir, receba nosso <strong>Guia Completo da Cannabis Medicinal</strong> com tudo o que você precisa saber para iniciar seu tratamento com segurança e legalidade.
           </p>
 
           <div className="bg-primary-50 rounded-lg p-4 mb-6 text-left space-y-2">
@@ -61,13 +61,13 @@ export function ExitIntentModal() {
           </div>
 
           <form className="space-y-3" onSubmit={(e) => {
-              e.preventDefault();
-              // In a real app, handle submission
-              setIsOpen(false);
+            e.preventDefault();
+            // In a real app, handle submission
+            setIsOpen(false);
           }}>
             <input
               type="email"
-              placeholder="Seu melhor email"
+              placeholder="Seu melhor e-mail"
               className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none"
               required
             />
@@ -76,12 +76,12 @@ export function ExitIntentModal() {
               size="lg"
               className="w-full bg-primary-700 hover:bg-primary-800 text-white"
             >
-              Enviar Meu Guia Grátis
+              Receber Meu Guia Gratuito
             </Button>
           </form>
 
           <p className="text-xs text-slate-500 mt-4">
-            100% gratuito • Sem spam • Pode cancelar quando quiser
+            100% gratuito • Sem spam • Você pode cancelar a qualquer momento
           </p>
         </div>
       </Card>

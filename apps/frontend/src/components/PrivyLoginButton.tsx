@@ -44,8 +44,7 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const googleAccount = user?.linkedAccounts.find((a: any) => a.type === 'google_oauth') as any;
+  const googleAccount = user?.linkedAccounts.find((a) => (a as { type: string }).type === 'google_oauth') as { name?: string; picture?: string } | undefined;
   const displayName = googleAccount?.name || user?.email?.address || (address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Usuário');
 
   return (

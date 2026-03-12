@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const associations = [
   {
@@ -18,11 +17,11 @@ const associations = [
     price: "150",
     rating: 4.9,
     members: 2500,
-    description: "A AMA-ME é uma das associações mais tradicionais do Brasil, focada em acolhimento e educação sobre cannabis medicinal.",
+    description: "A AMA-ME é uma das associações mais tradicionais do Brasil, focada no acolhimento e educação sobre a cannabis medicinal.",
     products: [
-      { name: "Oleo CBD Full Spectrum 5%", price: "280" },
-      { name: "Oleo CBD Isolate 10%", price: "420" },
-      { name: "Creme Topico Relaxante", price: "145" }
+      { name: "Óleo CBD Full Spectrum 5%", price: "280" },
+      { name: "Óleo CBD Isolate 10%", price: "420" },
+      { name: "Creme Tópico Relaxante", price: "145" }
     ]
   },
   {
@@ -34,10 +33,10 @@ const associations = [
     price: "120",
     rating: 4.8,
     members: 1800,
-    description: "Especializada em casos neurologicos, a Cultive Saude oferece suporte especializado para familias e pacientes de alta complexidade.",
+    description: "Especializada em casos neurológicos, a Cultive Saúde oferece suporte especializado para famílias e pacientes de alta complexidade.",
     products: [
-      { name: "Oleo CBD Neurologico", price: "350" },
-      { name: "Capsulas CBD 25mg", price: "220" },
+      { name: "Óleo CBD Neurológico", price: "350" },
+      { name: "Cápsulas CBD 25mg", price: "220" },
       { name: "Extrato Rico em THC (Baixa Dosagem)", price: "180" }
     ]
   },
@@ -50,11 +49,11 @@ const associations = [
     price: "180",
     rating: 4.7,
     members: 1200,
-    description: "Com foco em doencas inflamatorias e oncologia, a Cannativa busca as melhores linhagens para alinhamento terapeutico.",
+    description: "Focada em doenças inflamatórias e oncologia, a Cannativa busca as melhores cepas para alinhamento terapêutico.",
     products: [
-      { name: "Oleo Anti-inflamatorio", price: "310" },
+      { name: "Óleo Anti-inflamatório", price: "310" },
       { name: "Gummies CBD 10mg", price: "160" },
-      { name: "Balsamo Muscular CBD", price: "125" }
+      { name: "Bálsamo Muscular CBD", price: "125" }
     ]
   }
 ];
@@ -67,7 +66,7 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/#associacoes" className="flex items-center gap-2 text-slate-600 hover:text-primary-700 transition-colors">
+          <Link href="/#associations" className="flex items-center gap-2 text-slate-600 hover:text-primary-700 transition-colors">
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Voltar</span>
           </Link>
@@ -81,96 +80,96 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
           {/* Sidebar Info */}
           <div className="lg:col-span-1 space-y-8">
             <Card className="border-0 shadow-lg overflow-hidden">
-               <div className="aspect-video bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white text-4xl font-bold">
-                 {assoc.name.charAt(0)}
-               </div>
-               <CardContent className="p-8">
-                  <div className="flex justify-between items-center mb-4">
-                    <Badge className="bg-primary-600 text-white"><ShieldCheck className="w-3 h-3 mr-1" /> Verificada</Badge>
-                    <div className="flex items-center gap-1"><Star className="w-4 h-4 fill-yellow-400 text-yellow-400" /> <b>{assoc.rating}</b></div>
-                  </div>
-                  <CardTitle className="text-2xl mb-2">{assoc.name}</CardTitle>
-                  <CardDescription className="flex items-center gap-1 mb-6">
-                    <MapPin className="w-4 h-4" /> {assoc.city}, {assoc.state}
-                  </CardDescription>
-                  <p className="text-slate-600 text-sm leading-loose mb-6">{assoc.description}</p>
+              <div className="aspect-video bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white text-4xl font-bold">
+                {assoc.name.charAt(0)}
+              </div>
+              <CardContent className="p-8">
+                <div className="flex justify-between items-center mb-4">
+                  <Badge className="bg-primary-600 text-white"><ShieldCheck className="w-3 h-3 mr-1" /> Verificada</Badge>
+                  <div className="flex items-center gap-1"><Star className="w-4 h-4 fill-yellow-400 text-yellow-400" /> <b>{assoc.rating}</b></div>
+                </div>
+                <CardTitle className="text-2xl mb-2">{assoc.name}</CardTitle>
+                <CardDescription className="flex items-center gap-1 mb-6">
+                  <MapPin className="w-4 h-4" /> {assoc.city}, {assoc.state}
+                </CardDescription>
+                <p className="text-slate-600 text-sm leading-loose mb-6">{assoc.description}</p>
 
-                  <div className="space-y-4 pt-6 border-t">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-500">Mensalidade:</span>
-                      <span className="font-bold text-slate-900">R$ {assoc.price}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-500">Associados:</span>
-                      <span className="font-bold text-slate-900">{assoc.members.toLocaleString()}</span>
-                    </div>
+                <div className="space-y-4 pt-6 border-t">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Mensalidade:</span>
+                    <span className="font-bold text-slate-900">R$ {assoc.price}</span>
                   </div>
-               </CardContent>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Associados:</span>
+                    <span className="font-bold text-slate-900">{assoc.members.toLocaleString()}</span>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
 
             <Card className="bg-primary-50 border-primary-100">
-               <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center gap-2 text-primary-800 font-bold">
-                    <HeartPulse className="w-5 h-5" />
-                    Como se associar?
-                  </div>
-                  <ol className="text-xs text-primary-900 space-y-3 list-decimal list-inside">
-                    <li>Tenha sua prescricao medica em maos.</li>
-                    <li>Preencha o formulario de adesao desta associacao.</li>
-                    <li>Pague a taxa de anuidade/mensalidade.</li>
-                    <li>Aguarde a validacao dos documentos.</li>
-                  </ol>
-                  <Button className="w-full bg-primary-700 hover:bg-primary-800 mt-2">Iniciar Filiacao</Button>
-               </CardContent>
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center gap-2 text-primary-800 font-bold">
+                  <HeartPulse className="w-5 h-5" />
+                  Como se associar?
+                </div>
+                <ol className="text-xs text-primary-900 space-y-3 list-decimal list-inside">
+                  <li>Tenha em mãos sua prescrição médica.</li>
+                  <li>Preencha a ficha de inscrição desta associação.</li>
+                  <li>Realize o pagamento da taxa anuidade/mensal.</li>
+                  <li>Aguarde a validação dos documentos.</li>
+                </ol>
+                <Button className="w-full bg-primary-700 hover:bg-primary-800 mt-2">Iniciar Associação</Button>
+              </CardContent>
             </Card>
           </div>
 
           {/* Catalog Content */}
           <div className="lg:col-span-2 space-y-8">
-             <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-slate-900">Catalogo de Produtos</h2>
-                <Badge variant="outline">{assoc.products.length} itens disponiveis</Badge>
-             </div>
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-slate-900">Catálogo de Produtos</h2>
+              <Badge variant="outline">{assoc.products.length} itens disponíveis</Badge>
+            </div>
 
-             <div className="grid md:grid-cols-2 gap-6">
-               {assoc.products.map((product, i) => (
-                 <Card key={i} className="group hover:shadow-md transition-shadow">
-                    <CardHeader className="pb-2">
-                       <div className="w-full aspect-square bg-slate-100 rounded-lg mb-4 flex items-center justify-center">
-                          <ShoppingBag className="w-12 h-12 text-slate-300" />
-                       </div>
-                       <CardTitle className="text-lg">{product.name}</CardTitle>
-                       <CardDescription>Qualidade farmacêutica</CardDescription>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                       <div className="flex justify-between items-end mt-4">
-                          <div>
-                             <p className="text-xs text-slate-500 uppercase font-bold tracking-wider">Preço Sugerido</p>
-                             <span className="text-2xl font-extrabold text-slate-900">R$ {product.price}</span>
-                          </div>
-                          <Button size="sm" variant="outline" className="border-primary-200 text-primary-700 hover:bg-primary-50">
-                             Ver Detalhes
-                          </Button>
-                       </div>
-                    </CardContent>
-                 </Card>
-               ))}
-             </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {assoc.products.map((product, i) => (
+                <Card key={i} className="group hover:shadow-md transition-shadow">
+                  <CardHeader className="pb-2">
+                    <div className="w-full aspect-square bg-slate-100 rounded-lg mb-4 flex items-center justify-center">
+                      <ShoppingBag className="w-12 h-12 text-slate-300" />
+                    </div>
+                    <CardTitle className="text-lg">{product.name}</CardTitle>
+                    <CardDescription>Qualidade Farmacêutica</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="flex justify-between items-end mt-4">
+                      <div>
+                        <p className="text-xs text-slate-500 uppercase font-bold tracking-wider">Preço Sugerido</p>
+                        <span className="text-2xl font-extrabold text-slate-900">R$ {product.price}</span>
+                      </div>
+                      <Button size="sm" variant="outline" className="border-primary-200 text-primary-700 hover:bg-primary-50">
+                        Ver Detalhes
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-             {/* More Info */}
-             <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2"><Info className="w-5 h-5 text-primary-600" /> Informacoes Adicionais</h3>
-                <div className="grid md:grid-cols-2 gap-8 text-sm text-slate-600">
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-2">Prazos de Entrega</h4>
-                    <p>Enviamos para todo o Brasil. O prazo medio e de 5 a 12 dias uteis apos a confirmacao do pedido.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-2">Suporte ao Paciente</h4>
-                    <p>Oferecemos acompanhamento farmaceutico gratuito para todos os associados ativos.</p>
-                  </div>
+            {/* More Info */}
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2"><Info className="w-5 h-5 text-primary-600" /> Informações Adicionais</h3>
+              <div className="grid md:grid-cols-2 gap-8 text-sm text-slate-600">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Prazos de Entrega</h4>
+                  <p>Enviamos para todo o Brasil. O prazo médio de entrega é de 5 a 12 dias úteis após confirmação do pedido.</p>
                 </div>
-             </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Suporte ao Paciente</h4>
+                  <p>Oferecemos acompanhamento farmacêutico gratuito para todos os associados ativos.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

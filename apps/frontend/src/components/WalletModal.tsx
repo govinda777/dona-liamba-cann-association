@@ -47,7 +47,7 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             setRecipient('');
             setAmount('');
         } catch (error) {
-            console.error("Erro ao enviar transação:", error);
+            console.error("Error sending transaction:", error);
         } finally {
             setIsSending(false);
         }
@@ -61,7 +61,7 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
     return (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] flex items-center justify-center p-4">
             <Card className="max-w-md w-full bg-white rounded-3xl shadow-2xl relative animate-in fade-in zoom-in duration-300 overflow-hidden border-0">
-                {/* Header Decoração */}
+                {/* Header Decoration */}
                 <div className="h-28 bg-gradient-to-br from-emerald-600 to-primary-700 relative">
                     <button
                         onClick={handleClose}
@@ -179,7 +179,7 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                                 <div className="w-48 h-48 bg-white rounded-xl flex items-center justify-center border border-slate-200 overflow-hidden">
                                     <Image
                                         src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${address}`}
-                                        alt="QR Code Carteira"
+                                        alt="Wallet QR Code"
                                         width={192}
                                         height={192}
                                         className="w-full h-full"
@@ -240,7 +240,7 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                                             onClick={() => setAmount(formatEther(balance?.value || 0n))}
                                             className="text-primary-600 font-bold hover:underline"
                                         >
-                                            MÁX
+                                            MAX
                                         </button>
                                     </p>
                                 </div>
@@ -264,7 +264,7 @@ export function WalletModal({ isOpen, onClose }: { isOpen: boolean, onClose: () 
 
                     <div className="mt-8 pt-6 border-t border-slate-100 text-center">
                         <p className="text-[10px] text-slate-400 uppercase font-bold tracking-[0.2em]">
-                            Segurança Nível Bancário • Criptografado
+                            Segurança de Nível Bancário • Criptografado
                         </p>
                     </div>
                 </div>

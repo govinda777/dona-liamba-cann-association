@@ -52,7 +52,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
         <h1 className="text-2xl font-bold mb-4 text-gray-900">Acesso Restrito</h1>
-        <p className="text-gray-500 mb-8 text-center max-w-md">Você precisa conectar sua carteira para acessar o painel do paciente.</p>
+        <p className="text-gray-500 mb-8 text-center max-w-md">Você precisa fazer login para acessar o painel do paciente.</p>
         <PrivyLoginButton />
       </div>
     );

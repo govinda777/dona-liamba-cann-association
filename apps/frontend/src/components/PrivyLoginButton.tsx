@@ -4,7 +4,7 @@ import { usePrivy, useWallets } from '@privy-io/react-auth';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Wallet, LogOut, LayoutDashboard, Settings } from 'lucide-react';
+import { LogIn, LogOut, LayoutDashboard, Settings } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 interface PrivyLoginButtonProps {
@@ -38,8 +38,8 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
 
     return (
       <Button onClick={login} className={className || "bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-md transition-all"}>
-        <Wallet className="w-4 h-4 mr-2" />
-        Entrar com Wallet
+        <LogIn className="w-4 h-4 mr-2" />
+        Entrar
       </Button>
     );
   }

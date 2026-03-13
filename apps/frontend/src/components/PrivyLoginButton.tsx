@@ -37,7 +37,7 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
     }
 
     return (
-      <Button onClick={login} className={className || "bg-[#15803d] hover:bg-[#166534] text-white font-medium px-6 shadow-md transition-all"}>
+      <Button onClick={login} className={className || "bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-md transition-all"}>
         <Wallet className="w-4 h-4 mr-2" />
         Entrar com Wallet
       </Button>
@@ -50,11 +50,11 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-primary-100 hover:border-primary-300">
+        <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-primary/20 hover:border-primary/40">
           <Avatar className="h-9 w-9">
             {/* Use user.linkedAccounts to find email or google image if available, otherwise fallback */}
             <AvatarImage src={googleAccount?.picture || undefined} />
-            <AvatarFallback className="bg-primary-100 text-primary-700 font-bold">
+            <AvatarFallback className="bg-primary/10 text-primary font-bold">
               {user?.email?.address
                 ? user.email.address.slice(0, 2).toUpperCase()
                 : address

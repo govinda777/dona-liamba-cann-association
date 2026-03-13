@@ -3,6 +3,7 @@
 import { PrivyProvider } from '@privy-io/react-auth';
 import { createConfig, WagmiProvider } from '@privy-io/wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from 'next-themes';
 import { localhost } from 'viem/chains';
 import { http } from 'wagmi';
 import React from 'react';
@@ -20,28 +21,30 @@ const queryClient = new QueryClient();
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <PrivyProvider
-      appId="cmaqqs10k00onl20md0g7c7bg"
-      config={{
-        loginMethods: ['email'],
-        appearance: {
-          theme: 'light',
-          accentColor: '#22c55e', // Medical Green
-          logo: undefined, // Add logo URL here if available
-        },
-        supportedChains: [localhost],
-        embeddedWallets: {
-          ethereum: {
-            createOnLogin: 'all-users',
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <PrivyProvider
+        appId="cmaqqs10k00onl20md0g7c7bg"
+        config={{
+          loginMethods: ['email'],
+          appearance: {
+            theme: 'light',
+            accentColor: '#22c55e', // Medical Green
+            logo: undefined, // Add logo URL here if available
           },
-        },
-      }}
-    >
-      <QueryClientProvider client={queryClient}>
-        <WagmiProvider config={config}>
-          {children}
-        </WagmiProvider>
-      </QueryClientProvider>
-    </PrivyProvider>
+          supportedChains: [localhost],
+          embeddedWallets: {
+            ethereum: {
+              createOnLogin: 'all-users',
+            },
+          },
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          <WagmiProvider config={config}>
+            {children}
+          </WagmiProvider>
+        </QueryClientProvider>
+      </PrivyProvider>
+    </ThemeProvider>
   );
 }

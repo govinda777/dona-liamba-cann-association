@@ -40,7 +40,7 @@ export const revalidate = 3600;
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans selection:bg-mint-200 selection:text-primary-900">
+    <div className="min-h-screen bg-background font-sans selection:bg-mint-200 selection:text-primary-900">
       <ExitIntentModal />
       <FloatingWhatsApp />
       <Header />
@@ -50,7 +50,7 @@ export default function Home() {
         {/* 1. Hero Section */}
         <section className="relative pt-6 pb-20 lg:pt-10 lg:pb-32 overflow-hidden">
           {/* Background: fallback gradient + image */}
-          <div className="absolute inset-0 -z-20 bg-gradient-to-br from-primary-50 via-mint-50 to-turquoise-50" />
+          <div className="absolute inset-0 -z-20 bg-background dark:bg-zinc-950" />
           <Image
             src="/hero-cannabis.jpg"
             alt=""
@@ -59,7 +59,7 @@ export default function Home() {
             className="absolute inset-0 -z-20 object-cover"
           />
           {/* Overlay for text readability */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 via-white/50 to-white/70" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/60 via-background/50 to-background/70" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -71,14 +71,14 @@ export default function Home() {
                   <span className="font-medium tracking-wide text-xs uppercase">Plataforma Oficial Cannabis Medicinal Brasil</span>
                 </Badge>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-primary-950 mb-8 leading-[1.1] tracking-tight">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-foreground mb-8 leading-[1.1] tracking-tight">
                   Conectando <span className="text-primary-600 relative whitespace-nowrap">
                     <span className="relative z-10">saúde</span>
                     <span className="absolute bottom-2 left-0 w-full h-3 bg-mint-200/60 -z-10 skew-x-12"></span>
                   </span> e bem-estar em um só lugar
                 </h1>
 
-                <p className="text-lg lg:text-xl text-slate-700 mb-12 max-w-prose mx-auto lg:mx-0 leading-loose font-light">
+                <p className="text-lg lg:text-xl text-muted-foreground mb-12 max-w-prose mx-auto lg:mx-0 leading-loose font-light">
                   A plataforma mais completa do Brasil unindo pacientes, médicos prescritores e associações de cannabis medicinal com segurança e acolhimento.
                 </p>
 
@@ -99,7 +99,7 @@ export default function Home() {
                   </a>
 
                   {/* Urgência Social Proof */}
-                  <div className="flex items-center gap-3 text-sm text-slate-700 bg-white/60 px-4 py-2 rounded-full backdrop-blur-sm">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground bg-card text-card-foreground/60 px-4 py-2 rounded-full backdrop-blur-sm">
                     <div className="flex -space-x-2">
                       {/* IMAGEM IA: Avatares de pacientes - Caminho: /avatars/ */}
                       {[
@@ -113,10 +113,10 @@ export default function Home() {
                           alt={avatar.alt}
                           width={32}
                           height={32}
-                          className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                          className="w-8 h-8 rounded-full border-2 border-card object-cover"
                         />
                       ))}
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">+</div>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-card flex items-center justify-center text-[10px] font-bold text-white">+</div>
                     </div>
                     <span className="font-medium">+127 pacientes iniciaram esta semana</span>
                   </div>
@@ -138,7 +138,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-slate-600 font-medium">
+                <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-muted-foreground font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-primary-500" />
                     <span>100% Legal e Seguro</span>
@@ -154,7 +154,7 @@ export default function Home() {
               <div className="flex-1 relative w-full max-w-lg lg:max-w-none lg:-mt-64">
                 <div className="relative aspect-square">
                   {/* IMAGEM IA: Folhas de cannabis medicinal - Caminho: /hero-cannabis.jpg */}
-                  <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl shadow-primary-900/10">
+                  <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10">
                     <Image
                       src="/hero-cannabis.jpg"
                       alt="Cannabis medicinal - folhas verdes em luz natural"
@@ -166,17 +166,17 @@ export default function Home() {
                   </div>
 
                   {/* Floating Elements with backdrop-blur */}
-                  <div className="absolute top-12 left-12 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[3000ms]">
+                  <div className="absolute top-12 left-12 p-4 bg-card text-card-foreground/80 backdrop-blur-md rounded-2xl shadow-lg border border-card/50 animate-bounce duration-[3000ms]">
                     <User className="w-8 h-8 text-primary-500" />
                     <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
                   </div>
 
-                  <div className="absolute bottom-20 right-10 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[4000ms]">
+                  <div className="absolute bottom-20 right-10 p-4 bg-card text-card-foreground/80 backdrop-blur-md rounded-2xl shadow-lg border border-card/50 animate-bounce duration-[4000ms]">
                     <Stethoscope className="w-8 h-8 text-turquoise-500" />
                     <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
                   </div>
 
-                  <div className="absolute top-20 right-8 p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 animate-bounce duration-[3500ms]">
+                  <div className="absolute top-20 right-8 p-4 bg-card text-card-foreground/80 backdrop-blur-md rounded-2xl shadow-lg border border-card/50 animate-bounce duration-[3500ms]">
                     <Building2 className="w-8 h-8 text-gold-500" />
                     <div className="h-2 w-12 bg-slate-100 rounded-full mt-2" />
                   </div>
@@ -189,7 +189,7 @@ export default function Home() {
         {/* 2. Social Proof Section */}
         <AnimatedSection>
           <section className="max-w-7xl mx-auto px-6 -mt-8 relative z-20">
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 lg:p-10">
+            <div className="bg-card text-card-foreground rounded-2xl shadow-xl border border-border p-8 lg:p-10">
               {/* Métricas de Impacto */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 {[
@@ -201,14 +201,14 @@ export default function Home() {
                   <div key={i} className="text-center">
                     <stat.icon className="w-6 h-6 mx-auto mb-2 text-primary-600" />
                     <div className="text-3xl font-extrabold text-primary-900 tracking-tight">{stat.value}</div>
-                    <div className="text-sm text-slate-700 mt-1">{stat.label}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* Depoimentos Reais */}
-              <div className="border-t border-slate-200 pt-8">
-                <h3 className="text-xl font-extrabold text-center mb-8 text-slate-900 tracking-tight">
+              <div className="border-t border-border pt-8">
+                <h3 className="text-xl font-extrabold text-center mb-8 text-foreground tracking-tight">
                   Histórias Reais de Quem Transformou o Tratamento
                 </h3>
                 <div className="grid md:grid-cols-3 gap-8">
@@ -250,12 +250,12 @@ export default function Home() {
                             className="w-12 h-12 rounded-full object-cover border-2 border-primary-100"
                           />
                           <div>
-                            <div className="font-semibold text-slate-900">{testimonial.name}</div>
-                            <div className="text-xs text-slate-600">{testimonial.location}</div>
+                            <div className="font-semibold text-foreground">{testimonial.name}</div>
+                            <div className="text-xs text-muted-foreground">{testimonial.location}</div>
                           </div>
                         </div>
                         <Badge variant="outline" className="mb-3 text-xs">{testimonial.condition}</Badge>
-                        <p className="text-sm text-slate-700 italic leading-relaxed max-w-prose">{`"${testimonial.quote}"`}</p>
+                        <p className="text-sm text-muted-foreground italic leading-relaxed max-w-prose">{`"${testimonial.quote}"`}</p>
                         <div className="flex gap-1 mt-3">
                           {[1, 2, 3, 4, 5].map(star => (
                             <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -268,19 +268,19 @@ export default function Home() {
               </div>
 
               {/* Selos de Confiança */}
-              <div className="border-t border-slate-200 mt-8 pt-6">
+              <div className="border-t border-border mt-8 pt-6">
                 <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-slate-700">Conforme ANVISA</span>
+                    <span className="text-sm font-medium text-muted-foreground">Conforme ANVISA</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Lock className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-slate-700">LGPD Certificado</span>
+                    <span className="text-sm font-medium text-muted-foreground">LGPD Certificado</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Building2 className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-slate-700">85 Associações Verificadas</span>
+                    <span className="text-sm font-medium text-muted-foreground">85 Associações Verificadas</span>
                   </div>
                 </div>
               </div>
@@ -293,10 +293,10 @@ export default function Home() {
           <section id="como-funciona" className="max-w-7xl mx-auto px-6 py-32">
             <div className="text-center mb-16">
               <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium mb-4" style={{ background: '#dcfce7', color: '#15803d' }}>Passo a Passo</span>
-              <h2 className="text-4xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
+              <h2 className="text-4xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
                 Seu Tratamento em <span style={{ color: '#15803d' }}>4 Passos Simples</span>
               </h2>
-              <p className="text-lg text-slate-700 max-w-prose mx-auto leading-loose">
+              <p className="text-lg text-muted-foreground max-w-prose mx-auto leading-loose">
                 Veja como é fácil organizar tudo, da busca pelo médico até o recebimento dos produtos
               </p>
             </div>
@@ -365,19 +365,19 @@ export default function Home() {
 
                     {/* Conteúdo - Desktop: alternado; Mobile: sempre à direita */}
                     <div className={`w-full md:w-5/12 ml-24 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                      <Card className="bg-white shadow-lg hover:shadow-xl transition-all card-hover" style={{ borderColor: '#bbf7d0' }}>
+                      <Card className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-all card-hover" style={{ borderColor: '#bbf7d0' }}>
                         <CardHeader className="p-8">
                           <div className={`inline-flex p-3 rounded-lg mb-3 ${isEven ? 'md:ml-auto' : ''}`} style={{ background: '#dcfce7', color: '#15803d' }}>
                             <step.icon className="w-6 h-6" />
                           </div>
                           <CardTitle className="text-2xl mb-2 font-serif font-extrabold tracking-tight">{step.title}</CardTitle>
                           <div className={`flex gap-2 flex-wrap ${isEven ? 'md:justify-end' : ''}`}>
-                            <Badge variant="outline" className="text-xs border-slate-300 text-slate-600">{step.time}</Badge>
+                            <Badge variant="outline" className="text-xs border-slate-300 text-muted-foreground">{step.time}</Badge>
                             <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style={{ background: '#15803d', color: '#ffffff' }}>{step.highlight}</span>
                           </div>
                         </CardHeader>
                         <CardContent className="px-8 pb-8">
-                          <p className="text-slate-700 leading-loose max-w-prose">{step.description}</p>
+                          <p className="text-muted-foreground leading-loose max-w-prose">{step.description}</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -385,7 +385,7 @@ export default function Home() {
                     {/* Preview visual - Desktop: alternado; Mobile: oculto */}
                     <div className={`hidden md:block w-5/12 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}>
                       {/* IMAGEM IA: Ilustração do passo - Caminho: /steps/ */}
-                      <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-white" style={{ border: '4px solid #bbf7d0' }}>
+                      <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-card text-card-foreground" style={{ border: '4px solid #bbf7d0' }}>
                         <div className="aspect-video relative">
                           <Image
                             src={step.image}
@@ -403,7 +403,7 @@ export default function Home() {
 
             {/* CTA no final do fluxo */}
             <div className="text-center mt-16 rounded-2xl p-10" style={{ background: 'linear-gradient(135deg, #f0fdf4, #ecfdf5)', border: '1px solid #bbf7d0' }}>
-              <h3 className="text-2xl font-extrabold mb-4 text-slate-900 font-serif tracking-tight">Pronto para começar?</h3>
+              <h3 className="text-2xl font-extrabold mb-4 text-foreground font-serif tracking-tight">Pronto para começar?</h3>
               <a
                 href="#lead-form"
                 className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white transition-all hover:scale-105"
@@ -412,7 +412,7 @@ export default function Home() {
                 Criar Minha Conta Grátis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
-              <p className="text-xs text-slate-600 mt-3">Sem cartão de crédito -- Sem compromisso</p>
+              <p className="text-xs text-muted-foreground mt-3">Sem cartão de crédito -- Sem compromisso</p>
             </div>
           </section>
         </AnimatedSection>
@@ -422,11 +422,11 @@ export default function Home() {
           <section id="faq" className="bg-gradient-to-br from-emerald-50 to-primary-50 py-32">
             <div className="max-w-5xl mx-auto px-6">
               <div className="text-center mb-16">
-                <Badge variant="secondary" className="mb-4 bg-white/50 backdrop-blur-sm">Para Iniciantes</Badge>
-                <h2 className="text-3xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
+                <Badge variant="secondary" className="mb-4 bg-card text-card-foreground/50 backdrop-blur-sm">Para Iniciantes</Badge>
+                <h2 className="text-3xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
                   Novo em Cannabis Medicinal? <span className="text-primary-600">Você Não Está Sozinho</span>
                 </h2>
-                <p className="text-lg text-slate-700 max-w-prose mx-auto leading-loose">
+                <p className="text-lg text-muted-foreground max-w-prose mx-auto leading-loose">
                   Tire suas principais dúvidas sobre o tratamento legal no Brasil
                 </p>
               </div>
@@ -434,7 +434,7 @@ export default function Home() {
               {/* Vídeo Explicativo */}
               <div className="mb-16">
                 <Card className="overflow-hidden border-primary-200 shadow-lg">
-                  <div className="aspect-video bg-slate-900">
+                  <div className="aspect-video bg-foreground text-background">
                     <iframe
                       width="100%"
                       height="100%"
@@ -445,9 +445,9 @@ export default function Home() {
                       allowFullScreen
                     ></iframe>
                   </div>
-                  <CardContent className="p-8 bg-white">
+                  <CardContent className="p-8 bg-card text-card-foreground">
                     <h3 className="font-bold text-xl mb-2">Como funciona a Cannabis Medicinal no Brasil?</h3>
-                    <p className="text-slate-700 text-base leading-loose max-w-prose">
+                    <p className="text-muted-foreground text-base leading-loose max-w-prose">
                       Entenda como funciona o processo legal, quais condições podem ser tratadas e os passos para iniciar seu tratamento com segurança.
                     </p>
                   </CardContent>
@@ -498,13 +498,13 @@ export default function Home() {
                     icon: CreditCard
                   }
                 ].map((faq, i) => (
-                  <details key={i} className="group bg-white rounded-lg border border-slate-200 hover:border-primary-300 transition-colors open:shadow-md">
-                    <summary className="cursor-pointer p-6 flex items-center gap-3 font-semibold text-slate-900 group-open:text-primary-700 select-none">
+                  <details key={i} className="group bg-card text-card-foreground rounded-lg border border-border hover:border-primary-300 transition-colors open:shadow-md">
+                    <summary className="cursor-pointer p-6 flex items-center gap-3 font-semibold text-foreground group-open:text-primary-700 select-none">
                       <faq.icon className="w-5 h-5 text-primary-500 shrink-0" />
                       <span className="flex-1">{faq.q}</span>
                       <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-primary-600 shrink-0" />
                     </summary>
-                    <div className="px-6 pb-6 pt-2 text-slate-700 leading-loose border-t border-slate-100 animate-slide-up ml-8 max-w-prose">
+                    <div className="px-6 pb-6 pt-2 text-muted-foreground leading-loose border-t border-slate-100 animate-slide-up ml-8 max-w-prose">
                       {faq.a}
                     </div>
                   </details>
@@ -517,7 +517,7 @@ export default function Home() {
                   <BookOpen className="w-5 h-5 mr-2" />
                   Baixar Guia Completo em PDF
                 </Button>
-                <p className="text-xs text-slate-600 mt-2">Material gratuito com tudo que você precisa saber</p>
+                <p className="text-xs text-muted-foreground mt-2">Material gratuito com tudo que você precisa saber</p>
               </div>
             </div>
           </section>
@@ -528,27 +528,27 @@ export default function Home() {
           <section className="max-w-4xl mx-auto px-6 py-32">
             <div className="text-center mb-12">
               <Badge variant="secondary" className="mb-4">Planejamento Financeiro</Badge>
-              <h2 className="text-3xl font-extrabold text-slate-900 mb-4 font-serif tracking-tight">
+              <h2 className="text-3xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
                 Quanto Custa Meu Tratamento?
               </h2>
-              <p className="text-lg text-slate-700 leading-loose">
+              <p className="text-lg text-muted-foreground leading-loose">
                 Calcule uma estimativa personalizada em menos de 1 minuto
               </p>
             </div>
 
-            <Card className="border-primary-200 shadow-xl bg-white">
+            <Card className="border-primary-200 shadow-xl bg-card text-card-foreground">
               <CardContent className="p-8 lg:p-10">
                 {/* Perguntas interativas */}
                 <div className="space-y-8">
                   {/* 1. Primeira consulta médica */}
                   <div>
-                    <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    <label className="block text-sm font-semibold text-foreground mb-3">
                       1. Já tem prescrição médica?
                     </label>
                     <div className="grid grid-cols-2 gap-4">
-                      <button className="p-5 border-2 border-slate-200 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all text-left group focus:ring-2 focus:ring-primary-500">
+                      <button className="p-5 border-2 border-border rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all text-left group focus:ring-2 focus:ring-primary-500">
                         <div className="font-semibold group-hover:text-primary-700">Sim</div>
-                        <div className="text-xs text-slate-600 mt-1">Posso pular esta etapa</div>
+                        <div className="text-xs text-muted-foreground mt-1">Posso pular esta etapa</div>
                       </button>
                       <button className="p-5 border-2 border-primary-500 bg-primary-50 rounded-lg text-left shadow-inner ring-1 ring-primary-200">
                         <div className="font-semibold text-primary-900">Não</div>
@@ -560,7 +560,7 @@ export default function Home() {
 
                   {/* 2. Tipo de associação */}
                   <div>
-                    <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    <label className="block text-sm font-semibold text-foreground mb-3">
                       2. Qual tipo de plano de associação?
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -569,9 +569,9 @@ export default function Home() {
                         { name: 'Intermediário', price: 150, desc: 'Mais variedade' },
                         { name: 'Premium', price: 280, desc: 'Catálogo completo' }
                       ].map((plan, i) => (
-                        <button key={plan.name} className={`p-5 border-2 rounded-lg transition-all text-center ${i === 0 ? 'border-primary-500 bg-primary-50' : 'border-slate-200 hover:border-primary-500 hover:bg-primary-50'}`}>
+                        <button key={plan.name} className={`p-5 border-2 rounded-lg transition-all text-center ${i === 0 ? 'border-primary-500 bg-primary-50' : 'border-border hover:border-primary-500 hover:bg-primary-50'}`}>
                           <div className="font-semibold">{plan.name}</div>
-                          <div className="text-xs text-slate-600 mt-1">{plan.desc}</div>
+                          <div className="text-xs text-muted-foreground mt-1">{plan.desc}</div>
                           <div className="text-lg font-bold text-primary-700 mt-2">R$ {plan.price}/mês</div>
                         </button>
                       ))}
@@ -580,11 +580,11 @@ export default function Home() {
 
                   {/* 3. Frequência de uso */}
                   <div>
-                    <label className="block text-sm font-semibold text-slate-900 mb-3">
+                    <label className="block text-sm font-semibold text-foreground mb-3">
                       3. Frequência estimada de uso:
                     </label>
                     <div className="relative">
-                      <select className="w-full px-5 py-4 border-2 border-slate-200 rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-white text-slate-900">
+                      <select className="w-full px-5 py-4 border-2 border-border rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-card text-card-foreground text-foreground">
                         <option>{'Uso diário (produtos duram ~1 mês) - R$ 350/mês'}</option>
                         <option>{'Uso moderado (produtos duram ~2 meses) - R$ 175/mês'}</option>
                         <option>{'Uso esporádico (produtos duram ~3 meses) - R$ 117/mês'}</option>
@@ -595,34 +595,34 @@ export default function Home() {
                 </div>
 
                 {/* Resultado */}
-                <div className="mt-10 pt-10 border-t-2 border-slate-200">
+                <div className="mt-10 pt-10 border-t-2 border-border">
                   <div className="bg-gradient-to-br from-primary-50 to-emerald-50 rounded-xl p-8 border-2 border-primary-200">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <div className="text-sm font-semibold text-slate-700 mb-1">Custo Inicial (1o mês):</div>
-                        <div className="text-4xl font-extrabold text-slate-900 tracking-tight">R$ 780</div>
+                        <div className="text-sm font-semibold text-muted-foreground mb-1">Custo Inicial (1o mês):</div>
+                        <div className="text-4xl font-extrabold text-foreground tracking-tight">R$ 780</div>
                       </div>
                       <Badge className="bg-primary-600 text-white hover:bg-primary-700">Estimativa</Badge>
                     </div>
 
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-slate-700">Consulta médica:</span>
-                        <span className="font-semibold text-slate-800">R$ 350</span>
+                        <span className="text-muted-foreground">Consulta médica:</span>
+                        <span className="font-semibold text-foreground">R$ 350</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-700">Mensalidade associação:</span>
-                        <span className="font-semibold text-slate-800">R$ 80</span>
+                        <span className="text-muted-foreground">Mensalidade associação:</span>
+                        <span className="font-semibold text-foreground">R$ 80</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-700">Produtos (1o mês):</span>
-                        <span className="font-semibold text-slate-800">R$ 350</span>
+                        <span className="text-muted-foreground">Produtos (1o mês):</span>
+                        <span className="font-semibold text-foreground">R$ 350</span>
                       </div>
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-primary-300">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-semibold text-slate-700">Meses seguintes (média):</span>
+                        <span className="text-sm font-semibold text-muted-foreground">Meses seguintes (média):</span>
                         <span className="text-2xl font-extrabold text-primary-700 tracking-tight">R$ 430/mês</span>
                       </div>
                     </div>
@@ -639,7 +639,7 @@ export default function Home() {
                     </Button>
                   </div>
 
-                  <p className="text-xs text-center text-slate-600 mt-4 max-w-prose mx-auto">
+                  <p className="text-xs text-center text-muted-foreground mt-4 max-w-prose mx-auto">
                     * Valores são estimativas baseadas em médias de mercado. O custo real varia conforme prescrição e produto escolhido.
                   </p>
                 </div>
@@ -650,23 +650,23 @@ export default function Home() {
 
         {/* 4. Target Audience Section */}
         <AnimatedSection>
-          <section id="para-quem" className="py-32 bg-white relative">
+          <section id="para-quem" className="py-32 bg-card text-card-foreground relative">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-primary-950 mb-4 tracking-tight">Um espaço para todo o ecossistema</h2>
-                <p className="text-slate-700 text-lg leading-loose max-w-prose mx-auto">Soluções integradas para cada papel fundamental na terapia canábica.</p>
+                <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-foreground mb-4 tracking-tight">Um espaço para todo o ecossistema</h2>
+                <p className="text-muted-foreground text-lg leading-loose max-w-prose mx-auto">Soluções integradas para cada papel fundamental na terapia canábica.</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-12">
                 {/* Patient Card */}
-                <Card className="border-0 bg-gradient-to-b from-primary-50/50 to-white shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
+                <Card className="border-0 bg-gradient-to-b from-primary-50/50 to-white shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                   <div className="h-2 bg-primary-500 w-full" />
                   <CardHeader className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary-600 mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-primary-600 mb-4 group-hover:scale-110 transition-transform">
                       <User className="w-7 h-7" />
                     </div>
                     <CardTitle className="text-2xl font-serif font-extrabold text-primary-900 tracking-tight">Pacientes</CardTitle>
-                    <CardDescription className="text-base text-slate-700">Jornada simplificada e segura</CardDescription>
+                    <CardDescription className="text-base text-muted-foreground">Jornada simplificada e segura</CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -676,7 +676,7 @@ export default function Home() {
                         "Transparência de custos",
                         "Tudo em um só lugar"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700">
+                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
                           <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-primary-600" />
                           </div>
@@ -695,14 +695,14 @@ export default function Home() {
                 </Card>
 
                 {/* Doctor Card */}
-                <Card className="border-0 bg-gradient-to-b from-turquoise-50/30 to-white shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
+                <Card className="border-0 bg-gradient-to-b from-turquoise-50/30 to-white shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                   <div className="h-2 bg-turquoise-500 w-full" />
                   <CardHeader className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-turquoise-600 mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-turquoise-600 mb-4 group-hover:scale-110 transition-transform">
                       <Stethoscope className="w-7 h-7" />
                     </div>
-                    <CardTitle className="text-2xl font-serif font-extrabold text-slate-900 tracking-tight">Médicos</CardTitle>
-                    <CardDescription className="text-base text-slate-700">Gestão eficiente</CardDescription>
+                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">Médicos</CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">Gestão eficiente</CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -712,7 +712,7 @@ export default function Home() {
                         "Encaminhamento direto",
                         "Acompanhamento da evolução"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700">
+                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
                           <div className="w-6 h-6 rounded-full bg-turquoise-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-turquoise-600" />
                           </div>
@@ -731,14 +731,14 @@ export default function Home() {
                 </Card>
 
                 {/* Association Card */}
-                <Card className="border-0 bg-gradient-to-b from-gold-50/30 to-white shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
+                <Card className="border-0 bg-gradient-to-b from-gold-50/30 to-white shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 rounded-[2rem] overflow-hidden group">
                   <div className="h-2 bg-gold-500 w-full" />
                   <CardHeader className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gold-600 mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-gold-600 mb-4 group-hover:scale-110 transition-transform">
                       <Building2 className="w-7 h-7" />
                     </div>
-                    <CardTitle className="text-2xl font-serif font-extrabold text-slate-900 tracking-tight">Associações</CardTitle>
-                    <CardDescription className="text-base text-slate-700">Visibilidade e gestão</CardDescription>
+                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">Associações</CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">Visibilidade e gestão</CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -748,7 +748,7 @@ export default function Home() {
                         "Avaliações transparentes",
                         "Ferramentas de comunicação"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700">
+                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
                           <div className="w-6 h-6 rounded-full bg-gold-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
                           </div>
@@ -772,13 +772,13 @@ export default function Home() {
 
         {/* 5. Associations Section */}
         <AnimatedSection>
-          <section id="associacoes" className="py-32 bg-slate-50 relative">
+          <section id="associacoes" className="py-32 bg-background relative">
             <div className="absolute inset-0 bg-organic-pattern opacity-[0.02]"></div>
             <div className="max-w-7xl mx-auto px-6 relative">
               <div className="flex flex-col sm:flex-row justify-between items-end mb-16 gap-4">
                 <div>
-                  <h2 className="text-3xl font-serif font-extrabold text-slate-900 mb-2 tracking-tight">Associações Parceiras</h2>
-                  <p className="text-slate-700 text-lg leading-loose">Conheça algumas das organizações presentes no hub.</p>
+                  <h2 className="text-3xl font-serif font-extrabold text-foreground mb-2 tracking-tight">Associações Parceiras</h2>
+                  <p className="text-muted-foreground text-lg leading-loose">Conheça algumas das organizações presentes no hub.</p>
                 </div>
                 <Button variant="ghost" className="text-primary-700 hover:text-primary-800 hover:bg-primary-50 font-medium">
                   Ver todas <ArrowRight className="w-4 h-4 ml-2" />
@@ -821,7 +821,7 @@ export default function Home() {
                     members: 1200
                   }
                 ].map((assoc, i) => (
-                  <Card key={i} className="group cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white rounded-2xl overflow-hidden card-hover">
+                  <Card key={i} className="group cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card text-card-foreground rounded-2xl overflow-hidden card-hover">
                     {/* Banner hero da associação */}
                     <div className="aspect-[3/1] bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
                       <div className="absolute inset-0 bg-organic-pattern opacity-20" />
@@ -832,7 +832,7 @@ export default function Home() {
                     <CardHeader className="pb-3 border-b border-slate-100 p-8">
                       <div className="flex justify-between items-start mb-4">
                         {/* Logo */}
-                        <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-md -mt-10 border-4 border-white relative z-10">
+                        <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-xl shadow-md -mt-10 border-4 border-card relative z-10">
                           {assoc.name.charAt(0)}
                         </div>
                         <div className="flex flex-col gap-1 items-end">
@@ -842,14 +842,14 @@ export default function Home() {
                           </Badge>
                           <div className="flex items-center gap-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            <span className="text-sm font-bold text-slate-900">{assoc.rating}</span>
+                            <span className="text-sm font-bold text-foreground">{assoc.rating}</span>
                           </div>
                         </div>
                       </div>
                       <CardTitle className="text-lg mb-1 group-hover:text-primary-700 transition-colors font-extrabold tracking-tight">
                         {assoc.name}
                       </CardTitle>
-                      <CardDescription className="flex items-center gap-1 text-xs text-slate-600">
+                      <CardDescription className="flex items-center gap-1 text-xs text-muted-foreground">
                         <MapPin className="w-3 h-3" />
                         {assoc.city}, {assoc.state}
                       </CardDescription>
@@ -857,7 +857,7 @@ export default function Home() {
                     <CardContent className="pt-4 pb-4 px-8 space-y-4">
                       {/* Especialidades */}
                       <div>
-                        <div className="text-xs font-semibold text-slate-600 mb-2">Especialidades:</div>
+                        <div className="text-xs font-semibold text-muted-foreground mb-2">Especialidades:</div>
                         <div className="flex flex-wrap gap-1">
                           {assoc.specialties.map((spec, idx) => (
                             <Badge key={idx} variant="outline" className="text-xs border-primary-200 text-primary-700 bg-primary-50">
@@ -868,7 +868,7 @@ export default function Home() {
                       </div>
 
                       {/* Membros ativos */}
-                      <div className="flex items-center gap-2 text-xs text-slate-700">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Users className="w-4 h-4 text-primary-600" />
                         <span>{assoc.members.toLocaleString('pt-BR')} associados ativos</span>
                       </div>
@@ -876,17 +876,17 @@ export default function Home() {
                       {/* Preço */}
                       <div className="pt-2 border-t border-slate-100">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-2xl font-extrabold text-slate-900 tracking-tight">R$ {assoc.price}</span>
-                          <span className="text-sm text-slate-600">/mês</span>
+                          <span className="text-2xl font-extrabold text-foreground tracking-tight">R$ {assoc.price}</span>
+                          <span className="text-sm text-muted-foreground">/mês</span>
                         </div>
-                        <p className="text-xs text-slate-600 mt-1">+ produtos conforme prescrição</p>
+                        <p className="text-xs text-muted-foreground mt-1">+ produtos conforme prescrição</p>
                       </div>
                     </CardContent>
                     <CardFooter className="pt-0 pb-8 px-8">
                       <Link href={`/associations/${assoc.id}`} className="w-full">
                         <Button
                           size="sm"
-                          className="w-full bg-white border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
+                          className="w-full bg-card text-card-foreground border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
                         >
                           Ver Catálogo Completo
                           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -898,8 +898,8 @@ export default function Home() {
               </div>
 
               {/* Mapa de Cobertura Simples */}
-              <div className="mt-20 bg-white rounded-xl p-10 border border-slate-200 shadow-sm">
-                <h3 className="text-xl font-extrabold text-center mb-8 text-slate-900 tracking-tight">
+              <div className="mt-20 bg-card text-card-foreground rounded-xl p-10 border border-border shadow-sm">
+                <h3 className="text-xl font-extrabold text-center mb-8 text-foreground tracking-tight">
                   Cobertura Nacional
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -917,11 +917,11 @@ export default function Home() {
                   ].map(region => (
                     <div key={region.state} className="flex items-center justify-between p-4 bg-primary-50 rounded-lg border border-primary-100 hover:bg-primary-100 transition-colors cursor-default">
                       <span className="font-bold text-primary-900">{region.state}</span>
-                      <Badge variant="secondary" className="text-xs bg-white">{region.count}</Badge>
+                      <Badge variant="secondary" className="text-xs bg-card text-card-foreground">{region.count}</Badge>
                     </div>
                   ))}
                 </div>
-                <p className="text-center text-sm text-slate-600 mt-6">
+                <p className="text-center text-sm text-muted-foreground mt-6">
                   Novas associações sendo adicionadas semanalmente
                 </p>
               </div>
@@ -1044,12 +1044,12 @@ export default function Home() {
         </AnimatedSection>
 
         {/* 7. Final CTA */}
-        <section className="pt-40 pb-32 bg-white">
+        <section className="pt-40 pb-32 bg-card text-card-foreground">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl sm:text-5xl font-serif font-extrabold text-primary-950 mb-8 tracking-tight text-balance">
+            <h2 className="text-4xl sm:text-5xl font-serif font-extrabold text-foreground mb-8 tracking-tight text-balance">
               Pronto para organizar seu tratamento?
             </h2>
-            <p className="text-xl text-slate-700 mb-12 max-w-prose mx-auto font-light leading-loose">
+            <p className="text-xl text-muted-foreground mb-12 max-w-prose mx-auto font-light leading-loose">
               Junte-se a milhares de pacientes que já encontraram o caminho para uma vida com mais qualidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -1084,7 +1084,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-100 bg-slate-50 pt-16 pb-8">
+      <footer className="border-t border-slate-100 bg-background pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
@@ -1092,21 +1092,21 @@ export default function Home() {
                 <Leaf className="w-6 h-6 text-primary-600" />
                 <span className="text-xl font-serif font-extrabold text-primary-900 tracking-tight">Dona Liamba</span>
               </div>
-              <p className="text-slate-600 max-w-xs leading-loose">
+              <p className="text-muted-foreground max-w-xs leading-loose">
                 Conectando pacientes, médicos e associações para democratizar o acesso à saúde canábica no Brasil.
               </p>
             </div>
             <div>
-              <h4 className="font-extrabold text-slate-900 mb-6 tracking-tight">Plataforma</h4>
-              <ul className="space-y-4 text-slate-700">
+              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">Plataforma</h4>
+              <ul className="space-y-4 text-muted-foreground">
                 <li><Link href="/cadastro-paciente" className="hover:text-primary-600 transition-colors">Para Pacientes</Link></li>
                 <li><Link href="/onboarding/doctor" className="hover:text-primary-600 transition-colors">Para Médicos</Link></li>
                 <li><Link href="/onboarding/association" className="hover:text-primary-600 transition-colors">Para Associações</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-extrabold text-slate-900 mb-6 tracking-tight">Legal</h4>
-              <ul className="space-y-4 text-slate-700">
+              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">Legal</h4>
+              <ul className="space-y-4 text-muted-foreground">
                 <li><a href="#" className="hover:text-primary-600 transition-colors">Termos de Uso</a></li>
                 <li><a href="#" className="hover:text-primary-600 transition-colors">Privacidade</a></li>
                 <li><a href="#" className="hover:text-primary-600 transition-colors">Sobre Nós</a></li>
@@ -1114,7 +1114,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-sm">
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
             <p>© 2024 Dona Liamba. Todos os direitos reservados.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary-600">Instagram</a>

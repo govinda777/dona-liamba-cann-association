@@ -8,13 +8,17 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "vercel:setup": "dotenv -e .env.setup -- tsx scripts/vercel-setup.ts"
   },
   "devDependencies": {
+    "@vercel/sdk": "^1.2.1",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9.21.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.2",
     "prettier": "^3.8.1",
+    "tsx": "^4.19.3",
     "turbo": "^2.8.10",
     "typescript": "^5.9.3"
   },

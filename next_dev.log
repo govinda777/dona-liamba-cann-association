@@ -1,0 +1,31 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 1138ms
+○ Compiling /blog ...
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /blog 200 in 31.4s (compile: 29.0s, render: 2.4s)
+✓ Finished writing to filesystem cache in 10.2s
+ GET /blog 200 in 329ms (compile: 33ms, render: 296ms)
+○ Compiling /_not-found/page ...
+ GET /images/blog/cannabis-dentistry.jpg 404 in 7.9s (compile: 7.3s, render: 555ms)
+ GET /images/blog/women-health-cannabis.jpg 404 in 7.6s (compile: 7.2s, render: 456ms)
+ GET /images/blog/stj-hemp-revolution.jpg 404 in 7.9s (compile: 7.5s, render: 362ms)
+ GET /images/blog/neurodivergence-cannabis-frontier.jpg 404 in 7.9s (compile: 7.5s, render: 338ms)
+ GET /images/blog/new-era-cannabis.jpg 404 in 7.8s (compile: 7.4s, render: 431ms)
+ GET /images/blog/biohacking-longevity.jpg 404 in 7.9s (compile: 7.4s, render: 405ms)
+ HEAD /blog 200 in 275ms (compile: 44ms, render: 231ms)
+ GET /images/blog/minor-cannabinoids-revolution.jpg 404 in 132ms (compile: 44ms, render: 88ms)
+ HEAD /blog 200 in 470ms (compile: 71ms, render: 399ms)
+○ Compiling /blog/[slug] ...

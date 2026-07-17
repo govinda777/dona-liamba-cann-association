@@ -17,9 +17,10 @@ Em 2026, a barreira entre a medicina humana e a veterinária foi finalmente derr
 O Sistema Endocanabinoide (SEC) é universal entre os vertebrados. No entanto, cães e gatos apresentam uma densidade altíssima de receptores CB1 e CB2 em órgãos estratégicos. Isso significa que eles não apenas respondem à Cannabis — eles são **hipersensíveis** a ela.
 
 ### O que os dados dizem em 2025/2026? 📊
-*   **A Explosão do Mercado:** O mercado brasileiro de cannabis medicinal atingiu a marca de **R$ 971 milhões em 2025**, com o setor veterinário sendo um dos nichos de maior crescimento orgânico (Fonte: [CNN Brasil/Kaya Mind](https://www.cnnbrasil.com.br)).
-*   **Capilaridade:** Hoje, **85% dos municípios brasileiros** já possuem pelo menos um paciente (humano ou pet) em tratamento canábico.
-*   **O Salto dos Pacientes:** De 672 mil em 2024 para mais de **873 mil em 2025**. A estimativa é que 1 em cada 10 novos pacientes seja um pet (Fonte: [Anuário Kaya Mind 2025](https://kayamind.com/anuario-2025)).
+
+- **A Explosão do Mercado:** O mercado brasileiro de cannabis medicinal atingiu a marca de **R$ 971 milhões em 2025**, com o setor veterinário sendo um dos nichos de maior crescimento orgânico (Fonte: [CNN Brasil/Kaya Mind](https://www.cnnbrasil.com.br)).
+- **Capilaridade:** Hoje, **85% dos municípios brasileiros** já possuem pelo menos um paciente (humano ou pet) em tratamento canábico.
+- **O Salto dos Pacientes:** De 672 mil em 2024 para mais de **873 mil em 2025**. A estimativa é que 1 em cada 10 novos pacientes seja um pet (Fonte: [Anuário Kaya Mind 2025](https://kayamind.com/anuario-2025)).
 
 ---
 
@@ -45,15 +46,17 @@ Não é apenas sobre epilepsia (embora os resultados aqui sejam revolucionários
 Com o prazo final de 31 de março de 2026 estabelecido pelo STJ para a regulamentação do cultivo de cânhamo (IAC 16), o Brasil está prestes a ver uma enxurrada de produtos "Pet-Friendly" baseados em fibras e extratos nacionais. Isso significa **preços mais baixos** e **qualidade padrão exportação** para o seu companheiro.
 
 ### Desafio Interativo: Como está o seu pet hoje? 🐾
+
 - [ ] Ele sofre com dores nas articulações?
 - [ ] Ele tem crises de ansiedade quando você sai?
 - [ ] Você já considerou a Cannabis, mas teve medo do "preconceito"?
 
-*Se você marcou qualquer opção, o futuro chegou para você. Não deixe seu pet no passado.*
+_Se você marcou qualquer opção, o futuro chegou para você. Não deixe seu pet no passado._
 
 ---
 
 **Referências e Fontes para Tutores Inteligentes:**
+
 - [Kaya Mind: O Potencial da Cannabis no Mercado Pet Brasileiro](https://kayamind.com/potencial-da-cannabis-no-mercado-pet/)
 - [CNN Brasil: Mercado de Cannabis Medicinal atinge R$ 971 milhões em 2025](https://www.cnnbrasil.com.br/agro/mercado-de-cannabis-medicinal-atinge-r-971-milhoes-no-brasil-em-2025/)
 - [Portal Cannabis & Saúde: Módulo VetCannabis e tendências 2026](https://www.cannabisesaude.com.br/cannabis-fair-e-cbcm-2026/)

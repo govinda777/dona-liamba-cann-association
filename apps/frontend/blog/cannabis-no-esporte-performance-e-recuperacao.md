@@ -16,7 +16,7 @@ Bem-vindos à era do **Doping Reverso**. Não se trata de mascarar o cansaço co
 
 Não estamos falando de "achismos" de vestiário. A ciência de 2025 e 2026 consolidou o que já suspeitávamos:
 
-1.  **A Batalha contra o Ibuprofeno (Allen, 2025):** Um estudo *head-to-head* comparou 75mg de CBD com 400mg de Ibuprofeno. O resultado? O CBD provou ser **não-inferior** no alívio da dor muscular (DOMS), mas com um detalhe crucial: **zero efeitos gastrointestinais**, enquanto 23% do grupo do Ibuprofeno relatou desconforto gástrico.
+1.  **A Batalha contra o Ibuprofeno (Allen, 2025):** Um estudo _head-to-head_ comparou 75mg de CBD com 400mg de Ibuprofeno. O resultado? O CBD provou ser **não-inferior** no alívio da dor muscular (DOMS), mas com um detalhe crucial: **zero efeitos gastrointestinais**, enquanto 23% do grupo do Ibuprofeno relatou desconforto gástrico.
 2.  **O Milagre da Maratona (Heel, 2024):** Pesquisadores alemães acompanharam amadores em maratonas. O grupo que utilizou 100mg de CBD viu uma queda de **37% nos níveis de creatina quinase (CK)** em 72 horas. Tradução: menos dano muscular e retorno aos treinos em 5 dias, contra 7 do grupo placebo.
 3.  **Sinfonia Inflamatória (Hatchett, 2020):** Jogadores de rugby que utilizaram 60mg de CBD apresentaram redução significativa nas citocinas pró-inflamatórias (IL-6 e TNF-alpha). O CBD não "desliga" a inflamação necessária para o crescimento, ele a **rege**.
 
@@ -35,16 +35,17 @@ Vencer exige estratégia, e estratégia exige segurança. Conheça os parceiros 
 
 A Agência Mundial Antidopagem (WADA) manteve em 2026 a regra que mudou o jogo: **O CBD é a única substância canabinoide permitida.**
 
-*   **O Limite do THC:** O limite urinário para o THC permanece em **150 ng/mL** apenas *em competição*.
-*   **O Risco da "Contaminação":** Um estudo clássico (Bonn-Miller, JAMA) revelou que apenas **30%** dos produtos de CBD são rotulados corretamente. Para o atleta, isso significa que um óleo "Full Spectrum" mal processado pode conter THC suficiente para gerar um positivo.
-*   **A Regra de Ouro:** Profissionais devem focar em **CBD Isolate** ou **Broad Spectrum** com certificados de análise (COA) rigorosos.
+- **O Limite do THC:** O limite urinário para o THC permanece em **150 ng/mL** apenas _em competição_.
+- **O Risco da "Contaminação":** Um estudo clássico (Bonn-Miller, JAMA) revelou que apenas **30%** dos produtos de CBD são rotulados corretamente. Para o atleta, isso significa que um óleo "Full Spectrum" mal processado pode conter THC suficiente para gerar um positivo.
+- **A Regra de Ouro:** Profissionais devem focar em **CBD Isolate** ou **Broad Spectrum** com certificados de análise (COA) rigorosos.
 
 ### 💡 Checkpoint de Performance: Você está pronto para o próximo nível?
+
 - [ ] Sofre com insônia pré-competição?
 - [ ] Sente que a dor muscular impede seu volume de treinos semanal?
 - [ ] Busca uma alternativa aos anti-inflamatórios que agridem seus rins?
 
-*Se você marcou sim, você não precisa de mais treino. Você precisa de mais recuperação.*
+_Se você marcou sim, você não precisa de mais treino. Você precisa de mais recuperação._
 
 ---
 
@@ -59,9 +60,11 @@ A Cannabis no esporte em 2026 não é sobre "relaxar". É sobre **frequência, i
 **Desafio Interativo:** Qual é o seu maior obstáculo hoje? Recuperação muscular, ansiedade pré-prova ou sono? Comente abaixo e vamos descobrir como a planta pode hackear sua performance! 👇
 
 ---
+
 **Referências e Dados Reais para Atletas Inteligentes:**
-*   [1] "CBD vs Ibuprofen in DOMS: A Head-to-Head Study", Allen et al., Journal of Sports Science (2025).
-*   [2] "Recovery after a Marathon: Impact of CBD on CK levels", Heel et al., German Journal of Sports Medicine (2024).
-*   [3] [WADA Prohibited List 2026: Cannabinoids Section](https://www.wada-ama.org/en/prohibited-list), World Anti-Doping Agency.
-*   [4] [Mercado de Cannabis Medicinal no Brasil](https://kayamind.com.br), Kaya Mind Report 2025/2026.
-*   [5] ["Hatchett et al. (2020): CBD and Inflammatory Cytokines in Rugby Players"](https://pubmed.ncbi.nlm.nih.gov/33308104/), Sports Medicine Open.
+
+- [1] "CBD vs Ibuprofen in DOMS: A Head-to-Head Study", Allen et al., Journal of Sports Science (2025).
+- [2] "Recovery after a Marathon: Impact of CBD on CK levels", Heel et al., German Journal of Sports Medicine (2024).
+- [3] [WADA Prohibited List 2026: Cannabinoids Section](https://www.wada-ama.org/en/prohibited-list), World Anti-Doping Agency.
+- [4] [Mercado de Cannabis Medicinal no Brasil](https://kayamind.com.br), Kaya Mind Report 2025/2026.
+- [5] ["Hatchett et al. (2020): CBD and Inflammatory Cytokines in Rugby Players"](https://pubmed.ncbi.nlm.nih.gov/33308104/), Sports Medicine Open.

@@ -1,18 +1,27 @@
-'use client';
+"use client";
 
-import { usePrivy, useWallets } from '@privy-io/react-auth';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { LogIn, LogOut, LayoutDashboard, Settings } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { usePrivy, useWallets } from "@privy-io/react-auth";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { LogIn, LogOut, LayoutDashboard, Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface PrivyLoginButtonProps {
   minimal?: boolean;
   className?: string;
 }
 
-export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) {
+export function PrivyLoginButton({
+  minimal,
+  className,
+}: PrivyLoginButtonProps) {
   const { ready, authenticated, login, logout, user } = usePrivy();
   const { wallets } = useWallets();
   const router = useRouter();
@@ -20,37 +29,51 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
   const wallet = wallets[0];
   const address = wallet?.address;
 
-  if (!ready) return <Button disabled variant="ghost">Carregando...</Button>;
+  if (!ready)
+    return (
+      <Button disabled variant="ghost">
+        Carregando...
+      </Button>
+    );
 
   if (!authenticated) {
     if (minimal) {
       return (
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={login}
-          className={className}
-        >
+        <Button variant="ghost" size="sm" onClick={login} className={className}>
           Entrar
         </Button>
       );
     }
 
     return (
-      <Button onClick={login} className={className || "bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-md transition-all"}>
+      <Button
+        onClick={login}
+        className={
+          className ||
+          "bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-md transition-all"
+        }
+      >
         <LogIn className="w-4 h-4 mr-2" />
         Entrar
       </Button>
     );
   }
 
-  const googleAccount = user?.linkedAccounts.find((a) => (a as { type: string }).type === 'google_oauth') as { name?: string; picture?: string } | undefined;
-  const displayName = googleAccount?.name || user?.email?.address || (address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Usuário');
+  const googleAccount = user?.linkedAccounts.find(
+    (a) => (a as { type: string }).type === "google_oauth",
+  ) as { name?: string; picture?: string } | undefined;
+  const displayName =
+    googleAccount?.name ||
+    user?.email?.address ||
+    (address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "Usuário");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-primary/20 hover:border-primary/40">
+        <Button
+          variant="ghost"
+          className="relative h-10 w-10 rounded-full border-2 border-primary/20 hover:border-primary/40"
+        >
           <Avatar className="h-9 w-9">
             {/* Use user.linkedAccounts to find email or google image if available, otherwise fallback */}
             <AvatarImage src={googleAccount?.picture || undefined} />
@@ -59,7 +82,7 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
                 ? user.email.address.slice(0, 2).toUpperCase()
                 : address
                   ? address.slice(2, 4).toUpperCase()
-                  : 'U'}
+                  : "U"}
             </AvatarFallback>
           </Avatar>
         </Button>
@@ -81,7 +104,7 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => router.push('/dashboard')}>
+        <DropdownMenuItem onClick={() => router.push("/dashboard")}>
           <LayoutDashboard className="mr-2 h-4 w-4" />
           <span>Dashboard</span>
         </DropdownMenuItem>
@@ -90,7 +113,10 @@ export function PrivyLoginButton({ minimal, className }: PrivyLoginButtonProps) 
           <span>Configurações</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={logout} className="text-red-600 focus:text-red-600">
+        <DropdownMenuItem
+          onClick={logout}
+          className="text-red-600 focus:text-red-600"
+        >
           <LogOut className="mr-2 h-4 w-4" />
           <span>Sair</span>
         </DropdownMenuItem>

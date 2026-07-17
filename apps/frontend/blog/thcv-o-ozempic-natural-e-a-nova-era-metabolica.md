@@ -23,11 +23,12 @@ Estudos recentes indicam que a THCV não apenas reduz a vontade de comer, mas ta
 ---
 
 ### 💡 **Checkpoint Interativo: Você se identifica?**
+
 - [ ] Sente picos de insulina após as refeições?
 - [ ] Luta contra a compulsão alimentar noturna?
 - [ ] Procura uma alternativa natural para otimizar o jejum intermitente?
 
-*Se você marcou sim em qualquer uma, continue lendo. O futuro é verde.*
+_Se você marcou sim em qualquer uma, continue lendo. O futuro é verde._
 
 ---
 
@@ -46,7 +47,7 @@ Navegar no mundo da cannabis exige segurança jurídica e acesso facilitado. Con
 1.  **[CannaLaw Consultoria Jurídica](#):** A segurança para médicos e associações que querem atuar na legalidade total. Se você é um prescritor, a CannaLaw é sua bússola.
 2.  **[Plataforma Dona Liamba](#):** Nosso ecossistema completo. Conectamos pacientes, médicos e as melhores associações do Brasil em um clique.
 
-*Quer saber como prescrever ou acessar THCV legalmente? [Clique aqui e fale com nosso suporte.](#)*
+_Quer saber como prescrever ou acessar THCV legalmente? [Clique aqui e fale com nosso suporte.](#)_
 
 ---
 
@@ -55,6 +56,7 @@ Navegar no mundo da cannabis exige segurança jurídica e acesso facilitado. Con
 Enquanto os análogos de GLP-1 (como o Ozempic) focam no esvaziamento gástrico e sinais hormonais, a THCV trabalha diretamente no **Sistema Endocanabinoide (SEC)**, regulando a homeostase energética.
 
 **Vantagens da THCV relatadas por pacientes:**
+
 1.  **Sem náusea extrema:** Comum em fármacos sintéticos.
 2.  **Foco Cognitivo:** Diferente do THC, a THCV é conhecida por proporcionar clareza mental e energia [3].
 3.  **Regulação Glicêmica:** Ajuda a manter os níveis de açúcar no sangue estáveis [2].
@@ -70,9 +72,11 @@ A THCV não é uma "pílula mágica", mas é, sem dúvida, a ferramenta mais sof
 **Gostou deste post?** Compartilhe com seu médico ou com aquele amigo que vive tentando hackear o metabolismo!
 
 ---
+
 **Referências e Dados Reais:**
-*   [1] "O Impacto do THCV no Controle do Apetite", Portal Cannabis e Saúde (2024).
-*   [2] "THCV ameliorates insulin sensitivity", PMC3671751 (2013).
-*   [3] "The role of THCV in metabolic disorders", PMC12011981 (2025).
-*   [4] "Efficacy and Safety of CBD and THCV in Type 2 Diabetes", Diabetes Care (Jadoon et al., 2016).
-*   [5] "O Mercado Brasileiro de Cannabis: Projeções 2025-2027", Kaya Mind Report.
+
+- [1] "O Impacto do THCV no Controle do Apetite", Portal Cannabis e Saúde (2024).
+- [2] "THCV ameliorates insulin sensitivity", PMC3671751 (2013).
+- [3] "The role of THCV in metabolic disorders", PMC12011981 (2025).
+- [4] "Efficacy and Safety of CBD and THCV in Type 2 Diabetes", Diabetes Care (Jadoon et al., 2016).
+- [5] "O Mercado Brasileiro de Cannabis: Projeções 2025-2027", Kaya Mind Report.

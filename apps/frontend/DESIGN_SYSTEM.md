@@ -16,6 +16,7 @@ Utilizado para ações principais, botões e destaques. Representa a planta e a 
 - **Foreground (`--primary-foreground`)**: Branco (`#ffffff`) ou Preto (`#000000`) dependendo do contraste.
 
 **Uso no código:**
+
 ```tsx
 <div className="bg-primary text-primary-foreground">Botão Principal</div>
 <span className="text-primary">Texto em destaque</span>
@@ -48,6 +49,7 @@ A fonte principal é **Montserrat**. Ela é moderna, legível e transmite profis
 
 **Uso no código:**
 A fonte é aplicada automaticamente como a fonte `sans` padrão do Tailwind.
+
 ```tsx
 <h1 className="font-sans font-bold text-2xl">Título</h1>
 <!-- ou explicitamente -->
@@ -73,11 +75,11 @@ import { Button } from "@/components/ui/button"
 Os cards utilizam `bg-card` e bordas sutis.
 
 ```tsx
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 
 <Card>
   <CardContent>Conteúdo</CardContent>
-</Card>
+</Card>;
 ```
 
 ## Logotipo

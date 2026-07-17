@@ -19,9 +19,10 @@ A regra, consolidada pelo STJ, é clara: se a planta tem teor de **THC inferior 
 A Anvisa e a União têm agora um prazo definitivo: **31 de março de 2026** para entregar a regulamentação completa que permitirá às empresas e associações cultivarem em solo brasileiro.
 
 ### Dados que fazem o cérebro vibrar (Fonte: Kaya Mind 2024/2025):
-*   **Exército Verde:** O Brasil atingiu a marca recorde de **672 mil pacientes** em 2024, com projeções de superar **870 mil em 2025**.
-*   **Cifrões Reais:** O mercado movimentou **R$ 853 milhões em 2024**, e a expectativa é que rompa a barreira de **R$ 1 bilhão** ainda este ano.
-*   **Presença Nacional:** Mais de **80% dos municípios brasileiros** já possuem pacientes realizando tratamento com cannabis.
+
+- **Exército Verde:** O Brasil atingiu a marca recorde de **672 mil pacientes** em 2024, com projeções de superar **870 mil em 2025**.
+- **Cifrões Reais:** O mercado movimentou **R$ 853 milhões em 2024**, e a expectativa é que rompa a barreira de **R$ 1 bilhão** ainda este ano.
+- **Presença Nacional:** Mais de **80% dos municípios brasileiros** já possuem pacientes realizando tratamento com cannabis.
 
 ---
 
@@ -41,9 +42,10 @@ Embora o STJ tenha focado no cânhamo industrial para pessoas jurídicas, o impa
 Para o setor, 2025 é o ano da estruturação. As empresas que já possuem decisões judiciais favoráveis estão na vanguarda, mas a regulamentação geral de 2026 será o divisor de águas entre o "amadorismo" e a indústria de ponta.
 
 ### O que esperar até março de 2026:
-*   **Editais de Chamamento:** Possíveis consultas públicas para definir critérios de segurança e controle.
-*   **Rastreabilidade Total:** Da semente ao frasco, tudo precisará ser documentado.
-*   **Foco na Ciência:** O Brasil caminha para ser um hub de exportação de IFAV (Insumo Farmacêutico Ativo Vegetal) de alta qualidade.
+
+- **Editais de Chamamento:** Possíveis consultas públicas para definir critérios de segurança e controle.
+- **Rastreabilidade Total:** Da semente ao frasco, tudo precisará ser documentado.
+- **Foco na Ciência:** O Brasil caminha para ser um hub de exportação de IFAV (Insumo Farmacêutico Ativo Vegetal) de alta qualidade.
 
 ## Conclusão: Excêntricos? Talvez. Visionários? Com certeza. 🚀
 
@@ -54,7 +56,9 @@ E você? Vai ficar assistindo da arquibancada ou vai fazer parte dessa revoluç�
 **Interaja conosco:** Você acredita que a regulamentação de 2026 vai finalmente baixar o custo para o paciente final? Deixe seu comentário abaixo! ⬇️
 
 ---
-*Referências e Links Úteis:*
+
+_Referências e Links Úteis:_
+
 - [STJ valida cultivo de cannabis com baixo THC para fins medicinais](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2024/14112024-STJ-valida-cultivo-medicinal-da-cannabis-por-empresas-e-da-prazo-para-regulamentacao.aspx)
 - [Anuário Kaya Mind: Brasil atinge 672 mil pacientes](https://agenciabrasil.ebc.com.br/saude/noticia/2024-11/brasil-atingiu-marca-de-672-mil-pacientes-que-se-tratam-com-cannabis)
 - [Prazo para regulamentação prorrogado para março de 2026](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2025/11112025-Prazo-para-regulamentacao-do-cultivo-medicinal-da-cannabis-e-prorrogado-ate-31-de-marco.aspx)

@@ -17,6 +17,7 @@ A Dona Liamba é a plataforma mais completa do Brasil unindo pacientes, médicos
 ### Para Pacientes
 
 Se você é paciente, aqui você pode:
+
 - Encontrar médicos especialistas.
 - Conectar-se com associações verificadas.
 - Organizar suas prescrições e pedidos.

@@ -16,13 +16,13 @@ O **Prêmio Nobel de Medicina de 2025** foi entregue aos heróis que desvendaram
 
 Imagine que seu sistema imune é um exército de soldados altamente armados. Sem as Tregs (as Células T Reguladoras), esses soldados perdem o juízo e atacam tudo o que veem pela frente. É aí que a doença autoimune se instala.
 
-A ciência agora confirma: o **Sistema Endocanabinoide (SEC)** é o supervisor direto dessas células. Quando você introduz fitocanabinoides como o CBD e o THC, você não está apenas "diminuindo a dor". Você está enviando um memorando oficial para as Tregs: *"Pessoal, hora de colocar ordem na casa"*.
+A ciência agora confirma: o **Sistema Endocanabinoide (SEC)** é o supervisor direto dessas células. Quando você introduz fitocanabinoides como o CBD e o THC, você não está apenas "diminuindo a dor". Você está enviando um memorando oficial para as Tregs: _"Pessoal, hora de colocar ordem na casa"_.
 
 ### O Pulso do Mercado Brasileiro (Dados Reais 2026) 📊
 
-*   **O Salto do Bilhão:** O mercado de cannabis medicinal no Brasil atingiu **R$ 1 Bilhão em 2026**, impulsionado por pacientes que buscam tratamentos para condições crônicas e autoimunes [1].
-*   **Autorizações em Massa:** Em 2025, o Brasil registrou o recorde de **194.682 autorizações de importação**, um crescimento de 200 vezes em relação a 2015 [2].
-*   **Prescritores em Alta:** Já somos mais de **61 mil médicos brasileiros** prescrevendo cannabis, com um aumento de 31% nas prescrições entre os veteranos [2].
+- **O Salto do Bilhão:** O mercado de cannabis medicinal no Brasil atingiu **R$ 1 Bilhão em 2026**, impulsionado por pacientes que buscam tratamentos para condições crônicas e autoimunes [1].
+- **Autorizações em Massa:** Em 2025, o Brasil registrou o recorde de **194.682 autorizações de importação**, um crescimento de 200 vezes em relação a 2015 [2].
+- **Prescritores em Alta:** Já somos mais de **61 mil médicos brasileiros** prescrevendo cannabis, com um aumento de 31% nas prescrições entre os veteranos [2].
 
 ---
 
@@ -33,15 +33,16 @@ Não se luta uma guerra biológica sem inteligência jurídica e acesso tecnoló
 1.  **[CannaLaw Consultoria Jurídica](#):** A bússola legal em tempos de transição. Com o marco regulatório do cânhamo de 2026 batendo à porta, a CannaLaw garante que pacientes e associações operem na legalidade máxima para o tratamento de doenças graves.
 2.  **[Plataforma Dona Liamba](#):** A ponte entre a ciência e o paciente. Conectamos você aos médicos que realmente entendem a relação entre Tregs e Cannabis, além das associações que produzem medicamentos de espectro completo (Full Spectrum) testados em laboratório.
 
-*Seu corpo merece a paz. [Encontre o médico certo na Dona Liamba agora.](/) *
+_Seu corpo merece a paz. [Encontre o médico certo na Dona Liamba agora.](/) _
 
 ---
 
 ## Por que a Cannabis é a "Chave Mestra" das Autoimunes? 🧬🔑
 
-Estudos publicados no final de 2024 e agora em 2025 (como os revisados pelo *Autoimmunity Reviews*) sugerem que os canabinoides induzem a formação de novas células Tregs e aumentam sua supressão imunológica [4].
+Estudos publicados no final de 2024 e agora em 2025 (como os revisados pelo _Autoimmunity Reviews_) sugerem que os canabinoides induzem a formação de novas células Tregs e aumentam sua supressão imunológica [4].
 
 **O Biohack Imunológico:**
+
 - **Lúpus:** Redução da inflamação sistêmica e proteção renal via ativação dos receptores CB2.
 - **Esclerose Múltipla:** Controle da espasticidade e redução do ataque à bainha de mielina através da modulação da barreira hematoencefálica.
 - **Artrite Reumatóide:** Alívio imediato da dor sinovial e interrupção da degradação cartilaginosa.
@@ -55,6 +56,7 @@ Com a decisão do STJ (IAC 16) e o prazo de regulamentação até março de 2026
 O Nobel de 2025 não foi apenas uma medalha de ouro; foi a validação de que o corpo humano possui os mecanismos de autocura — e a Cannabis é a ferramenta de precisão para ativá-los.
 
 **Desafio Interativo:** Você já sentiu que seu sistema imune está "fora de controle"?
+
 - [ ] Sim, sofro com inflamação crônica.
 - [ ] Tenho diagnóstico de doença autoimune.
 - [ ] Quero prevenir o desequilíbrio imunológico.
@@ -62,9 +64,11 @@ O Nobel de 2025 não foi apenas uma medalha de ouro; foi a validação de que o 
 Comente abaixo como está sua jornada de cura ou compartilhe este post com alguém que precisa saber que a paz é possível! 👇
 
 ---
+
 **Referências e Links de Autoridade:**
-*   [1] "Mercado de cannabis medicinal deve movimentar R$ 1 bi em 2026", CDPI Pharma (2025).
-*   [2] "Avanço clínico e IA: um olhar para o CBCM 2026", Medicina S/A.
-*   [3] "Nobel de Medicina de 2025 reconhece pesquisas sobre Células T Reguladoras", SBI / Nobel Prize.
-*   [4] "Exploring therapeutic potential of Cannabis in autoimmune disorders", PubMed (2025).
-*   [5] "Kaya Mind: Relatório de Tendências e Mercado 2025/2026".
+
+- [1] "Mercado de cannabis medicinal deve movimentar R$ 1 bi em 2026", CDPI Pharma (2025).
+- [2] "Avanço clínico e IA: um olhar para o CBCM 2026", Medicina S/A.
+- [3] "Nobel de Medicina de 2025 reconhece pesquisas sobre Células T Reguladoras", SBI / Nobel Prize.
+- [4] "Exploring therapeutic potential of Cannabis in autoimmune disorders", PubMed (2025).
+- [5] "Kaya Mind: Relatório de Tendências e Mercado 2025/2026".

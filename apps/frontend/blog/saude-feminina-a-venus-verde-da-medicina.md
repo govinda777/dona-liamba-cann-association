@@ -16,9 +16,9 @@ Em 2025, o jogo mudou. Não estamos mais falando apenas de "alívio"; estamos fa
 
 A realidade das brasileiras é um grito por alternativas. Veja os dados que a ciência e o IBGE nos trouxeram este ano:
 
-*   **O Abismo do Climatério:** Cerca de **17 milhões de mulheres** no Brasil estão no climatério, e **9,2 milhões** já atravessaram a linha da menopausa. Pasmem: apenas **22%** delas têm acesso a terapias hormonais convencionais eficazes (Fonte: [Febrasgo/Estudo ReNEW](https://www.febrasgo.org.br)).
-*   **O Enigma da Endometriose:** Mais de **7 milhões de brasileiras** convivem com a dor pélvica paralisante da endometriose. Para muitas, o CBD e o THC não são "opções", são o único passaporte de volta para uma vida funcional.
-*   **A Explosão do Acesso:** O mercado de cannabis medicinal no Brasil atingiu a marca histórica de **R$ 971 milhões em 2025** (Fonte: [CNN Brasil/Kaya Mind](https://www.cnnbrasil.com.br)), impulsionado em grande parte pelo público feminino, que hoje lidera a busca por qualidade de vida e longevidade.
+- **O Abismo do Climatério:** Cerca de **17 milhões de mulheres** no Brasil estão no climatério, e **9,2 milhões** já atravessaram a linha da menopausa. Pasmem: apenas **22%** delas têm acesso a terapias hormonais convencionais eficazes (Fonte: [Febrasgo/Estudo ReNEW](https://www.febrasgo.org.br)).
+- **O Enigma da Endometriose:** Mais de **7 milhões de brasileiras** convivem com a dor pélvica paralisante da endometriose. Para muitas, o CBD e o THC não são "opções", são o único passaporte de volta para uma vida funcional.
+- **A Explosão do Acesso:** O mercado de cannabis medicinal no Brasil atingiu a marca histórica de **R$ 971 milhões em 2025** (Fonte: [CNN Brasil/Kaya Mind](https://www.cnnbrasil.com.br)), impulsionado em grande parte pelo público feminino, que hoje lidera a busca por qualidade de vida e longevidade.
 
 ---
 
@@ -38,6 +38,7 @@ Não é mágica, é biologia pura. O sistema reprodutor feminino é um dos lugar
 Quando você usa Cannabis medicinal para uma **TPM severa (TDPM)** ou para os **fogachos da menopausa**, você não está apenas "mascarando" sintomas. Você está alimentando o seu Sistema Endocanabinoide (SEC) para que ele volte a regular o que está desajustado: humor, temperatura corporal, sono e inflamação.
 
 ### O Triunfo dos Canabinoides na Ginecologia:
+
 - **CBD:** Atua como um anti-inflamatório potente para a endometriose, reduzindo a proliferação celular indesejada.
 - **THC (em doses controladas):** É o mestre no controle da dor neuropática e pélvica profunda.
 - **CBG:** O novo aliado para a saúde da microbiota vaginal e redução de ansiedade.
@@ -47,6 +48,7 @@ Quando você usa Cannabis medicinal para uma **TPM severa (TDPM)** ou para os **
 Estamos vivendo o fim da era da invisibilidade feminina na medicina. Se em 2015 éramos 850 pacientes, em 2025 somos quase **um milhão**. A "Vênus Verde" despertou e ela não vai aceitar menos do que a plenitude.
 
 **Desafio Interativo:** Qual sintoma mais rouba a sua energia hoje?
+
 - 🔥 **Fogachos e Insônia** (Menopausa)
 - 🎈 **Inflamação e Cólica** (Endometriose/TPM)
 - 🧠 **Névoa Mental e Ansiedade**
@@ -55,7 +57,8 @@ Comente abaixo ou compartilhe este post com a mulher mais forte que você conhec
 
 ---
 
-*Fontes e Conhecimento para Mulheres Inteligentes:*
+_Fontes e Conhecimento para Mulheres Inteligentes:_
+
 - [Migalhas: Direito ao Alívio - Cannabis e Saúde da Mulher (2025)](https://www.migalhas.com.br/depeso/430440/direito-ao-alivio--cannabis-medicinal-e-a-saude-da-mulher)
 - [Febrasgo: Dados sobre Climatério e Menopausa no Brasil](https://www.febrasgo.org.br/pt/noticias/item/2197-menopausa-cerca-de-17-milhoes-de-mulheres-no-brasil-estao-no-climaterio)
 - [Cannabis & Saúde: Workshop de Ginecologia Canábica 2025](https://www.cannabisesaude.com.br/beatriz-jacob-saude-mulher-cannabis/)

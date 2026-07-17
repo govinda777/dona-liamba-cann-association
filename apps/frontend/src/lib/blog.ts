@@ -1,13 +1,13 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 // Try to find the blog directory
 // If running from apps/frontend, it should be just 'blog'
 // If running from root (e.g. some scripts), it might be 'apps/frontend/blog'
-let postsDirectory = path.join(process.cwd(), 'blog');
+let postsDirectory = path.join(process.cwd(), "blog");
 if (!fs.existsSync(postsDirectory)) {
-  const altPath = path.join(process.cwd(), 'apps/frontend/blog');
+  const altPath = path.join(process.cwd(), "apps/frontend/blog");
   if (fs.existsSync(altPath)) {
     postsDirectory = altPath;
   }
@@ -28,13 +28,13 @@ export function getPostSlugs() {
     console.warn(`Blog directory not found at: ${postsDirectory}`);
     return [];
   }
-  return fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
+  return fs.readdirSync(postsDirectory).filter((file) => file.endsWith(".md"));
 }
 
 export function getPostBySlug(slug: string): Post {
-  const realSlug = slug.replace(/\.md$/, '');
+  const realSlug = slug.replace(/\.md$/, "");
   const fullPath = path.join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return {

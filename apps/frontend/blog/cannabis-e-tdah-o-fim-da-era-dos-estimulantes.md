@@ -10,7 +10,7 @@ image: "/images/blog/welcome.jpg"
 
 Se você tem TDAH (Transtorno do Déficit de Atenção com Hiperatividade), provavelmente já sentiu que seu cérebro é uma Ferrari com freios de bicicleta. Por décadas, a solução padrão foi "pisar no acelerador" com estimulantes sintéticos como o metilfenidato e a lisdexanfetamina. Mas em pleno 2026, uma nova pergunta ecoa nos consultórios de neurodivergência: **E se pudéssemos ajustar os freios em vez de apenas acelerar o motor?**
 
-Bem-vindo à era do **Biohacking Neurodivergente**, onde a Cannabis medicinal deixa de ser um "tabu" para se tornar o sistema operacional de quem busca foco, sem o *crash* dopaminérgico.
+Bem-vindo à era do **Biohacking Neurodivergente**, onde a Cannabis medicinal deixa de ser um "tabu" para se tornar o sistema operacional de quem busca foco, sem o _crash_ dopaminérgico.
 
 ## A Bolha dos Estimulantes no Brasil 🇧🇷📈
 
@@ -25,12 +25,13 @@ Em contrapartida, o mercado de Cannabis medicinal no Brasil rompeu a barreira de
 ---
 
 ### 💡 **Checkpoint de Autoconhecimento: Onde você está?**
+
 - [ ] Toma estimulantes e sente palpitação ou ansiedade?
 - [ ] Sente que sua criatividade é "anestesiada" pelos remédios tradicionais?
 - [ ] Sofre com a "paralisia do TDAH" mesmo medicado?
 - [ ] Busca uma alternativa natural que respeite sua neurofisiologia?
 
-*Se você marcou pelo menos duas, você faz parte da nova fronteira da medicina de precisão.*
+_Se você marcou pelo menos duas, você faz parte da nova fronteira da medicina de precisão._
 
 ---
 
@@ -41,7 +42,7 @@ Para transitar entre o sintético e o natural, você precisa de uma rede de segu
 1.  **[CannaLaw Consultoria Jurídica](#):** Prescrever ou usar Cannabis para TDAH exige segurança jurídica. A CannaLaw é a autoridade máxima em garantir que pacientes e médicos estejam protegidos enquanto exploram terapias de vanguarda.
 2.  **[Plataforma Dona Liamba](#):** Onde a neurodiversidade encontra a solução. Conectamos você aos médicos que já dominam o uso de CBG e CBD para foco e às associações que entregam pureza e procedência.
 
-*Não seja um experimento. Seja um paciente Dona Liamba. [Acesse aqui.](/) *
+_Não seja um experimento. Seja um paciente Dona Liamba. [Acesse aqui.](/) _
 
 ---
 
@@ -52,9 +53,10 @@ Enquanto o CBD é famoso pelo relaxamento, o **CBG (Canabigerol)** é o novo ast
 Estudos recentes indicam que o CBG atua nos receptores alfa-2 adrenérgicos no córtex pré-frontal — exatamente onde o TDAH "mora". Ele melhora a clareza mental e reduz a impulsividade sem a agitação motora dos estimulantes [3].
 
 **O Combo do Sucesso (Ratio 2026):**
-*   **CBD (Manhã):** Para baixar o ruído da ansiedade e silenciar os "pensamentos em cascata".
-*   **CBG (Trabalho/Estudo):** Para o *Deep Work* e a manutenção da atenção sustentada.
-*   **CBN (Noite):** Para desligar o motor e garantir o reparo neural necessário para o dia seguinte.
+
+- **CBD (Manhã):** Para baixar o ruído da ansiedade e silenciar os "pensamentos em cascata".
+- **CBG (Trabalho/Estudo):** Para o _Deep Work_ e a manutenção da atenção sustentada.
+- **CBN (Noite):** Para desligar o motor e garantir o reparo neural necessário para o dia seguinte.
 
 ## A Audácia do Futuro: Neurodiversidade não é Doença
 
@@ -63,9 +65,11 @@ Tratar o TDAH com Cannabis não é sobre "normalizar" o cérebro, mas sobre **ot
 Estamos deixando de tratar sintomas para tratar seres humanos. E você, vai continuar no ciclo dos sintéticos ou vai hackear seu foco com a inteligência da natureza?
 
 ---
+
 **Referências e Dados de Autoridade:**
-*   [1] "Consumo de Ritalina no Brasil cresce 775% em dez anos", Coren-CE / IMS-UERJ.
-*   [2] "Mercado de cannabis medicinal no Brasil atinge R$ 1 bilhão", Kaya Mind Report 2026.
-*   [3] "Cannabigerol (CBG) for ADHD: A new frontier in neuroprotection", PubMed / PMC (2025).
-*   [4] "Impactos do uso de cannabis em indivíduos com TDAH", RECIMA21 (2024).
-*   [5] "Relatório Anual de Importações Anvisa 2025/2026".
+
+- [1] "Consumo de Ritalina no Brasil cresce 775% em dez anos", Coren-CE / IMS-UERJ.
+- [2] "Mercado de cannabis medicinal no Brasil atinge R$ 1 bilhão", Kaya Mind Report 2026.
+- [3] "Cannabigerol (CBG) for ADHD: A new frontier in neuroprotection", PubMed / PMC (2025).
+- [4] "Impactos do uso de cannabis em indivíduos com TDAH", RECIMA21 (2024).
+- [5] "Relatório Anual de Importações Anvisa 2025/2026".

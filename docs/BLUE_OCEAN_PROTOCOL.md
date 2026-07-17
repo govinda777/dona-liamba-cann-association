@@ -3,6 +3,7 @@
 ## CRIAR SEÇÃO COMPLETA "Seja Membro" + MENU NAVEGAÇÃO
 
 ### 1. CRIAR ITEM DE MENU "Seja Membro" (PRIORIDADE 1)
+
 - Adicionar no header: `Seja Membro` (com badge "🚀 NOVO PROTOCOLO")
 - Link para `/membro` - página principal do protocolo
 - Design: botão gradiente verde-dourado com contador regressivo visível
@@ -12,20 +13,22 @@
 ## Protocolo Dona Liamba: Oceano Azul Tokenizado
 
 ### Visão Disruptiva
+
 **Primeiro protocolo Web3-hybrid para cannabis medicinal Brasil**: NFT controle associações + Chainlink scraping + governança tokenizada + referral viral. Elimina 90% burocracia Anvisa, viraliza rede (K-factor 2.5).
 
 ### Curva de Valor (IMPLEMENTAR GRÁFICOS)
+
 - Velocidade Jornada: 9/10 (3 cliques vs 9 passos)
 - Aquisição Orgânica: 10/10 (referral cashback + tokens)
 - Controle NFT Associações: 10/10 (login único, produtos scraped)
 - Governança Participativa: 10/10 (tokens DAO)
 
 ### Matriz ERRC Implementada
-| Eliminar | Reduzir | Elevar | Criar |
-|----------|---------|--------|-------|
-| Burocracia manual | CAC ads | Confiabilidade | NFT controle + Chainlink scraping |
-| Fragmentação | Consultas caras | Velocidade | Governança tokenizada |
 
+| Eliminar          | Reduzir         | Elevar         | Criar                             |
+| ----------------- | --------------- | -------------- | --------------------------------- |
+| Burocracia manual | CAC ads         | Confiabilidade | NFT controle + Chainlink scraping |
+| Fragmentação      | Consultas caras | Velocidade     | Governança tokenizada             |
 
 ### 3. PROTOCOLO DE MEMBRESIA TOKENIZADO (LÓGICA MATEMÁTICA)
 
@@ -38,8 +41,7 @@ Membro 2: 0,01 + 0,01 = 0,02 USDT
 Membro 3: 0,01 + 0,01 + 0,02 = 0,04 USDT
 Membro 4: 0,01 + 0,01 + 0,02 + 0,04 = 0,08 USDT
 ...
-Membro N: 0,01 * (2^(N-1))
-
+Membro N: 0,01 \* (2^(N-1))
 
 **IMPLEMENTAR CONTADOR VISUAL**:
 
@@ -47,7 +49,6 @@ Membro N: 0,01 * (2^(N-1))
 Próximo ciclo: 15/02/2026 00:00
 Slots disponíveis: 47/100
 Recompensa atual: 0,047 USDT + 10% tokens governança
-
 
 ### 4. SISTEMA DE GOVERNANÇA (PRINCÍPIOS DAO MELHORES PRÁTICAS)
 
@@ -59,7 +60,6 @@ Recompensa atual: 0,047 USDT + 10% tokens governança
 - Time-lock para evitar whales (6 meses)
 - Snapshot voting via blockchain
 
-
 **PROPOSTAS GOVERNANÇA** (categorias obrigatórias):
 
 1. Novas Associações Parceiras [Voto Simples]
@@ -67,16 +67,13 @@ Recompensa atual: 0,047 USDT + 10% tokens governança
 3. Alocação Tesouraria [Multi-sig 3/5]
 4. Upgrades Chainlink Scrapers [Delegated Voting]
 
-
 ### 5. JORNADA MEMBRO 100% BLOCKCHAIN GUARANTEED
-
 
 1. ENTRY: Link referral exclusivo → wallet auto-criada
 2. NFT Membro: Mint instantâneo (controle associações + perks)
 3. Taxa Geométrica: Paga via Stripe → convert USDT → distribuído rede
 4. Token Governança: Compra opcional → poder voto imediato
 5. LOOP VIRAL: Gera novo link → ganha 20% taxa próximo membro
-
 
 ### 6. PÁGINA /membro IMPLEMENTAR
 
@@ -87,7 +84,6 @@ SEJA MEMBRO DO PROTOCOLO DONA LIAMBA
 Taxa atual: R$0,047 | Recompensa referral: R$0,0094
 [CTA GRADIENTE] ENTRAR AGORA
 
-
 **SECTIONS**:
 
 1. [Gráfico Radar Blue Ocean]
@@ -97,17 +93,15 @@ Taxa atual: R$0,047 | Recompensa referral: R$0,0094
 5. "Chainlink Insights" (premium scraping R$49/mês)
 6. "Meu Referral" (link + stats cashback)
 
-
 ### 7. SMART CONTRACTS ESTRUTURA
 
-
 LIAMBA_PROTOCOL.sol:
+
 - mintMembershipNFT(uint memberId) → ERC-721
 - geometricFee(uint memberNumber) → calcula taxa
 - referralCashback(address referrer) → 20% distribuído
 - governanceVote(uint proposalId, uint votes) → quadratic voting
 - chainlinkScrape(address association) → oracle call
-
 
 ### 8. ROADMAP IMPLEMENTAÇÃO
 
@@ -118,8 +112,8 @@ LIAMBA_PROTOCOL.sol:
 🔥 SEMANA 2: Quadratic voting + tesouraria multi-sig
 🚀 Lançamento: 47 membros beta com taxa inicial
 
-
 ### IMPLEMENTAR IMEDIATAMENTE:
+
 1. Menu "Seja Membro" no header
 2. Página `/membro` com contador + CTA
 3. Sistema taxa geométrica visual

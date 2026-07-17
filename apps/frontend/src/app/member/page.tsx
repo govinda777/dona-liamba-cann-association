@@ -1,11 +1,17 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useState, useEffect } from "react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Rocket,
   TrendingUp,
@@ -16,13 +22,18 @@ import {
   Zap,
   Lock,
   Target,
-  Coins
-} from 'lucide-react';
-import { AnimatedSection } from '@/components/AnimatedSection';
+  Coins,
+} from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export default function MembershipPage() {
   const [memberCount, setMemberCount] = useState(47);
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   // Geometric Fee Calculation
   const calculateFee = (n: number) => {
@@ -46,7 +57,9 @@ export default function MembershipPage() {
       }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -61,14 +74,16 @@ export default function MembershipPage() {
       <Header />
 
       <main className="flex flex-col">
-
         {/* 1. HERO SECTION: Countdown & Main Value Prop */}
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-900 text-white">
           <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-slate-900/95 to-slate-900/90"></div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <Badge variant="outline" className="mb-6 border-emerald-400/30 text-emerald-400 px-4 py-1 text-sm tracking-wider uppercase bg-emerald-950/30 backdrop-blur-sm">
+            <Badge
+              variant="outline"
+              className="mb-6 border-emerald-400/30 text-emerald-400 px-4 py-1 text-sm tracking-wider uppercase bg-emerald-950/30 backdrop-blur-sm"
+            >
               🚀 Blue Ocean Web3 Protocol
             </Badge>
 
@@ -77,20 +92,29 @@ export default function MembershipPage() {
             </h1>
 
             <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-              Unique in the world. The protocol that pays you to participate. Join before the next halving cycle and secure your governance position.
+              Unique in the world. The protocol that pays you to participate.
+              Join before the next halving cycle and secure your governance
+              position.
             </p>
 
             {/* Countdown Timer */}
             <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12">
               {[
-                { label: 'DAYS', value: timeLeft.days },
-                { label: 'HOURS', value: timeLeft.hours },
-                { label: 'MINUTES', value: timeLeft.minutes },
-                { label: 'SECONDS', value: timeLeft.seconds },
+                { label: "DAYS", value: timeLeft.days },
+                { label: "HOURS", value: timeLeft.hours },
+                { label: "MINUTES", value: timeLeft.minutes },
+                { label: "SECONDS", value: timeLeft.seconds },
               ].map((item, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 w-24 sm:w-32 flex flex-col items-center shadow-2xl">
-                  <span className="text-3xl sm:text-4xl font-bold font-mono text-emerald-400">{String(item.value).padStart(2, '0')}</span>
-                  <span className="text-[10px] sm:text-xs text-slate-400 tracking-widest mt-2">{item.label}</span>
+                <div
+                  key={i}
+                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 w-24 sm:w-32 flex flex-col items-center shadow-2xl"
+                >
+                  <span className="text-3xl sm:text-4xl font-bold font-mono text-emerald-400">
+                    {String(item.value).padStart(2, "0")}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 tracking-widest mt-2">
+                    {item.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -98,25 +122,45 @@ export default function MembershipPage() {
             {/* Main Stats Card */}
             <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 p-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10 shadow-2xl">
               <div className="flex-1 p-6 flex flex-col items-center">
-                <span className="text-slate-400 text-sm mb-1 uppercase tracking-wider">Available Spots</span>
-                <span className="text-3xl font-bold text-white">47 <span className="text-slate-500 text-lg font-normal">/ 100</span></span>
+                <span className="text-slate-400 text-sm mb-1 uppercase tracking-wider">
+                  Available Spots
+                </span>
+                <span className="text-3xl font-bold text-white">
+                  47{" "}
+                  <span className="text-slate-500 text-lg font-normal">
+                    / 100
+                  </span>
+                </span>
               </div>
               <div className="flex-1 p-6 flex flex-col items-center">
-                <span className="text-slate-400 text-sm mb-1 uppercase tracking-wider">Current Fee (Member #47)</span>
-                <span className="text-3xl font-bold text-emerald-400">{currentFee.toFixed(4)} USDT</span>
+                <span className="text-slate-400 text-sm mb-1 uppercase tracking-wider">
+                  Current Fee (Member #47)
+                </span>
+                <span className="text-3xl font-bold text-emerald-400">
+                  {currentFee.toFixed(4)} USDT
+                </span>
               </div>
               <div className="flex-1 p-6 flex flex-col items-center bg-gradient-to-b from-yellow-500/10 to-transparent">
-                <span className="text-yellow-200/80 text-sm mb-1 uppercase tracking-wider">Referral Reward</span>
-                <span className="text-3xl font-bold text-yellow-400">{(currentFee * 0.2).toFixed(4)} USDT</span>
+                <span className="text-yellow-200/80 text-sm mb-1 uppercase tracking-wider">
+                  Referral Reward
+                </span>
+                <span className="text-3xl font-bold text-yellow-400">
+                  {(currentFee * 0.2).toFixed(4)} USDT
+                </span>
               </div>
             </div>
 
             <div className="mt-12">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white border-0 shadow-lg shadow-emerald-900/50 text-lg px-12 py-8 rounded-full font-bold transition-all hover:scale-105">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white border-0 shadow-lg shadow-emerald-900/50 text-lg px-12 py-8 rounded-full font-bold transition-all hover:scale-105"
+              >
                 Secure My Spot Now
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
-              <p className="mt-4 text-sm text-slate-400">Secure Transaction via Polygon Blockchain</p>
+              <p className="mt-4 text-sm text-slate-400">
+                Secure Transaction via Polygon Blockchain
+              </p>
             </div>
           </div>
         </section>
@@ -130,7 +174,8 @@ export default function MembershipPage() {
                   Blue Ocean Strategy
                 </h2>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  We redesigned the cannabis association model to eliminate bureaucracy and create real value for the patient.
+                  We redesigned the cannabis association model to eliminate
+                  bureaucracy and create real value for the patient.
                 </p>
               </div>
 
@@ -142,20 +187,35 @@ export default function MembershipPage() {
                   </div>
                   <div className="h-80 flex items-end justify-between gap-2 sm:gap-4 mt-8">
                     {[
-                      { label: 'Bureaucracy', current: 20, old: 90 },
-                      { label: 'Cost', current: 30, old: 80 },
-                      { label: 'Speed', current: 95, old: 30 },
-                      { label: 'Security', current: 100, old: 50 },
-                      { label: 'ROI', current: 90, old: 0 },
+                      { label: "Bureaucracy", current: 20, old: 90 },
+                      { label: "Cost", current: 30, old: 80 },
+                      { label: "Speed", current: 95, old: 30 },
+                      { label: "Security", current: 100, old: 50 },
+                      { label: "ROI", current: 90, old: 0 },
                     ].map((item, i) => (
-                      <div key={i} className="flex flex-col items-center justify-end h-full flex-1 group">
-                        <div className="w-full bg-slate-200 rounded-t-lg relative group-hover:bg-slate-300 transition-colors" style={{ height: `${item.old}%` }}>
-                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-slate-400 font-medium">Traditional</span>
+                      <div
+                        key={i}
+                        className="flex flex-col items-center justify-end h-full flex-1 group"
+                      >
+                        <div
+                          className="w-full bg-slate-200 rounded-t-lg relative group-hover:bg-slate-300 transition-colors"
+                          style={{ height: `${item.old}%` }}
+                        >
+                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-slate-400 font-medium">
+                            Traditional
+                          </span>
                         </div>
-                        <div className="w-full bg-emerald-500 rounded-t-lg relative -ml-2 sm:-ml-4 z-10 shadow-lg group-hover:bg-emerald-400 transition-colors" style={{ height: `${item.current}%` }}>
-                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-emerald-700 font-bold">{item.current}%</span>
+                        <div
+                          className="w-full bg-emerald-500 rounded-t-lg relative -ml-2 sm:-ml-4 z-10 shadow-lg group-hover:bg-emerald-400 transition-colors"
+                          style={{ height: `${item.current}%` }}
+                        >
+                          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-emerald-700 font-bold">
+                            {item.current}%
+                          </span>
                         </div>
-                        <span className="text-[10px] sm:text-xs font-bold text-slate-600 mt-3 text-center h-8 flex items-center">{item.label}</span>
+                        <span className="text-[10px] sm:text-xs font-bold text-slate-600 mt-3 text-center h-8 flex items-center">
+                          {item.label}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -231,12 +291,18 @@ export default function MembershipPage() {
             <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
             <div className="max-w-4xl mx-auto px-6 relative z-10">
               <div className="text-center mb-16">
-                <Badge variant="outline" className="mb-4 text-emerald-400 border-emerald-400/30">Protocol Mathematics</Badge>
+                <Badge
+                  variant="outline"
+                  className="mb-4 text-emerald-400 border-emerald-400/30"
+                >
+                  Protocol Mathematics
+                </Badge>
                 <h2 className="text-3xl md:text-5xl font-serif font-extrabold mb-6">
                   Geometric Fee Model
                 </h2>
                 <p className="text-slate-400 text-lg">
-                  The earlier you join, the lower your lifetime fee. The fee grows exponentially for new members, rewarding early pioneers.
+                  The earlier you join, the lower your lifetime fee. The fee
+                  grows exponentially for new members, rewarding early pioneers.
                 </p>
               </div>
 
@@ -244,14 +310,18 @@ export default function MembershipPage() {
                 <CardContent className="p-8 sm:p-12">
                   <div className="space-y-8">
                     <div>
-                      <label className="text-sm font-medium text-slate-300 mb-2 block">Simulate entry position (Member N#)</label>
+                      <label className="text-sm font-medium text-slate-300 mb-2 block">
+                        Simulate entry position (Member N#)
+                      </label>
                       <input
                         type="range"
                         min="1"
                         max="20"
                         step="1"
                         value={memberCount > 20 ? 20 : memberCount} // Slider cap for demo
-                        onChange={(e) => setMemberCount(parseInt(e.target.value))}
+                        onChange={(e) =>
+                          setMemberCount(parseInt(e.target.value))
+                        }
                         className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                       />
                       <div className="flex justify-between text-xs text-slate-500 mt-2">
@@ -263,27 +333,47 @@ export default function MembershipPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-800/50 rounded-2xl p-6 border border-white/5">
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1">Member #{memberCount}</h3>
-                        <p className="text-slate-400 text-sm">Your position in the network</p>
+                        <h3 className="text-lg font-bold text-white mb-1">
+                          Member #{memberCount}
+                        </h3>
+                        <p className="text-slate-400 text-sm">
+                          Your position in the network
+                        </p>
                       </div>
                       <div className="text-right">
-                        <span className="block text-sm text-slate-400 mb-1">Your Fixed Monthly Fee</span>
+                        <span className="block text-sm text-slate-400 mb-1">
+                          Your Fixed Monthly Fee
+                        </span>
                         <span className="text-4xl font-mono font-bold text-emerald-400">
                           {calculateFee(memberCount).toFixed(2)} USDT
                         </span>
-                        <span className="block text-xs text-slate-500 mt-1">= R$ {(calculateFee(memberCount) * 5.0).toFixed(2)} approx.</span>
+                        <span className="block text-xs text-slate-500 mt-1">
+                          = R$ {(calculateFee(memberCount) * 5.0).toFixed(2)}{" "}
+                          approx.
+                        </span>
                       </div>
                     </div>
 
                     <div className="text-center">
                       <p className="text-sm text-slate-400 mb-4">
-                        Formula: <code className="bg-slate-800 px-2 py-1 rounded text-emerald-300">0.01 * (2^(N-1))</code>
+                        Formula:{" "}
+                        <code className="bg-slate-800 px-2 py-1 rounded text-emerald-300">
+                          0.01 * (2^(N-1))
+                        </code>
                       </p>
                       <div className="flex justify-center gap-2 text-xs text-slate-500">
-                        <span className="px-3 py-1 bg-slate-800 rounded-full">#1: 0.01</span>
-                        <span className="px-3 py-1 bg-slate-800 rounded-full">#2: 0.02</span>
-                        <span className="px-3 py-1 bg-slate-800 rounded-full">#3: 0.04</span>
-                        <span className="px-3 py-1 bg-slate-800 rounded-full">#4: 0.08</span>
+                        <span className="px-3 py-1 bg-slate-800 rounded-full">
+                          #1: 0.01
+                        </span>
+                        <span className="px-3 py-1 bg-slate-800 rounded-full">
+                          #2: 0.02
+                        </span>
+                        <span className="px-3 py-1 bg-slate-800 rounded-full">
+                          #3: 0.04
+                        </span>
+                        <span className="px-3 py-1 bg-slate-800 rounded-full">
+                          #4: 0.08
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -299,34 +389,57 @@ export default function MembershipPage() {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 mb-6">DAO Governance</Badge>
+                  <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 mb-6">
+                    DAO Governance
+                  </Badge>
                   <h2 className="text-4xl font-serif font-extrabold text-slate-900 mb-6">
                     You Decide the Future of the Protocol
                   </h2>
                   <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                    We are not just a platform, we are an autonomous community. With the <strong>$LIAMBA</strong> token, you have the power to vote on critical decisions.
+                    We are not just a platform, we are an autonomous community.
+                    With the <strong>$LIAMBA</strong> token, you have the power
+                    to vote on critical decisions.
                   </p>
 
                   <ul className="space-y-6">
                     {[
-                      { icon: Vote, title: 'Quadratic Voting', desc: 'A fair system where whales do not dominate. Your vote counts more on issues you care about most.' },
-                      { icon: Target, title: 'Community Proposals', desc: 'Any member can suggest new partner associations or platform improvements.' },
-                      { icon: Lock, title: 'Multi-sig Treasury', desc: 'Funds managed by smart contracts with keys distributed among elected members.' },
+                      {
+                        icon: Vote,
+                        title: "Quadratic Voting",
+                        desc: "A fair system where whales do not dominate. Your vote counts more on issues you care about most.",
+                      },
+                      {
+                        icon: Target,
+                        title: "Community Proposals",
+                        desc: "Any member can suggest new partner associations or platform improvements.",
+                      },
+                      {
+                        icon: Lock,
+                        title: "Multi-sig Treasury",
+                        desc: "Funds managed by smart contracts with keys distributed among elected members.",
+                      },
                     ].map((item, i) => (
                       <li key={i} className="flex gap-4">
                         <div className="mt-1 w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center shrink-0">
                           <item.icon className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-900">{item.title}</h4>
-                          <p className="text-sm text-slate-600 mt-1">{item.desc}</p>
+                          <h4 className="font-bold text-slate-900">
+                            {item.title}
+                          </h4>
+                          <p className="text-sm text-slate-600 mt-1">
+                            {item.desc}
+                          </p>
                         </div>
                       </li>
                     ))}
                   </ul>
 
                   <div className="mt-10 flex gap-4">
-                    <Button variant="outline" className="border-purple-200 text-purple-700 hover:bg-purple-50">
+                    <Button
+                      variant="outline"
+                      className="border-purple-200 text-purple-700 hover:bg-purple-50"
+                    >
                       Read Whitepaper
                     </Button>
                     <Button className="bg-purple-600 hover:bg-purple-700 text-white">
@@ -341,25 +454,61 @@ export default function MembershipPage() {
                   <Card className="relative bg-white/80 backdrop-blur border-slate-200 shadow-xl">
                     <CardHeader className="border-b border-slate-100">
                       <div className="flex justify-between items-center">
-                        <CardTitle className="text-lg">Active Proposals</CardTitle>
-                        <Badge variant="secondary" className="bg-green-100 text-green-700 animate-pulse">● Open Voting</Badge>
+                        <CardTitle className="text-lg">
+                          Active Proposals
+                        </CardTitle>
+                        <Badge
+                          variant="secondary"
+                          className="bg-green-100 text-green-700 animate-pulse"
+                        >
+                          ● Open Voting
+                        </Badge>
                       </div>
                     </CardHeader>
                     <CardContent className="p-0">
                       <div className="divide-y divide-slate-100">
                         {[
-                          { id: 1, title: "Include 'GreenCure' Association in the Hub", votes: 450, status: 'Approving' },
-                          { id: 2, title: "Reduce withdrawal fee to 2%", votes: 120, status: 'In debate' },
-                          { id: 3, title: "Allocate 500 USDT for Marketing", votes: 890, status: 'Finalizing' },
+                          {
+                            id: 1,
+                            title: "Include 'GreenCure' Association in the Hub",
+                            votes: 450,
+                            status: "Approving",
+                          },
+                          {
+                            id: 2,
+                            title: "Reduce withdrawal fee to 2%",
+                            votes: 120,
+                            status: "In debate",
+                          },
+                          {
+                            id: 3,
+                            title: "Allocate 500 USDT for Marketing",
+                            votes: 890,
+                            status: "Finalizing",
+                          },
                         ].map((prop) => (
-                          <div key={prop.id} className="p-6 hover:bg-slate-50 transition-colors cursor-pointer group">
+                          <div
+                            key={prop.id}
+                            className="p-6 hover:bg-slate-50 transition-colors cursor-pointer group"
+                          >
                             <div className="flex justify-between items-start mb-2">
-                              <span className="text-xs font-mono text-slate-400">PROP-{prop.id.toString().padStart(3, '0')}</span>
-                              <span className="text-xs font-bold text-slate-600">{prop.status}</span>
+                              <span className="text-xs font-mono text-slate-400">
+                                PROP-{prop.id.toString().padStart(3, "0")}
+                              </span>
+                              <span className="text-xs font-bold text-slate-600">
+                                {prop.status}
+                              </span>
                             </div>
-                            <h4 className="font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors">{prop.title}</h4>
+                            <h4 className="font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors">
+                              {prop.title}
+                            </h4>
                             <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                              <div className="bg-purple-500 h-full rounded-full" style={{ width: `${(prop.votes / 1000) * 100}%` }}></div>
+                              <div
+                                className="bg-purple-500 h-full rounded-full"
+                                style={{
+                                  width: `${(prop.votes / 1000) * 100}%`,
+                                }}
+                              ></div>
                             </div>
                             <div className="flex justify-between mt-2 text-xs text-slate-500">
                               <span>{prop.votes} votes</span>
@@ -370,7 +519,9 @@ export default function MembershipPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="bg-slate-50 p-4 text-center">
-                      <span className="text-xs text-slate-500 w-full cursor-pointer hover:underline">View all proposals on Snapshot</span>
+                      <span className="text-xs text-slate-500 w-full cursor-pointer hover:underline">
+                        View all proposals on Snapshot
+                      </span>
                     </CardFooter>
                   </Card>
                 </div>
@@ -390,34 +541,59 @@ export default function MembershipPage() {
                 Viral Reward System
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-16">
-                The protocol grows, you win. Receive 20% of the entry fee for each new member who uses your unique referral link. Guaranteed via Smart Contract.
+                The protocol grows, you win. Receive 20% of the entry fee for
+                each new member who uses your unique referral link. Guaranteed
+                via Smart Contract.
               </p>
 
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { step: '1', title: 'Generate Your Link', desc: 'Connect your wallet and generate a unique referral link.' },
-                  { step: '2', title: 'Share', desc: 'Send to friends looking for medical cannabis treatment.' },
-                  { step: '3', title: 'Earn USDT', desc: 'Receive 20% of their membership fee directly in your wallet.' },
+                  {
+                    step: "1",
+                    title: "Generate Your Link",
+                    desc: "Connect your wallet and generate a unique referral link.",
+                  },
+                  {
+                    step: "2",
+                    title: "Share",
+                    desc: "Send to friends looking for medical cannabis treatment.",
+                  },
+                  {
+                    step: "3",
+                    title: "Earn USDT",
+                    desc: "Receive 20% of their membership fee directly in your wallet.",
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="relative p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-yellow-200 transition-colors group">
+                  <div
+                    key={i}
+                    className="relative p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-yellow-200 transition-colors group"
+                  >
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center font-bold text-xl text-yellow-600 border-2 border-yellow-50 group-hover:scale-110 transition-transform">
                       {item.step}
                     </div>
-                    <h3 className="mt-6 text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="mt-6 text-xl font-bold text-slate-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
 
               <div className="mt-16 bg-slate-900 rounded-2xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold mb-2">Earnings Simulation</h3>
+                  <h3 className="text-2xl font-bold mb-2">
+                    Earnings Simulation
+                  </h3>
                   <p className="text-slate-400">If you refer Member #48:</p>
                 </div>
                 <div className="flex items-center gap-4 bg-white/10 px-6 py-4 rounded-xl border border-white/10">
                   <Coins className="w-8 h-8 text-yellow-400" />
                   <div>
-                    <div className="text-xs text-slate-300 uppercase tracking-wider">You Receive</div>
+                    <div className="text-xs text-slate-300 uppercase tracking-wider">
+                      You Receive
+                    </div>
                     <div className="text-2xl font-mono font-bold text-yellow-400">
                       {(calculateFee(48) * 0.2).toFixed(4)} USDT
                     </div>
@@ -438,10 +614,15 @@ export default function MembershipPage() {
               Don&apos;t wait for the next cycle.
             </h2>
             <p className="text-xl text-slate-600 mb-12">
-              Spots are limited and the fee rises with each new member. Secure your position now and be part of the decentralized health revolution.
+              Spots are limited and the fee rises with each new member. Secure
+              your position now and be part of the decentralized health
+              revolution.
             </p>
 
-            <Button size="lg" className="h-16 px-10 text-xl rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+            <Button
+              size="lg"
+              className="h-16 px-10 text-xl rounded-full bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
+            >
               Join the Protocol
               <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
@@ -450,7 +631,6 @@ export default function MembershipPage() {
             </p>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>

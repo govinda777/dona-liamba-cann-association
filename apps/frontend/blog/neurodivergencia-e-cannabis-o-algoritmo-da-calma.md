@@ -16,12 +16,12 @@ Mas e se eu te dissesse que o "reboot" que o sistema precisava não vem de uma p
 
 Esqueça o achismo. Estamos falando de dados reais, quentes, saídos do forno da ciência brasileira. Um estudo liderado pelo **Hospital Universitário de Brasília (HUB/UnB)**, finalizado em 2024 e apresentado com destaque nos congressos de neurologia infantil, trouxe números que fizeram o establishment médico levantar a sobrancelha:
 
-*   **70% de Eficácia:** Sete em cada dez crianças e adolescentes com autismo moderado a grave apresentaram melhoras significativas na agressividade, irritabilidade e sociabilidade.
-*   **O Grande Desmonte da Polifarmácia:** **74% dos pacientes** conseguiram reduzir ou interromper o uso de pelo menos um medicamento convencional (como a risperidona). Menos carga para o fígado, mais vida para o paciente.
-*   **TDAH no Radar:** Para os 60% dos autistas que também carregam o TDAH na mochila, **50% demonstraram melhorias brutais** na hiperatividade e agitação.
+- **70% de Eficácia:** Sete em cada dez crianças e adolescentes com autismo moderado a grave apresentaram melhoras significativas na agressividade, irritabilidade e sociabilidade.
+- **O Grande Desmonte da Polifarmácia:** **74% dos pacientes** conseguiram reduzir ou interromper o uso de pelo menos um medicamento convencional (como a risperidona). Menos carga para o fígado, mais vida para o paciente.
+- **TDAH no Radar:** Para os 60% dos autistas que também carregam o TDAH na mochila, **50% demonstraram melhorias brutais** na hiperatividade e agitação.
 
 > "Não é apenas sobre 'acalmar', é sobre permitir que o aprendizado e o contato visual finalmente aconteçam."
-> — *Insight baseado na pesquisa do HUB (Nov/2024).*
+> — _Insight baseado na pesquisa do HUB (Nov/2024)._
 
 ---
 
@@ -41,6 +41,7 @@ O segredo está no **Sistema Endocanabinoide (SEC)**. No autismo, há evidência
 É biohacking na sua forma mais pura: ajustar a química cerebral para que a pessoa possa ser ela mesma, sem o ruído constante do mundo exterior.
 
 ### O Efeito "High-Tech" da Natureza:
+
 Ao contrário dos estimulantes tradicionais para TDAH, que podem causar "crash" e perda de apetite, o CBD oferece um suporte suave que não desliga a criatividade, mas organiza o caos.
 
 ## Conclusão: O Futuro é Atípico e Verde 🌿
@@ -51,7 +52,8 @@ Estamos vivendo o fim da era do "cala-boca" químico e o início da era da **Har
 
 ---
 
-*Fontes e Links para você mergulhar:*
+_Fontes e Links para você mergulhar:_
+
 - [G1: Canabidiol ajuda no tratamento de 70% das crianças com autismo (HUB/UnB)](https://g1.globo.com/df/distrito-federal/noticia/2024/11/09/canabidiol-ajuda-no-treatment-de-70percent-das-criancas-e-adolescentes-com-autismo-diz-pesquisa-do-hospital-universitario-de-brasilia.ghtml)
 - [Veja Saúde: Estudo Brasileiro e a Redução da Polifarmácia no TEA](https://veja.abril.com.br/saude/canabidiol-melhora-sintomas-em-70-das-criancas-com-autismo-diz-estudo-brasileiro/)
 - [Revista JRG: Uso de Cannabis no TEA - Revisão 2025](https://revistajrg.com/index.php/jrg/article/view/1779)

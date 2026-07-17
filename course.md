@@ -9,6 +9,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ### Cultivo e Extração
 
 #### 1. **Curso de Cultivo: Da Germinação à Cura - Leds Indoor**
+
 - **Formato:** Online On Demand
 - **Carga Horária:** 5 horas
 - **Módulos:** 5 módulos com 43 aulas gravadas
@@ -18,6 +19,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [Leds Indoor - Cursos](https://www.ledsindoor.com.br/cursos)
 
 #### 2. **Curso de Cultivo Indoor e Extração - Cultlight (Professor Cadu)**
+
 - **Formato:** 100% online e gravado
 - **Carga Horária:** 12 horas
 - **Módulos:** 6 módulos completos
@@ -28,11 +30,13 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [Cultlight - Curso de Cultivo](https://cultlight.com.br/loja/educacao/apostila-turma-de-cultivo-para-iniciantes-com-o-cadu/)
 
 #### 3. **Curso de Cultivo Indoor Orgânico (Avançado) - Cultlight**
+
 - **Formato:** Online
 - **Nível:** Avançado
 - **Link:** [Cultlight - Curso Avançado](https://cultlight.com.br/loja/educacao/cursos/curso-de-cultivo-indoor-organico/)
 
 #### 4. **Curso NO TILL - Cultivo em Solo Vivo**
+
 - **Formato:** Online On Demand
 - **Carga Horária:** 3,5 horas
 - **Módulos:** 4 módulos com 15 aulas gravadas
@@ -45,6 +49,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ### Medicina Canabinoide (Para Profissionais de Saúde)
 
 #### 5. **Certificação Internacional em Medicina Endocanabinoide - WeCann Academy**
+
 - **Público-alvo:** Exclusivo para médicos
 - **Formato:** Online com aulas gravadas e ao vivo semanais
 - **Diferencial:** Trilhas personalizadas por especialidade (psiquiatria, neurologia, geriatria, pediatria, ortopedia, medicina da família)
@@ -53,6 +58,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [WeCann Academy](https://wecann.academy/cursos-de-cannabis-medicinal/)
 
 #### 6. **Medicina Canabinoide: Abordagem Baseada em Evidências - HCFMUSP**
+
 - **Instituição:** Hospital das Clínicas da USP
 - **Público-alvo:** Médicos
 - **Conteúdo:** Espécies de plantas, bases fisiológicas, farmacologia, produtos no mercado
@@ -61,6 +67,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [HCX FMUSP](https://ensino.hcxfmusp.org.br/pt/medicina-canabinoide-abordagem-baseada-em-evidencias-cientificas/p)
 
 #### 7. **Curso de Medicina Canabinoide - HempMeds**
+
 - **Formato:** Online e gratuito
 - **Público-alvo:** Exclusivo para médicos
 - **Aulas:** 6 aulas
@@ -69,6 +76,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [HempMeds - Curso Gratuito](https://hempmedsbr.com/curso-de-medicina-canabinoide)
 
 #### 8. **Aprimoramento em Cannabis Medicinal - Afya**
+
 - **Instituição:** Maior grupo de tecnologia e educação médica do Brasil
 - **Formato:** Online
 - **Público-alvo:** Médicos
@@ -76,6 +84,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [Afya Educação Médica](https://www.afya.com.br)
 
 #### 9. **Maconha Medicinal: Da Planta ao Paciente - UNICAMP**
+
 - **Instituição:** Faculdade de Ciências Farmacêuticas - UNICAMP
 - **Formato:** Curso de extensão a distância
 - **Público-alvo:** Profissionais de saúde, pesquisadores e interessados
@@ -86,6 +95,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ### Mercado e Empreendedorismo
 
 #### 10. **Empreendedorismo Verde: Mercado e Oportunidades**
+
 - **Parceria:** Reefer e Kaya Mind
 - **Formato:** Online On Demand
 - **Carga Horária:** 10 horas
@@ -97,6 +107,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [Leds Indoor - Empreendedorismo Verde](https://www.ledsindoor.com.br/cursos)
 
 #### 11. **INFLORE - Formação de Consultor Canábico**
+
 - **Criadora:** Luna Vargas (Mestra em Antropologia Social)
 - **Edição:** 8ª edição
 - **Formato:** Virtual
@@ -107,6 +118,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ### Programa Completo
 
 #### 12. **Programa Cannabis 101 - PROCBD**
+
 - **Formato:** 100% online
 - **Certificações:** 11 certificações
 - **Carga Horária:** 110 horas
@@ -122,6 +134,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ### Cultivo e Extração
 
 #### 13. **51º Curso de Cultivo e Extração de Cannabis Medicinal - Santa Cannabis**
+
 - **Formato:** Online ao vivo (4 dias consecutivos)
 - **Datas:** 15, 16, 17 e 18 de Dezembro de 2025
 - **Horário:** 19h às 22h30
@@ -131,6 +144,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [RadioHemp - Santa Cannabis](https://www.radiohemp.com/produto/como-plantar-maconha-medicinal/)
 
 #### 14. **Curso Básico Cultivo e Extração de Cannabis - APEPI**
+
 - **Formato:** Híbrido (online ao vivo + presencial)
 - **Local presencial:** Fazenda Sofia Langenbach (visita técnica) + Sede da APEPI no Rio de Janeiro
 - **Diferencial:** Experiência prática no cultivo e extração + aspectos práticos da prescrição
@@ -138,6 +152,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [APEPI - Curso de Cultivo](https://apepi.org/curso-de-cultivo/)
 
 #### 15. **Curso de Prescrição Medicinal de Cannabis - APEPI**
+
 - **Formato:** Híbrido (encontros online ao vivo + videoaulas gravadas + encontros presenciais)
 - **Encontros presenciais:**
   - Visita à Fazenda Sofia Langenbach (cultivo e extração)
@@ -146,6 +161,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - **Link:** [APEPI - Prescrição Medicinal](https://apepi.org/curso-de-cultivo/)
 
 #### 16. **Sechat Academy**
+
 - **Formato:** Presencial
 - **Local:** Av. Presidente Juscelino Kubitschek, 1600 – Itaim Bibi – São Paulo – SP
 - **Material:** Material didático antes e após o curso
@@ -158,6 +174,7 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ## 🎯 Eventos e Congressos
 
 ### Congresso Brasileiro da Cannabis Medicinal 2026
+
 - **Data:** 21 a 23 de maio de 2026
 - **Local:** Transamerica Expo Center - São Paulo - SP
 - **Endereço:** Av. Dr. Mário Vilas Boas Rodrigues
@@ -169,12 +186,14 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 ## 📊 Resumo por Categoria
 
 ### Para Iniciantes
+
 - Curso de Cultivo: Da Germinação à Cura (Leds Indoor)
 - Curso de Cultivo Indoor e Extração (Cultlight - Professor Cadu)
 - 51º Curso de Cultivo e Extração (Santa Cannabis)
 - Programa Cannabis 101 (PROCBD)
 
 ### Para Profissionais de Saúde
+
 - Certificação Internacional WeCann Academy
 - Medicina Canabinoide HCFMUSP
 - Curso Gratuito HempMeds
@@ -182,14 +201,17 @@ Este documento apresenta uma lista categorizada dos melhores cursos online e pre
 - Maconha Medicinal UNICAMP
 
 ### Para Empreendedores
+
 - Empreendedorismo Verde (Reefer + Kaya Mind)
 - INFLORE - Formação de Consultor Canábico
 
 ### Para Cultivo Avançado
+
 - Curso NO TILL - Solo Vivo (Leds Indoor)
 - Curso de Cultivo Indoor Orgânico Avançado (Cultlight)
 
 ### Cursos com Experiência Prática
+
 - Curso APEPI (visita à fazenda)
 - Sechat Academy (presencial em SP)
 

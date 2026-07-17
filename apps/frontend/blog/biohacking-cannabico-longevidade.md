@@ -17,15 +17,16 @@ Se você ainda pensa em Cannabis apenas como "remédio para dor", você está vi
 O Sistema Endocanabinoide é o maior sistema de neurotransmissão do corpo humano. Ele não apenas "ajuda"; ele **coordena**. Do sono à resposta imunológica, o SEC é o maestro que garante que a orquestra das suas células não desafine com o passar dos anos.
 
 ### A Ciência do "Anti-Aging" Neural (Neuroproteção):
+
 Estudos recentes, como os desenvolvidos na **USP (Universidade de São Paulo)**, demonstram que o Canabidiol (CBD) possui um potencial neurotrófico impressionante, induzindo a formação de novos neuritos e protegendo contra toxinas dopaminérgicas.
 
 > "O CBD tem potencial neurotrófico e neuroprotetor, podendo retardar a degeneração axonal e sináptica."
-> — *Biblioteca Digital de Teses e Dissertações da USP, 2024.*
+> — _Biblioteca Digital de Teses e Dissertações da USP, 2024._
 
 ## Dados que Vão Explodir sua Mente (Fonte: Kaya Mind): 📈
 
-*   **O Grande Salto:** O Brasil encerrou 2024 com **672 mil pacientes**, mas a projeção para 2025 é de romper a barreira dos **873 mil**. Isso é um crescimento exponencial de consciência!
-*   **O Mercado do Futuro:** O setor de longevidade e bem-estar é o que mais cresce dentro da medicina canábica, saindo do nicho de doenças raras para o uso cotidiano por quem busca performance mental e física.
+- **O Grande Salto:** O Brasil encerrou 2024 com **672 mil pacientes**, mas a projeção para 2025 é de romper a barreira dos **873 mil**. Isso é um crescimento exponencial de consciência!
+- **O Mercado do Futuro:** O setor de longevidade e bem-estar é o que mais cresce dentro da medicina canábica, saindo do nicho de doenças raras para o uso cotidiano por quem busca performance mental e física.
 
 ---
 
@@ -43,6 +44,7 @@ Para hackear sua longevidade com segurança, você precisa de parceiros que conh
 O Biohacking canábico foca na modulação do estresse oxidativo e da neuroinflamação — os dois grandes vilões do envelhecimento precoce. Ao utilizar fitocanabinoides de forma inteligente, você não está apenas tratando um sintoma; você está otimizando o seu sistema operacional biológico.
 
 ### Checklist do Biohacker Canábico:
+
 1.  **Microdosagem:** Ajuste fino para foco e redução de ansiedade diurna.
 2.  **Higiene do Sono:** O uso de canabinoides menores (como CBN) para garantir o reparo celular profundo durante a noite.
 3.  **Sinergia (Efeito Entourage):** Por que isolar se a natureza entregou o pacote completo?
@@ -54,7 +56,9 @@ A pergunta não é mais se a Cannabis funciona, mas sim **quão longe você quer
 **Desafio Interativo:** Você já sentiu que sua "máquina" biológica precisava de um upgrade? Como você imagina sua saúde daqui a 20 anos se pudesse modular seu sistema de homeostase hoje? Comente abaixo! 👇
 
 ---
-*Referências e Links Científicos:*
+
+_Referências e Links Científicos:_
+
 - [Estudo USP: Efeito Neurotrófico e Neuroprotetor do CBD (Dez/2024)](https://www.teses.usp.br/teses/disponiveis/60/60134/tde-05122024-113403/)
 - [Wecann Academy: Canabinoides e o Futuro da Neuroproteção](https://wecann.academy/canabinoides-e-neuroprotecao/)
 - [Anuário Kaya Mind 2025: O Crescimento do Mercado Brasileiro](https://www.cannabisesaude.com.br/anuario-da-kaya-mind-2025/)

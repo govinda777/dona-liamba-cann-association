@@ -1,4 +1,4 @@
-import Dashboard from './DashboardContent';
+import Dashboard from "./DashboardContent";
 
 export const revalidate = 3600;
 

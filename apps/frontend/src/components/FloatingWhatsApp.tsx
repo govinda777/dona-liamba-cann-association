@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { MessageCircle, X, Leaf } from 'lucide-react';
-import { useState } from 'react';
-import { Button } from './ui/button';
+import { MessageCircle, X, Leaf } from "lucide-react";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 export function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,15 +39,17 @@ export function FloatingWhatsApp() {
           <div className="p-4 space-y-3">
             <div className="bg-slate-100 rounded-lg p-3 text-sm">
               <p className="mb-2">👋 Olá! Como podemos ajudar hoje?</p>
-              <p className="text-xs text-slate-600">Tempo médio de resposta: 2 minutos</p>
+              <p className="text-xs text-slate-600">
+                Tempo médio de resposta: 2 minutos
+              </p>
             </div>
 
             <div className="space-y-2">
               {[
-                { emoji: '🏥', text: 'Quero encontrar um médico' },
-                { emoji: '🏢', text: 'Preciso de uma associação' },
-                { emoji: '💰', text: 'Dúvidas sobre custos' },
-                { emoji: '📋', text: 'Como funciona o processo?' }
+                { emoji: "🏥", text: "Quero encontrar um médico" },
+                { emoji: "🏢", text: "Preciso de uma associação" },
+                { emoji: "💰", text: "Dúvidas sobre custos" },
+                { emoji: "📋", text: "Como funciona o processo?" },
               ].map((option, i) => (
                 <button
                   key={i}

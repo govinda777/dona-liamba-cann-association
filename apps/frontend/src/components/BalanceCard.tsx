@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useAccount, useBalance } from 'wagmi';
-import { Card } from '@/components/ui/card';
-import { TrendingUp, Wallet, ArrowUpRight } from 'lucide-react';
-import { formatEther } from 'viem';
-import { usePrivy } from '@privy-io/react-auth';
+import { useAccount, useBalance } from "wagmi";
+import { Card } from "@/components/ui/card";
+import { TrendingUp, Wallet, ArrowUpRight } from "lucide-react";
+import { formatEther } from "viem";
+import { usePrivy } from "@privy-io/react-auth";
 
 export function BalanceCard({ onClick }: { onClick?: () => void }) {
   const { address } = useAccount();
@@ -40,7 +40,7 @@ export function BalanceCard({ onClick }: { onClick?: () => void }) {
               ) : balance ? (
                 `${parseFloat(formatEther(balance.value)).toFixed(4)}`
               ) : (
-                '0.0000'
+                "0.0000"
               )}
             </p>
             <span className="text-xs font-bold opacity-70">ETH</span>

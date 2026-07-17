@@ -1,65 +1,107 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { usePrivy } from '@privy-io/react-auth';
-import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { BalanceCard } from '@/components/BalanceCard';
-import { PrescriptionCard } from '@/components/PrescriptionCard';
-import { PrescriptionGridSkeleton } from '@/components/PrescriptionGridSkeleton';
-import { PrivyLoginButton } from '@/components/PrivyLoginButton';
-import { WalletModal } from '@/components/WalletModal';
-import { FileText, ShoppingCart, History, Plus, Loader2, Leaf, LayoutDashboard } from 'lucide-react';
-import { parseEther } from 'viem';
-import contractsConfig from '@/abis/contracts-config.json';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { usePrivy } from "@privy-io/react-auth";
+import {
+  useAccount,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+} from "wagmi";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { BalanceCard } from "@/components/BalanceCard";
+import { PrescriptionCard } from "@/components/PrescriptionCard";
+import { PrescriptionGridSkeleton } from "@/components/PrescriptionGridSkeleton";
+import { PrivyLoginButton } from "@/components/PrivyLoginButton";
+import { WalletModal } from "@/components/WalletModal";
+import {
+  FileText,
+  ShoppingCart,
+  History,
+  Plus,
+  Loader2,
+  Leaf,
+  LayoutDashboard,
+} from "lucide-react";
+import { parseEther } from "viem";
+import contractsConfig from "@/abis/contracts-config.json";
+import Link from "next/link";
 
 export default function Dashboard() {
   const { user, ready, authenticated } = usePrivy();
   const { address } = useAccount();
-  const [prescriptions, setPrescriptions] = useState<Array<{ id: string; tokenId: number; createdAt: string; status: string }>>([]);
-  const [txHistory, setTxHistory] = useState<Array<{ id: string; type: string; createdAt: string; amount?: string; details: string }>>([]);
+  const [prescriptions, setPrescriptions] = useState<
+    Array<{ id: string; tokenId: number; createdAt: string; status: string }>
+  >([]);
+  const [txHistory, setTxHistory] = useState<
+    Array<{
+      id: string;
+      type: string;
+      createdAt: string;
+      amount?: string;
+      details: string;
+    }>
+  >([]);
   const [loadingData, setLoadingData] = useState(true);
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
 
   useEffect(() => {
     if (authenticated && address) {
       Promise.all([
-        fetch(`/api/prescriptions?patientAddress=${address}`).then(res => res.json()),
-        fetch(`/api/transactions?userAddress=${address}`).then(res => res.json())
-      ]).then(([prescData, txData]) => {
-        setPrescriptions(Array.isArray(prescData) ? prescData : []);
-        setTxHistory(Array.isArray(txData) ? txData : []);
-        setLoadingData(false);
-      }).catch(err => {
-        console.error("Error loading dashboard data", err);
-        setLoadingData(false);
-      });
+        fetch(`/api/prescriptions?patientAddress=${address}`).then((res) =>
+          res.json(),
+        ),
+        fetch(`/api/transactions?userAddress=${address}`).then((res) =>
+          res.json(),
+        ),
+      ])
+        .then(([prescData, txData]) => {
+          setPrescriptions(Array.isArray(prescData) ? prescData : []);
+          setTxHistory(Array.isArray(txData) ? txData : []);
+          setLoadingData(false);
+        })
+        .catch((err) => {
+          console.error("Error loading dashboard data", err);
+          setLoadingData(false);
+        });
     } else if (ready && loadingData) {
       setTimeout(() => setLoadingData(false), 0);
     }
   }, [authenticated, address, ready, loadingData]);
 
-  if (!ready) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-    </div>
-  );
+  if (!ready)
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      </div>
+    );
 
   if (!authenticated || !user) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">Acesso Restrito</h1>
-        <p className="text-gray-500 mb-8 text-center max-w-md">Você precisa fazer login para acessar o painel do paciente.</p>
+        <h1 className="text-2xl font-bold mb-4 text-gray-900">
+          Acesso Restrito
+        </h1>
+        <p className="text-gray-500 mb-8 text-center max-w-md">
+          Você precisa fazer login para acessar o painel do paciente.
+        </p>
         <PrivyLoginButton />
       </div>
     );
   }
 
-  const googleAccount = user?.linkedAccounts.find((a) => a.type === 'google_oauth') as { name?: string } | undefined;
-  const displayName = googleAccount?.name || user?.email?.address?.split('@')[0] || 'Patient';
+  const googleAccount = user?.linkedAccounts.find(
+    (a) => a.type === "google_oauth",
+  ) as { name?: string } | undefined;
+  const displayName =
+    googleAccount?.name || user?.email?.address?.split("@")[0] || "Patient";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-primary-50/30">
@@ -69,7 +111,10 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             {/* Left side: Logo & Breadcrumb */}
             <div className="flex items-center gap-4 sm:gap-8">
-              <Link href="/" className="flex items-center space-x-2 group shrink-0">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 group shrink-0"
+              >
                 <div className="p-1.5 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
                   <Leaf className="w-5 h-5 text-primary-600" />
                 </div>
@@ -96,7 +141,9 @@ export default function Dashboard() {
                   {displayName}
                 </span>
                 <span className="text-[10px] font-mono text-slate-400">
-                  {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : ''}
+                  {address
+                    ? `${address.slice(0, 6)}...${address.slice(-4)}`
+                    : ""}
                 </span>
               </div>
               <PrivyLoginButton />
@@ -112,7 +159,9 @@ export default function Dashboard() {
             <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               Olá, {displayName} 👋
             </h1>
-            <p className="text-slate-500">Bem-vindo ao seu centro de saúde cannábica.</p>
+            <p className="text-slate-500">
+              Bem-vindo ao seu centro de saúde cannábica.
+            </p>
           </div>
         </div>
       </div>
@@ -121,17 +170,26 @@ export default function Dashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Tabs defaultValue="my-prescriptions" className="w-full space-y-8">
           <TabsList className="grid w-full grid-cols-3 h-auto p-1 bg-white border border-primary-100 rounded-xl shadow-sm">
-            <TabsTrigger value="my-prescriptions" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger
+              value="my-prescriptions"
+              className="py-3 rounded-lg transition-all duration-300"
+            >
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Minhas Prescrições</span>
               <span className="sm:hidden">Prescrições</span>
             </TabsTrigger>
-            <TabsTrigger value="shop" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger
+              value="shop"
+              className="py-3 rounded-lg transition-all duration-300"
+            >
               <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Comprar Produtos</span>
               <span className="sm:hidden">Loja</span>
             </TabsTrigger>
-            <TabsTrigger value="history" className="py-3 rounded-lg transition-all duration-300">
+            <TabsTrigger
+              value="history"
+              className="py-3 rounded-lg transition-all duration-300"
+            >
               <History className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="hidden sm:inline">Histórico</span>
               <span className="sm:hidden">Histórico</span>
@@ -141,21 +199,35 @@ export default function Dashboard() {
           {/* My Prescriptions */}
           <TabsContent value="my-prescriptions" className="mt-8 outline-none">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold text-gray-800">Suas Prescrições Digitais</h3>
-              <MintPrescriptionButton address={address} onMint={() => {
-                // Refresh data
-                fetch(`/api/prescriptions?patientAddress=${address}`)
-                  .then(res => res.json())
-                  .then(data => setPrescriptions(data));
-              }} />
+              <h3 className="text-xl font-semibold text-gray-800">
+                Suas Prescrições Digitais
+              </h3>
+              <MintPrescriptionButton
+                address={address}
+                onMint={() => {
+                  // Refresh data
+                  fetch(`/api/prescriptions?patientAddress=${address}`)
+                    .then((res) => res.json())
+                    .then((data) => setPrescriptions(data));
+                }}
+              />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {prescriptions.map((p) => (
-                <PrescriptionCard key={p.id} tokenId={p.tokenId} doctor="Specialist" date={p.createdAt} status={p.status as "active" | "used" | "expired"} coOwners={1} />
+                <PrescriptionCard
+                  key={p.id}
+                  tokenId={p.tokenId}
+                  doctor="Specialist"
+                  date={p.createdAt}
+                  status={p.status as "active" | "used" | "expired"}
+                  coOwners={1}
+                />
               ))}
               {prescriptions.length === 0 && !loadingData && (
-                <p className="col-span-full text-center text-gray-500 py-12">Nenhuma prescrição encontrada.</p>
+                <p className="col-span-full text-center text-gray-500 py-12">
+                  Nenhuma prescrição encontrada.
+                </p>
               )}
               {loadingData && <PrescriptionGridSkeleton />}
             </div>
@@ -163,25 +235,41 @@ export default function Dashboard() {
 
           {/* Marketplace */}
           <TabsContent value="shop" className="mt-8 outline-none">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">Farmácia Credenciada</h3>
-            <MarketplaceGrid address={address} onPurchase={() => {
-              fetch(`/api/transactions?userAddress=${address}`)
-                .then(res => res.json())
-                .then(data => setTxHistory(data));
-            }} />
+            <h3 className="text-xl font-semibold text-gray-800 mb-6">
+              Farmácia Credenciada
+            </h3>
+            <MarketplaceGrid
+              address={address}
+              onPurchase={() => {
+                fetch(`/api/transactions?userAddress=${address}`)
+                  .then((res) => res.json())
+                  .then((data) => setTxHistory(data));
+              }}
+            />
           </TabsContent>
 
           {/* History */}
           <TabsContent value="history" className="mt-8 outline-none">
             <div className="space-y-4">
               {txHistory.map((tx) => (
-                <Card key={tx.id} className="p-4 flex justify-between items-center">
+                <Card
+                  key={tx.id}
+                  className="p-4 flex justify-between items-center"
+                >
                   <div>
-                    <p className="font-bold text-gray-800">{tx.type === 'purchase' ? 'Compra de Produto' : 'Nova Prescrição'}</p>
-                    <p className="text-sm text-gray-500">{new Date(tx.createdAt).toLocaleDateString()}</p>
+                    <p className="font-bold text-gray-800">
+                      {tx.type === "purchase"
+                        ? "Compra de Produto"
+                        : "Nova Prescrição"}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {new Date(tx.createdAt).toLocaleDateString()}
+                    </p>
                   </div>
                   <div className="text-right">
-                    <p className="font-mono text-sm text-primary-600">{tx.amount ? `${tx.amount} ETH` : '-'}</p>
+                    <p className="font-mono text-sm text-primary-600">
+                      {tx.amount ? `${tx.amount} ETH` : "-"}
+                    </p>
                     <p className="text-xs text-gray-400">{tx.details}</p>
                   </div>
                 </Card>
@@ -205,30 +293,38 @@ export default function Dashboard() {
   );
 }
 
-function MintPrescriptionButton({ address, onMint }: { address?: `0x${string}`, onMint: () => void }) {
+function MintPrescriptionButton({
+  address,
+  onMint,
+}: {
+  address?: `0x${string}`;
+  onMint: () => void;
+}) {
   const { data: hash, writeContract, isPending } = useWriteContract();
-  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
+    hash,
+  });
 
   useEffect(() => {
     if (isSuccess && address) {
-      fetch('/api/prescriptions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      fetch("/api/prescriptions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           tokenId: Math.floor(Math.random() * 1000),
           patientAddress: address,
-          doctorAddress: '0x0000000000000000000000000000000000000000',
-          metadataUri: 'ipfs://demo'
-        })
+          doctorAddress: "0x0000000000000000000000000000000000000000",
+          metadataUri: "ipfs://demo",
+        }),
       }).then(() => {
-        fetch('/api/transactions', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        fetch("/api/transactions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             userAddress: address,
-            type: 'mint',
-            details: 'Nova Prescricao Gerada'
-          })
+            type: "mint",
+            details: "Nova Prescricao Gerada",
+          }),
         });
         onMint();
       });
@@ -240,35 +336,55 @@ function MintPrescriptionButton({ address, onMint }: { address?: `0x${string}`, 
     writeContract({
       address: contractsConfig.MedicalNFT.address as `0x${string}`,
       abi: contractsConfig.MedicalNFT.abi,
-      functionName: 'mintMedicalRecord',
+      functionName: "mintMedicalRecord",
       args: [address, "ipfs://QmDemo", []],
     });
   };
 
   return (
-    <Button onClick={mint} disabled={isPending || isConfirming} size="sm" className="bg-primary-600 hover:bg-primary-700">
-      {(isPending || isConfirming) ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : <Plus className="w-4 h-4 mr-1" />}
+    <Button
+      onClick={mint}
+      disabled={isPending || isConfirming}
+      size="sm"
+      className="bg-primary-600 hover:bg-primary-700"
+    >
+      {isPending || isConfirming ? (
+        <Loader2 className="animate-spin w-4 h-4 mr-2" />
+      ) : (
+        <Plus className="w-4 h-4 mr-1" />
+      )}
       Nova Prescrição (Demo)
     </Button>
   );
 }
 
-function MarketplaceGrid({ address, onPurchase }: { address?: string, onPurchase: () => void }) {
+function MarketplaceGrid({
+  address,
+  onPurchase,
+}: {
+  address?: string;
+  onPurchase: () => void;
+}) {
   const { data: hash, writeContract, isPending } = useWriteContract();
-  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
-  const [lastBought, setLastBought] = useState<{ title: string, price: string } | null>(null);
+  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
+    hash,
+  });
+  const [lastBought, setLastBought] = useState<{
+    title: string;
+    price: string;
+  } | null>(null);
 
   useEffect(() => {
     if (isSuccess && address && lastBought) {
-      fetch('/api/transactions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      fetch("/api/transactions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userAddress: address,
-          type: 'purchase',
+          type: "purchase",
           details: lastBought.title,
-          amount: lastBought.price
-        })
+          amount: lastBought.price,
+        }),
       }).then(() => onPurchase());
     }
   }, [isSuccess, address, lastBought, onPurchase]);
@@ -278,7 +394,7 @@ function MarketplaceGrid({ address, onPurchase }: { address?: string, onPurchase
     writeContract({
       address: contractsConfig.EscrowMarketplace.address as `0x${string}`,
       abi: contractsConfig.EscrowMarketplace.abi,
-      functionName: 'createOrder',
+      functionName: "createOrder",
       args: [0n, 1n, "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"], // Using treasury address as pharmacy for demo
       value: parseEther(price),
     });
@@ -286,27 +402,62 @@ function MarketplaceGrid({ address, onPurchase }: { address?: string, onPurchase
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <ProductCard title="CBD Oil Full Spectrum 5%" price="0.01" onBuy={() => buyProduct("CBD Oil Full Spectrum 5%", "0.01")} loading={isPending || isConfirming} />
-      <ProductCard title="CBD Gummies 300mg" price="0.005" onBuy={() => buyProduct("CBD Gummies 300mg", "0.005")} loading={isPending || isConfirming} />
-      <ProductCard title="Cannabidiol Topical Cream" price="0.008" onBuy={() => buyProduct("Cannabidiol Topical Cream", "0.008")} loading={isPending || isConfirming} />
+      <ProductCard
+        title="CBD Oil Full Spectrum 5%"
+        price="0.01"
+        onBuy={() => buyProduct("CBD Oil Full Spectrum 5%", "0.01")}
+        loading={isPending || isConfirming}
+      />
+      <ProductCard
+        title="CBD Gummies 300mg"
+        price="0.005"
+        onBuy={() => buyProduct("CBD Gummies 300mg", "0.005")}
+        loading={isPending || isConfirming}
+      />
+      <ProductCard
+        title="Cannabidiol Topical Cream"
+        price="0.008"
+        onBuy={() => buyProduct("Cannabidiol Topical Cream", "0.008")}
+        loading={isPending || isConfirming}
+      />
     </div>
   );
 }
 
-function ProductCard({ title, price, onBuy, loading }: { title: string, price: string, onBuy: () => void, loading: boolean }) {
+function ProductCard({
+  title,
+  price,
+  onBuy,
+  loading,
+}: {
+  title: string;
+  price: string;
+  onBuy: () => void;
+  loading: boolean;
+}) {
   return (
     <Card className="hover:shadow-lg transition-shadow border-primary-100">
       <CardHeader>
-        <CardTitle className="text-lg font-bold text-gray-800">{title}</CardTitle>
-        <CardDescription className="text-primary-600 font-medium">Certificado ANVISA</CardDescription>
+        <CardTitle className="text-lg font-bold text-gray-800">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-primary-600 font-medium">
+          Certificado ANVISA
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex justify-between items-end">
           <div>
             <p className="text-xs text-gray-500">Preço</p>
-            <span className="font-bold text-2xl text-gray-900">{price} ETH</span>
+            <span className="font-bold text-2xl text-gray-900">
+              {price} ETH
+            </span>
           </div>
-          <Button onClick={onBuy} disabled={loading} className="bg-primary-600 hover:bg-primary-700">
+          <Button
+            onClick={onBuy}
+            disabled={loading}
+            className="bg-primary-600 hover:bg-primary-700"
+          >
             Comprar
           </Button>
         </div>

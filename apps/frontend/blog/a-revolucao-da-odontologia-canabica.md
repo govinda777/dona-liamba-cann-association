@@ -17,14 +17,16 @@ A Odontologia brasileira acaba de cruzar o Rubicão. Não estamos mais falando d
 O Brasil possui a maior concentração de dentistas do mundo (cerca de **441 mil profissionais**), mas até pouco tempo, menos de 1% dominava a prescrição de canabinoides. Em 2025, esse cenário explodiu. Por quê? Porque a ciência finalmente venceu o dogma.
 
 ### Por que a Cannabis na Cadeira do Dentista?
+
 1.  **Bruxismo e DTM:** O CBD (Canabidiol) atua diretamente no relaxamento da musculatura mastigatória, reduzindo o ciclo de dor-tensão sem os efeitos colaterais dos relaxantes musculares de ação central.
 2.  **Ansiedade Odontológica (Odontofobia):** O uso pré-operatório de óleos ricos em CBD tem reduzido drasticamente a necessidade de sedação consciente em pacientes fóbicos.
 3.  **Reparação Óssea:** Pesquisas de 2024/2025 confirmam que o sistema endocanabinoide desempenha um papel crucial na diferenciação de células-tronco e na integração de implantes.
 
 ### Dados que Abrem a Boca (Fonte: Kaya Mind & Sechat):
-*   **Mercado em Chamas:** O setor de cannabis medicinal no Brasil atingiu **R$ 971 milhões em 2025**, com um exército de **873 mil pacientes** ativos.
-*   **Importação Recorde:** Foram quase **200 mil autorizações** da Anvisa (RDC 660) em 2024/2025, e os dentistas já representam uma fatia crescente dessa demanda.
-*   **Teleodontologia:** Com a **Resolução CFO nº 278/2025**, o acompanhamento terapêutico canabinoide tornou-se digital, seguro e eficiente.
+
+- **Mercado em Chamas:** O setor de cannabis medicinal no Brasil atingiu **R$ 971 milhões em 2025**, com um exército de **873 mil pacientes** ativos.
+- **Importação Recorde:** Foram quase **200 mil autorizações** da Anvisa (RDC 660) em 2024/2025, e os dentistas já representam uma fatia crescente dessa demanda.
+- **Teleodontologia:** Com a **Resolução CFO nº 278/2025**, o acompanhamento terapêutico canabinoide tornou-se digital, seguro e eficiente.
 
 ---
 
@@ -41,7 +43,7 @@ Para navegar nesta revolução, você precisa de parceiros que não temem o futu
 
 Vamos ser audaciosos: o futuro da dor pós-operatória não é o opioide. Em um país que enfrenta crises de abuso de medicamentos sintéticos, a Cannabis surge como a alternativa inteligente.
 
-O dentista moderno de 2025 prescreve **Full Spectrum**. Ele entende que os terpenos (como o *Beta-Cariofileno*) potencializam a analgesia de forma sinérgica com o CBD e o CBN, permitindo uma recuperação mais rápida e menos inflamatória.
+O dentista moderno de 2025 prescreve **Full Spectrum**. Ele entende que os terpenos (como o _Beta-Cariofileno_) potencializam a analgesia de forma sinérgica com o CBD e o CBN, permitindo uma recuperação mais rápida e menos inflamatória.
 
 ### O Marco Legal: Resolvido? ⚖️
 
@@ -54,7 +56,9 @@ A Odontologia Canábica não é mais uma "tendência"; é um padrão de cuidado.
 **Pergunta Interativa:** Você já perguntou ao seu dentista sobre o uso de CBD para bruxismo? A resposta dele pode revelar se ele está no futuro ou se ficou preso em 1990. Deixe sua experiência nos comentários! 👇
 
 ---
-*Fontes de Conhecimento e Links Úteis:*
+
+_Fontes de Conhecimento e Links Úteis:_
+
 - [CFO: Resolução 277/2025 - Ambientes de Trabalho na Odontologia](https://website.cfo.org.br)
 - [CFO: Resolução 278/2025 - Regulamentação da Teleodontologia](https://website.cfo.org.br)
 - [Kaya Mind: Anuário 2025 - O Mercado de Cannabis no Brasil](https://kayamind.com/mercado-cannabis-brasil-2025)

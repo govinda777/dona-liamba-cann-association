@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export function AnimatedSection({
   children,
-  className = ''
+  className = "",
 }: {
   children: React.ReactNode;
   className?: string;
@@ -19,7 +19,7 @@ export function AnimatedSection({
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -32,7 +32,7 @@ export function AnimatedSection({
   return (
     <div
       ref={ref}
-      className={`${className} ${isVisible ? 'fade-in-up' : 'opacity-0'}`}
+      className={`${className} ${isVisible ? "fade-in-up" : "opacity-0"}`}
     >
       {children}
     </div>

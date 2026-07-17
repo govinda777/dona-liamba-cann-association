@@ -10,7 +10,8 @@ const config: HardhatUserConfig = {
       chainId: 31337,
     },
     amoy: {
-      url: process.env.ALCHEMY_AMOY_URL || "https://rpc-amoy.polygon.technology",
+      url:
+        process.env.ALCHEMY_AMOY_URL || "https://rpc-amoy.polygon.technology",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },

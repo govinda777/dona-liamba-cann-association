@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { X, Gift, Check } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
+import { useEffect, useState } from "react";
+import { X, Gift, Check } from "lucide-react";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 export function ExitIntentModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +17,8 @@ export function ExitIntentModal() {
       }
     };
 
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener("mouseleave", handleMouseLeave);
+    return () => document.removeEventListener("mouseleave", handleMouseLeave);
   }, [hasShown]);
 
   if (!isOpen) return null;
@@ -42,16 +42,19 @@ export function ExitIntentModal() {
             Espere! Receba Seu Guia Gratuito
           </h3>
           <p className="text-slate-600 mb-6">
-            Antes de ir, receba nosso <strong>Guia Completo da Cannabis Medicinal</strong> com tudo o que você precisa saber para iniciar seu tratamento com segurança e legalidade.
+            Antes de ir, receba nosso{" "}
+            <strong>Guia Completo da Cannabis Medicinal</strong> com tudo o que
+            você precisa saber para iniciar seu tratamento com segurança e
+            legalidade.
           </p>
 
           <div className="bg-primary-50 rounded-lg p-4 mb-6 text-left space-y-2">
             {[
-              'Checklist completo de documentos',
-              'Lista de médicos por estado',
-              'Tabela de custos médios',
-              'Seus direitos como paciente',
-              'Perguntas para fazer ao médico'
+              "Checklist completo de documentos",
+              "Lista de médicos por estado",
+              "Tabela de custos médios",
+              "Seus direitos como paciente",
+              "Perguntas para fazer ao médico",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-sm">
                 <Check className="w-4 h-4 text-primary-600 flex-shrink-0" />
@@ -60,11 +63,14 @@ export function ExitIntentModal() {
             ))}
           </div>
 
-          <form className="space-y-3" onSubmit={(e) => {
-            e.preventDefault();
-            // In a real app, handle submission
-            setIsOpen(false);
-          }}>
+          <form
+            className="space-y-3"
+            onSubmit={(e) => {
+              e.preventDefault();
+              // In a real app, handle submission
+              setIsOpen(false);
+            }}
+          >
             <input
               type="email"
               placeholder="Seu melhor e-mail"

@@ -14,7 +14,7 @@ Bem-vindo à era dos **Canabinoides Menores**. Eles podem estar em menor quantid
 
 ## O Despertar das Siglas de Poder: CBG, CBN e o "Flow" do THCV 🚀
 
-Enquanto o mundo estava distraído com a guerra do THC, a ciência brasileira e internacional estava hackeando o código fonte da *Cannabis sativa*.
+Enquanto o mundo estava distraído com a guerra do THC, a ciência brasileira e internacional estava hackeando o código fonte da _Cannabis sativa_.
 
 1.  **CBG (Canabigerol):** A "Célula-Tronco" da planta. Sem ele, nada existe. Na medicina, é o novo queridinho da neuroproteção. Pesquisas recentes apontam sua eficácia em condições neurodegenerativas e como um anti-inflamatório potente que não "pesa" no sistema.
 2.  **CBN (Canabinol):** O mestre do sono. Esqueça os sedativos sintéticos que te deixam grogue. O CBN é o resultado da maturação do THC e atua como um bálsamo para a insônia crônica, sem o efeito psicoativo indesejado.
@@ -22,9 +22,9 @@ Enquanto o mundo estava distraído com a guerra do THC, a ciência brasileira e 
 
 ### Os Números Não Mentem (Eles Gritam) 📊
 
-*   **Explosão de Pacientes:** Saímos de 672 mil pacientes em 2024 para uma projeção de **873 mil em 2025** (Fonte: [Kaya Mind](https://kayamind.com)).
-*   **Importação Recorde:** Só no primeiro trimestre de 2025, a busca por fórmulas *Full Spectrum* ricas em canabinoides menores cresceu **34%** em comparação ao ano anterior.
-*   **O Marco Legal:** A decisão do STJ no IAC 16 (limite de 0,3% de THC) abriu as comportas para o cultivo de variedades ricas exatamente nesses compostos "menores".
+- **Explosão de Pacientes:** Saímos de 672 mil pacientes em 2024 para uma projeção de **873 mil em 2025** (Fonte: [Kaya Mind](https://kayamind.com)).
+- **Importação Recorde:** Só no primeiro trimestre de 2025, a busca por fórmulas _Full Spectrum_ ricas em canabinoides menores cresceu **34%** em comparação ao ano anterior.
+- **O Marco Legal:** A decisão do STJ no IAC 16 (limite de 0,3% de THC) abriu as comportas para o cultivo de variedades ricas exatamente nesses compostos "menores".
 
 ---
 
@@ -41,7 +41,7 @@ Não adianta ter a ciência se você não tem a segurança jurídica ou o acesso
 
 Aqui está a audácia: O Brasil tem o melhor solo do mundo para o cultivo de Cânhamo. Com a regulamentação do cultivo nacional batendo à porta (prazo final de 31 de março de 2026), deixaremos de ser importadores de "restos" para sermos exportadores de **Genética Premium**.
 
-Imagine medicamentos personalizados onde o médico ajusta não só a dose, mas o *ratio* exato de CBG para a sua inflamação específica. Isso não é ficção científica; é o que está acontecendo nos laboratórios da Embrapa e em associações de ponta agora mesmo.
+Imagine medicamentos personalizados onde o médico ajusta não só a dose, mas o _ratio_ exato de CBG para a sua inflamação específica. Isso não é ficção científica; é o que está acontecendo nos laboratórios da Embrapa e em associações de ponta agora mesmo.
 
 ### O "Efeito Entourage" 2.0 🎭
 
@@ -52,6 +52,7 @@ A grande sacada de 2025 é entender que isolar compostos é como tentar ouvir um
 O mercado de Cannabis no Brasil já vale **R$ 853 milhões** e não para de crescer. A pergunta para você, paciente, médico ou investidor, é: você está preparado para a complexidade?
 
 **Desafio Interativo:** Qual desses canabinoides você mais precisa hoje?
+
 - 😴 **CBN** para o sono dos deuses.
 - 🧠 **CBG** para uma mente blindada.
 - ⚡ **THCV** para a performance máxima.
@@ -59,7 +60,9 @@ O mercado de Cannabis no Brasil já vale **R$ 853 milhões** e não para de cres
 Comente abaixo e vamos discutir o futuro da medicina verde! 👇
 
 ---
-*Fontes e Conhecimento:*
+
+_Fontes e Conhecimento:_
+
 - [PubMed: Minor Cannabinoids and Neuronal Firing (2025)](https://pubmed.ncbi.nlm.nih.gov/40204063/)
 - [Kaya Mind: Relatório de Tendências 2025](https://kayamind.com/anuario-2025)
 - [STJ: Atualização sobre o cultivo de Cânhamo no Brasil](https://www.stj.jus.br)

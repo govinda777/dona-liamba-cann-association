@@ -17,9 +17,10 @@ Bem-vindos ao ano em que a "normatividade" se curva à complexidade. Não estamo
 Os dados de 2025 não são apenas estatísticas; eles são um grito de liberdade. De acordo com o mais recente anuário da **Kaya Mind**, o mercado de cannabis medicinal no Brasil atingiu a marca astronômica de **R$ 971 milhões**.
 
 ### O Raio-X do Acesso:
-*   **O Exército Verde:** Já somos **873 mil pacientes** em tratamento ativo.
-*   **As Vias da Cura:** 40,55% utilizam a via da importação, 33,6% compram em farmácias e as associações — o coração pulsante do movimento — atendem 25,85% desse público.
-*   **A Ciência no Front:** Estudos publicados em 2025 (como os revisados pelo **TJRJ**) mostram que canabinoides podem reduzir drasticamente a irritabilidade no TEA e melhorar o foco e o sono no TDAH, sem o "efeito zumbi" de estimulantes tradicionais.
+
+- **O Exército Verde:** Já somos **873 mil pacientes** em tratamento ativo.
+- **As Vias da Cura:** 40,55% utilizam a via da importação, 33,6% compram em farmácias e as associações — o coração pulsante do movimento — atendem 25,85% desse público.
+- **A Ciência no Front:** Estudos publicados em 2025 (como os revisados pelo **TJRJ**) mostram que canabinoides podem reduzir drasticamente a irritabilidade no TEA e melhorar o foco e o sono no TDAH, sem o "efeito zumbi" de estimulantes tradicionais.
 
 ---
 
@@ -39,6 +40,7 @@ Para a mente com TDAH, o mundo é um rádio sintonizado em dez estações ao mes
 Enquanto o metilfenidato foca quase exclusivamente na dopamina, os fitocanabinoides (como o **THCV** e o **CBG**) trabalham na homeostase global. O resultado? Um foco que nasce da calma, não da agitação química.
 
 ### O que os estudos de 2025 (PubMed/SciELO) nos contam:
+
 1.  **Qualidade do Sono:** O CBN está se provando o aliado definitivo para a "mente que não desliga" à noite.
 2.  **Redução de Ansiedade Social:** Vital para pacientes no espectro que enfrentam a sobrecarga sensorial do cotidiano urbano.
 3.  **Segurança a Longo Prazo:** A transição do paradigma de "droga" para "ferramenta biológica".
@@ -48,6 +50,7 @@ Enquanto o metilfenidato foca quase exclusivamente na dopamina, os fitocanabinoi
 A medicina canábica no Brasil deixou de ser uma promessa para se tornar um pilar da saúde pública. Se você é pai, mãe, profissional da saúde ou um adulto neurodivergente em busca de performance e paz, o momento é agora.
 
 **Desafio Interativo:** Se você pudesse "ajustar" uma única função do seu cérebro hoje com a ajuda da inteligência botânica, qual seria?
+
 - 🎯 **Foco Inabalável**
 - 🧘 **Paz Sensorial**
 - 😴 **Sono Reparador**
@@ -55,7 +58,9 @@ A medicina canábica no Brasil deixou de ser uma promessa para se tornar um pila
 Deixe seu comentário audacioso abaixo e vamos construir essa nova era juntos! 👇
 
 ---
-*Fontes de Poder e Conhecimento:*
+
+_Fontes de Poder e Conhecimento:_
+
 - [CNN Brasil: Mercado de Cannabis Medicinal atinge R$ 971 milhões em 2025](https://www.cnnbrasil.com.br/agro/mercado-de-cannabis-medicinal-atinge-r-971-milhoes-no-brasil-em-2025/)
 - [Ama-me: Panorama Nacional do Setor Associativo (Julho 2025)](https://amame.org.br/panorama-nacional-do-setor-associativo-da-cannabis-medicinal-julho-2025/)
 - [TJRJ: Evidências científicas para Cannabis e TDAH (Set/2025)](https://www.tjrj.jus.br/documents/d/guest/rs_08_cannabis_tdah_v12_090925)

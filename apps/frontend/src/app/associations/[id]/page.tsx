@@ -1,15 +1,29 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { ArrowLeft, Star, MapPin, ShieldCheck, ShoppingBag, Info, HeartPulse } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import Link from 'next/link';
+import * as React from "react";
+import {
+  ArrowLeft,
+  Star,
+  MapPin,
+  ShieldCheck,
+  ShoppingBag,
+  Info,
+  HeartPulse,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import Link from "next/link";
 
 const associations = [
   {
-    id: 'ama-me',
+    id: "ama-me",
     name: "AMA-ME Cannabis",
     city: "São Paulo",
     state: "SP",
@@ -17,15 +31,16 @@ const associations = [
     price: "150",
     rating: 4.9,
     members: 2500,
-    description: "A AMA-ME é uma das associações mais tradicionais do Brasil, focada no acolhimento e educação sobre a cannabis medicinal.",
+    description:
+      "A AMA-ME é uma das associações mais tradicionais do Brasil, focada no acolhimento e educação sobre a cannabis medicinal.",
     products: [
       { name: "Óleo CBD Full Spectrum 5%", price: "280" },
       { name: "Óleo CBD Isolate 10%", price: "420" },
-      { name: "Creme Tópico Relaxante", price: "145" }
-    ]
+      { name: "Creme Tópico Relaxante", price: "145" },
+    ],
   },
   {
-    id: 'cultive-saude',
+    id: "cultive-saude",
     name: "Cultive Saúde",
     city: "Rio de Janeiro",
     state: "RJ",
@@ -33,15 +48,16 @@ const associations = [
     price: "120",
     rating: 4.8,
     members: 1800,
-    description: "Especializada em casos neurológicos, a Cultive Saúde oferece suporte especializado para famílias e pacientes de alta complexidade.",
+    description:
+      "Especializada em casos neurológicos, a Cultive Saúde oferece suporte especializado para famílias e pacientes de alta complexidade.",
     products: [
       { name: "Óleo CBD Neurológico", price: "350" },
       { name: "Cápsulas CBD 25mg", price: "220" },
-      { name: "Extrato Rico em THC (Baixa Dosagem)", price: "180" }
-    ]
+      { name: "Extrato Rico em THC (Baixa Dosagem)", price: "180" },
+    ],
   },
   {
-    id: 'cannativa',
+    id: "cannativa",
     name: "Cannativa Brasil",
     city: "Belo Horizonte",
     state: "MG",
@@ -49,28 +65,38 @@ const associations = [
     price: "180",
     rating: 4.7,
     members: 1200,
-    description: "Focada em doenças inflamatórias e oncologia, a Cannativa busca as melhores cepas para alinhamento terapêutico.",
+    description:
+      "Focada em doenças inflamatórias e oncologia, a Cannativa busca as melhores cepas para alinhamento terapêutico.",
     products: [
       { name: "Óleo Anti-inflamatório", price: "310" },
       { name: "Gummies CBD 10mg", price: "160" },
-      { name: "Bálsamo Muscular CBD", price: "125" }
-    ]
-  }
+      { name: "Bálsamo Muscular CBD", price: "125" },
+    ],
+  },
 ];
 
-export default function AssociationCatalog({ params }: { params: Promise<{ id: string }> }) {
+export default function AssociationCatalog({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = React.use(params);
-  const assoc = associations.find(a => a.id === id) || associations[0];
+  const assoc = associations.find((a) => a.id === id) || associations[0];
 
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/#associations" className="flex items-center gap-2 text-slate-600 hover:text-primary-700 transition-colors">
+          <Link
+            href="/#associations"
+            className="flex items-center gap-2 text-slate-600 hover:text-primary-700 transition-colors"
+          >
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Voltar</span>
           </Link>
-          <h1 className="text-xl font-bold font-serif text-primary-900">{assoc.name}</h1>
+          <h1 className="text-xl font-bold font-serif text-primary-900">
+            {assoc.name}
+          </h1>
           <div className="w-10" /> {/* Spacer */}
         </div>
       </header>
@@ -85,23 +111,34 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
               </div>
               <CardContent className="p-8">
                 <div className="flex justify-between items-center mb-4">
-                  <Badge className="bg-primary-600 text-white"><ShieldCheck className="w-3 h-3 mr-1" /> Verificada</Badge>
-                  <div className="flex items-center gap-1"><Star className="w-4 h-4 fill-yellow-400 text-yellow-400" /> <b>{assoc.rating}</b></div>
+                  <Badge className="bg-primary-600 text-white">
+                    <ShieldCheck className="w-3 h-3 mr-1" /> Verificada
+                  </Badge>
+                  <div className="flex items-center gap-1">
+                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />{" "}
+                    <b>{assoc.rating}</b>
+                  </div>
                 </div>
                 <CardTitle className="text-2xl mb-2">{assoc.name}</CardTitle>
                 <CardDescription className="flex items-center gap-1 mb-6">
                   <MapPin className="w-4 h-4" /> {assoc.city}, {assoc.state}
                 </CardDescription>
-                <p className="text-slate-600 text-sm leading-loose mb-6">{assoc.description}</p>
+                <p className="text-slate-600 text-sm leading-loose mb-6">
+                  {assoc.description}
+                </p>
 
                 <div className="space-y-4 pt-6 border-t">
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-500">Mensalidade:</span>
-                    <span className="font-bold text-slate-900">R$ {assoc.price}</span>
+                    <span className="font-bold text-slate-900">
+                      R$ {assoc.price}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-500">Associados:</span>
-                    <span className="font-bold text-slate-900">{assoc.members.toLocaleString()}</span>
+                    <span className="font-bold text-slate-900">
+                      {assoc.members.toLocaleString()}
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -119,7 +156,9 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
                   <li>Realize o pagamento da taxa anuidade/mensal.</li>
                   <li>Aguarde a validação dos documentos.</li>
                 </ol>
-                <Button className="w-full bg-primary-700 hover:bg-primary-800 mt-2">Iniciar Associação</Button>
+                <Button className="w-full bg-primary-700 hover:bg-primary-800 mt-2">
+                  Iniciar Associação
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -127,13 +166,20 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
           {/* Catalog Content */}
           <div className="lg:col-span-2 space-y-8">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-slate-900">Catálogo de Produtos</h2>
-              <Badge variant="outline">{assoc.products.length} itens disponíveis</Badge>
+              <h2 className="text-2xl font-bold text-slate-900">
+                Catálogo de Produtos
+              </h2>
+              <Badge variant="outline">
+                {assoc.products.length} itens disponíveis
+              </Badge>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               {assoc.products.map((product, i) => (
-                <Card key={i} className="group hover:shadow-md transition-shadow">
+                <Card
+                  key={i}
+                  className="group hover:shadow-md transition-shadow"
+                >
                   <CardHeader className="pb-2">
                     <div className="w-full aspect-square bg-slate-100 rounded-lg mb-4 flex items-center justify-center">
                       <ShoppingBag className="w-12 h-12 text-slate-300" />
@@ -144,10 +190,18 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
                   <CardContent className="pt-0">
                     <div className="flex justify-between items-end mt-4">
                       <div>
-                        <p className="text-xs text-slate-500 uppercase font-bold tracking-wider">Preço Sugerido</p>
-                        <span className="text-2xl font-extrabold text-slate-900">R$ {product.price}</span>
+                        <p className="text-xs text-slate-500 uppercase font-bold tracking-wider">
+                          Preço Sugerido
+                        </p>
+                        <span className="text-2xl font-extrabold text-slate-900">
+                          R$ {product.price}
+                        </span>
                       </div>
-                      <Button size="sm" variant="outline" className="border-primary-200 text-primary-700 hover:bg-primary-50">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-primary-200 text-primary-700 hover:bg-primary-50"
+                      >
                         Ver Detalhes
                       </Button>
                     </div>
@@ -158,15 +212,28 @@ export default function AssociationCatalog({ params }: { params: Promise<{ id: s
 
             {/* More Info */}
             <div className="bg-white rounded-xl p-8 border border-slate-200">
-              <h3 className="text-lg font-bold mb-4 flex items-center gap-2"><Info className="w-5 h-5 text-primary-600" /> Informações Adicionais</h3>
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <Info className="w-5 h-5 text-primary-600" /> Informações
+                Adicionais
+              </h3>
               <div className="grid md:grid-cols-2 gap-8 text-sm text-slate-600">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-2">Prazos de Entrega</h4>
-                  <p>Enviamos para todo o Brasil. O prazo médio de entrega é de 5 a 12 dias úteis após confirmação do pedido.</p>
+                  <h4 className="font-bold text-slate-900 mb-2">
+                    Prazos de Entrega
+                  </h4>
+                  <p>
+                    Enviamos para todo o Brasil. O prazo médio de entrega é de 5
+                    a 12 dias úteis após confirmação do pedido.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-2">Suporte ao Paciente</h4>
-                  <p>Oferecemos acompanhamento farmacêutico gratuito para todos os associados ativos.</p>
+                  <h4 className="font-bold text-slate-900 mb-2">
+                    Suporte ao Paciente
+                  </h4>
+                  <p>
+                    Oferecemos acompanhamento farmacêutico gratuito para todos
+                    os associados ativos.
+                  </p>
                 </div>
               </div>
             </div>

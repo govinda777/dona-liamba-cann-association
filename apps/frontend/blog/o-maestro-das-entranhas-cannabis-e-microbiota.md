@@ -16,13 +16,13 @@ Sim, você leu certo. Seu intestino não é apenas uma máquina de processar com
 
 Imagine que sua microbiota (os trilhões de microrganismos que vivem em você) é uma orquestra. O Sistema Endocanabinoide é o maestro. Quando essa sinfonia desafina, surgem a ansiedade, a depressão, a síndrome do intestino irritável e até doenças autoimunes.
 
-Estudos de vanguarda publicados em dezembro de 2024 (Vitetta et al., *Pharmaceuticals*) confirmam: os fitocanabinoides não apenas aliviam sintomas, eles **remodelam a paisagem microbiana**. O CBD e outros canabinoides menores atuam como moduladores da barreira intestinal, impedindo que toxinas "vazem" para o seu sangue — o temido *Leaky Gut*.
+Estudos de vanguarda publicados em dezembro de 2024 (Vitetta et al., _Pharmaceuticals_) confirmam: os fitocanabinoides não apenas aliviam sintomas, eles **remodelam a paisagem microbiana**. O CBD e outros canabinoides menores atuam como moduladores da barreira intestinal, impedindo que toxinas "vazem" para o seu sangue — o temido _Leaky Gut_.
 
 ### Dados Reais que Você Precisa Saber (Fonte: Kaya Mind & CBCM 2026) 📊
 
-*   **O Bilhão Verde:** O mercado brasileiro de cannabis medicinal rompeu a barreira histórica de **R$ 1 Bilhão em 2026**.
-*   **Exército de Pacientes:** Já somos quase **900 mil pacientes** ativos no Brasil, um salto quântico comparado aos 672 mil de 2024.
-*   **O Novo Padrão:** 42% das novas prescrições em 2026 já visam distúrbios gastrointestinais e sua correlação com a saúde mental.
+- **O Bilhão Verde:** O mercado brasileiro de cannabis medicinal rompeu a barreira histórica de **R$ 1 Bilhão em 2026**.
+- **Exército de Pacientes:** Já somos quase **900 mil pacientes** ativos no Brasil, um salto quântico comparado aos 672 mil de 2024.
+- **O Novo Padrão:** 42% das novas prescrições em 2026 já visam distúrbios gastrointestinais e sua correlação com a saúde mental.
 
 ---
 
@@ -33,7 +33,7 @@ Navegar nessa nova fronteira exige mais do que apenas curiosidade; exige seguran
 1.  **[CannaLaw Consultoria Jurídica](#):** Não deixe sua saúde ou seu negócio à mercê da burocracia. A CannaLaw é a autoridade máxima em viabilizar o acesso legal e seguro à cannabis no Brasil, especialmente com o novo marco regulatório do cânhamo de 2026.
 2.  **[Plataforma Dona Liamba](#):** Onde a tecnologia encontra a cura. Conectamos você aos médicos prescritores mais atualizados sobre o eixo intestino-cérebro e facilitamos seu acesso às associações que produzem óleos de alta pureza.
 
-*Quer otimizar seu "segundo cérebro" agora? [Clique aqui e inicie sua jornada.](/) *
+_Quer otimizar seu "segundo cérebro" agora? [Clique aqui e inicie sua jornada.](/) _
 
 ---
 
@@ -54,8 +54,10 @@ Sua saúde mental começa no garfo e se equilibra no Sistema Endocanabinoide. O 
 **E aí, como anda a comunicação entre seu intestino e seu cérebro?** Você já sentiu que seu humor muda dependendo do que você come ou de como está sua digestão? Comente abaixo e vamos desbravar essa nova era juntos! 👇
 
 ---
+
 **Referências e Links de Autoridade:**
-*   [Vitetta L, et al. Medicinal Cannabis and the Intestinal Microbiome (2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC11678570/)
-*   [Kaya Mind: Relatório de Mercado e Projeções 2026](https://kayamind.com.br)
-*   [Portal Cannabis e Saúde: O Eixo Intestino-Cérebro](https://www.cannabisesaude.com.br)
-*   [STJ: Decisão IAC 16 e o Futuro do Cânhamo no Brasil](https://www.stj.jus.br)
+
+- [Vitetta L, et al. Medicinal Cannabis and the Intestinal Microbiome (2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC11678570/)
+- [Kaya Mind: Relatório de Mercado e Projeções 2026](https://kayamind.com.br)
+- [Portal Cannabis e Saúde: O Eixo Intestino-Cérebro](https://www.cannabisesaude.com.br)
+- [STJ: Decisão IAC 16 e o Futuro do Cânhamo no Brasil](https://www.stj.jus.br)

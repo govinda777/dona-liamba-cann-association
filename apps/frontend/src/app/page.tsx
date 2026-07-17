@@ -22,19 +22,26 @@ import {
   Shield,
   HelpCircle,
   Car,
-  CreditCard
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { AnimatedSection } from '@/components/AnimatedSection';
-import { ExitIntentModal } from '@/components/ExitIntentModal';
-import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
-import { LeadCaptureForm } from '@/components/LeadCaptureForm';
-import Image from 'next/image';
+  CreditCard,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { ExitIntentModal } from "@/components/ExitIntentModal";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import Image from "next/image";
 
-import { Header } from '@/components/Header';
-import Link from 'next/link';
+import { Header } from "@/components/Header";
+import Link from "next/link";
 
 export const revalidate = 3600;
 
@@ -46,7 +53,6 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col">
-
         {/* 1. Hero Section */}
         <section className="relative pt-6 pb-20 lg:pt-10 lg:pb-32 overflow-hidden">
           {/* Background: fallback gradient + image */}
@@ -63,23 +69,31 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-
               {/* Text Content */}
               <div className="flex-1 text-center lg:text-left">
-                <Badge variant="secondary" className="mb-8 inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primary-50 to-emerald-50 text-primary-800 border-primary-300 shadow-md rounded-full">
+                <Badge
+                  variant="secondary"
+                  className="mb-8 inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primary-50 to-emerald-50 text-primary-800 border-primary-300 shadow-md rounded-full"
+                >
                   <ShieldCheck className="w-4 h-4" />
-                  <span className="font-medium tracking-wide text-xs uppercase">Plataforma Oficial Cannabis Medicinal Brasil</span>
+                  <span className="font-medium tracking-wide text-xs uppercase">
+                    Plataforma Oficial Cannabis Medicinal Brasil
+                  </span>
                 </Badge>
 
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-foreground mb-8 leading-[1.1] tracking-tight">
-                  Conectando <span className="text-primary-600 relative whitespace-nowrap">
+                  Conectando{" "}
+                  <span className="text-primary-600 relative whitespace-nowrap">
                     <span className="relative z-10">saúde</span>
                     <span className="absolute bottom-2 left-0 w-full h-3 bg-mint-200/60 -z-10 skew-x-12"></span>
-                  </span> e bem-estar em um só lugar
+                  </span>{" "}
+                  e bem-estar em um só lugar
                 </h1>
 
                 <p className="text-lg lg:text-xl text-muted-foreground mb-12 max-w-prose mx-auto lg:mx-0 leading-loose font-light">
-                  A plataforma mais completa do Brasil unindo pacientes, médicos prescritores e associações de cannabis medicinal com segurança e acolhimento.
+                  A plataforma mais completa do Brasil unindo pacientes, médicos
+                  prescritores e associações de cannabis medicinal com segurança
+                  e acolhimento.
                 </p>
 
                 <div className="flex flex-col items-center lg:items-start gap-6">
@@ -88,13 +102,17 @@ export default function Home() {
                     href="#lead-form"
                     className="group relative inline-flex items-center justify-center w-full sm:w-auto px-10 py-5 text-xl font-extrabold rounded-full text-white transition-all duration-300 transform hover:scale-105 overflow-hidden"
                     style={{
-                      background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
-                      boxShadow: '0 20px 60px -10px rgba(21, 128, 61, 0.55), 0 8px 24px -4px rgba(21, 128, 61, 0.3)',
+                      background:
+                        "linear-gradient(135deg, #15803d 0%, #166534 100%)",
+                      boxShadow:
+                        "0 20px 60px -10px rgba(21, 128, 61, 0.55), 0 8px 24px -4px rgba(21, 128, 61, 0.3)",
                     }}
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     <User className="w-5 h-5 mr-3 relative z-10" />
-                    <span className="relative z-10">Começar Tratamento Agora</span>
+                    <span className="relative z-10">
+                      Começar Tratamento Agora
+                    </span>
                     <ArrowRight className="w-5 h-5 ml-3 relative z-10 group-hover:translate-x-1 transition-transform" />
                   </a>
 
@@ -103,9 +121,9 @@ export default function Home() {
                     <div className="flex -space-x-2">
                       {/* IMAGEM IA: Avatares de pacientes - Caminho: /avatars/ */}
                       {[
-                        { src: '/avatars/maria.jpg', alt: 'Maria' },
-                        { src: '/avatars/joao.jpg', alt: 'João' },
-                        { src: '/avatars/ana.jpg', alt: 'Ana' },
+                        { src: "/avatars/maria.jpg", alt: "Maria" },
+                        { src: "/avatars/joao.jpg", alt: "João" },
+                        { src: "/avatars/ana.jpg", alt: "Ana" },
                       ].map((avatar, i) => (
                         <Image
                           key={i}
@@ -116,21 +134,33 @@ export default function Home() {
                           className="w-8 h-8 rounded-full border-2 border-card object-cover"
                         />
                       ))}
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-card flex items-center justify-center text-[10px] font-bold text-white">+</div>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-200 to-primary-400 border-2 border-card flex items-center justify-center text-[10px] font-bold text-white">
+                        +
+                      </div>
                     </div>
-                    <span className="font-medium">+127 pacientes iniciaram esta semana</span>
+                    <span className="font-medium">
+                      +127 pacientes iniciaram esta semana
+                    </span>
                   </div>
 
                   {/* CTAs Secundários - Menor destaque */}
                   <div className="flex gap-3 mt-4">
                     <Link href="/onboarding/doctor">
-                      <Button size="sm" variant="ghost" className="text-medical hover:bg-medical/10 border border-medical/20 min-h-12 w-full">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="text-medical hover:bg-medical/10 border border-medical/20 min-h-12 w-full"
+                      >
                         <Stethoscope className="w-4 h-4 mr-2" />
                         Área Médica
                       </Button>
                     </Link>
                     <Link href="/onboarding/association">
-                      <Button size="sm" variant="ghost" className="text-yellow-700 hover:bg-gold/10 border border-gold/20 min-h-12 w-full">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="text-yellow-700 hover:bg-gold/10 border border-gold/20 min-h-12 w-full"
+                      >
                         <Building2 className="w-4 h-4 mr-2" />
                         Área Associação
                       </Button>
@@ -193,15 +223,31 @@ export default function Home() {
               {/* Métricas de Impacto */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 {[
-                  { value: "12.500+", label: "Pacientes Atendidos", icon: User },
-                  { value: "340+", label: "Médicos Credenciados", icon: Stethoscope },
-                  { value: "85", label: "Associações Verificadas", icon: Building2 },
-                  { value: "4.8/5", label: "Avaliação Média", icon: Star }
+                  {
+                    value: "12.500+",
+                    label: "Pacientes Atendidos",
+                    icon: User,
+                  },
+                  {
+                    value: "340+",
+                    label: "Médicos Credenciados",
+                    icon: Stethoscope,
+                  },
+                  {
+                    value: "85",
+                    label: "Associações Verificadas",
+                    icon: Building2,
+                  },
+                  { value: "4.8/5", label: "Avaliação Média", icon: Star },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
                     <stat.icon className="w-6 h-6 mx-auto mb-2 text-primary-600" />
-                    <div className="text-3xl font-extrabold text-primary-900 tracking-tight">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                    <div className="text-3xl font-extrabold text-primary-900 tracking-tight">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground mt-1">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -217,28 +263,34 @@ export default function Home() {
                       name: "Maria Silva",
                       condition: "Ansiedade Crônica",
                       location: "São Paulo, SP",
-                      quote: "Em 2 dias encontrei médico e associação. Minha qualidade de vida mudou completamente.",
+                      quote:
+                        "Em 2 dias encontrei médico e associação. Minha qualidade de vida mudou completamente.",
                       avatar: "MS",
-                      photo: "/avatars/maria.jpg"
+                      photo: "/avatars/maria.jpg",
                     },
                     {
                       name: "João Santos",
                       condition: "Dor Crônica",
                       location: "Rio de Janeiro, RJ",
-                      quote: "Finalmente um lugar que organiza tudo. Não precisei mais buscar informação sozinho.",
+                      quote:
+                        "Finalmente um lugar que organiza tudo. Não precisei mais buscar informação sozinho.",
                       avatar: "JS",
-                      photo: "/avatars/joao.jpg"
+                      photo: "/avatars/joao.jpg",
                     },
                     {
                       name: "Ana Costa",
                       condition: "Insônia Severa",
                       location: "Belo Horizonte, MG",
-                      quote: "Transparência total nos custos e produtos. Me sinto segura e acolhida.",
+                      quote:
+                        "Transparência total nos custos e produtos. Me sinto segura e acolhida.",
                       avatar: "AC",
-                      photo: "/avatars/ana.jpg"
-                    }
+                      photo: "/avatars/ana.jpg",
+                    },
                   ].map((testimonial, i) => (
-                    <Card key={i} className="border-primary-100 hover:shadow-lg transition-shadow card-hover">
+                    <Card
+                      key={i}
+                      className="border-primary-100 hover:shadow-lg transition-shadow card-hover"
+                    >
                       <CardContent className="pt-6 p-8">
                         <div className="flex items-center gap-3 mb-4">
                           {/* IMAGEM IA: Foto do depoimento - Caminho: /avatars/ */}
@@ -250,15 +302,24 @@ export default function Home() {
                             className="w-12 h-12 rounded-full object-cover border-2 border-primary-100"
                           />
                           <div>
-                            <div className="font-semibold text-foreground">{testimonial.name}</div>
-                            <div className="text-xs text-muted-foreground">{testimonial.location}</div>
+                            <div className="font-semibold text-foreground">
+                              {testimonial.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {testimonial.location}
+                            </div>
                           </div>
                         </div>
-                        <Badge variant="outline" className="mb-3 text-xs">{testimonial.condition}</Badge>
+                        <Badge variant="outline" className="mb-3 text-xs">
+                          {testimonial.condition}
+                        </Badge>
                         <p className="text-sm text-muted-foreground italic leading-relaxed max-w-prose">{`"${testimonial.quote}"`}</p>
                         <div className="flex gap-1 mt-3">
-                          {[1, 2, 3, 4, 5].map(star => (
-                            <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star
+                              key={star}
+                              className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                            />
                           ))}
                         </div>
                       </CardContent>
@@ -272,15 +333,21 @@ export default function Home() {
                 <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-muted-foreground">Conforme ANVISA</span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      Conforme ANVISA
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Lock className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-muted-foreground">LGPD Certificado</span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      LGPD Certificado
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Building2 className="w-5 h-5 text-primary-600" />
-                    <span className="text-sm font-medium text-muted-foreground">85 Associações Verificadas</span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      85 Associações Verificadas
+                    </span>
                   </div>
                 </div>
               </div>
@@ -292,100 +359,154 @@ export default function Home() {
         <AnimatedSection>
           <section id="como-funciona" className="max-w-7xl mx-auto px-6 py-32">
             <div className="text-center mb-16">
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium mb-4" style={{ background: '#dcfce7', color: '#15803d' }}>Passo a Passo</span>
+              <span
+                className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium mb-4"
+                style={{ background: "#dcfce7", color: "#15803d" }}
+              >
+                Passo a Passo
+              </span>
               <h2 className="text-4xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
-                Seu Tratamento em <span style={{ color: '#15803d' }}>4 Passos Simples</span>
+                Seu Tratamento em{" "}
+                <span style={{ color: "#15803d" }}>4 Passos Simples</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-prose mx-auto leading-loose">
-                Veja como é fácil organizar tudo, da busca pelo médico até o recebimento dos produtos
+                Veja como é fácil organizar tudo, da busca pelo médico até o
+                recebimento dos produtos
               </p>
             </div>
 
             {/* Timeline Vertical com Previews */}
             <div className="relative">
               {/* Linha vertical conectora */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full" style={{ background: 'linear-gradient(to bottom, #86efac, #15803d, #86efac)' }} />
+              <div
+                className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, #86efac, #15803d, #86efac)",
+                }}
+              />
 
               {[
                 {
                   step: "01",
                   title: "Cadastro Rápido (2 minutos)",
-                  description: "Preencha suas necessidades, sintomas que deseja tratar e localização. Nosso sistema já sugere médicos e associações compatíveis.",
+                  description:
+                    "Preencha suas necessidades, sintomas que deseja tratar e localização. Nosso sistema já sugere médicos e associações compatíveis.",
                   icon: User,
                   time: "2 minutos",
                   highlight: "Grátis e sem compromisso",
                   image: "/steps/step-1.jpg",
-                  imageAlt: "Pessoa preenchendo formulário digital"
+                  imageAlt: "Pessoa preenchendo formulário digital",
                 },
                 {
                   step: "02",
                   title: "Encontre Seu Médico Prescritor",
-                  description: "Filtre por especialidade, avaliações, disponibilidade e valor de consulta. Agende online ou presencial com confirmação instantânea.",
+                  description:
+                    "Filtre por especialidade, avaliações, disponibilidade e valor de consulta. Agende online ou presencial com confirmação instantânea.",
                   icon: Search,
                   time: "5 minutos para agendar",
                   highlight: "340+ médicos especializados",
                   image: "/steps/step-2.jpg",
-                  imageAlt: "Médico consultando paciente com tablet"
+                  imageAlt: "Médico consultando paciente com tablet",
                 },
                 {
                   step: "03",
                   title: "Conecte-se à Associação Ideal",
-                  description: "Com sua prescrição em mãos, veja associações que atendem seu perfil, compare planos mensais, catálogo e avaliações de outros pacientes.",
+                  description:
+                    "Com sua prescrição em mãos, veja associações que atendem seu perfil, compare planos mensais, catálogo e avaliações de outros pacientes.",
                   icon: Building2,
                   time: "10 minutos para escolher",
                   highlight: "A partir de R$ 50/mês",
                   image: "/steps/step-3.jpg",
-                  imageAlt: "Produto cannabis medicinal com embalagem profissional"
+                  imageAlt:
+                    "Produto cannabis medicinal com embalagem profissional",
                 },
                 {
                   step: "04",
                   title: "Acompanhe Tudo em Um Só Lugar",
-                  description: "Dashboard personalizado com suas prescrições NFT, histórico de pedidos, lembretes de dosagem e chat direto com sua associação.",
+                  description:
+                    "Dashboard personalizado com suas prescrições NFT, histórico de pedidos, lembretes de dosagem e chat direto com sua associação.",
                   icon: ShoppingBag,
                   time: "Acesso 24/7",
                   highlight: "Seus dados 100% criptografados",
                   image: "/steps/step-4.jpg",
-                  imageAlt: "Dashboard de saúde no aplicativo mobile"
-                }
+                  imageAlt: "Dashboard de saúde no aplicativo mobile",
+                },
               ].map((step, idx) => {
                 const isEven = idx % 2 === 0;
                 return (
-                  <div key={idx} className={`relative flex items-center mb-20 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div
+                    key={idx}
+                    className={`relative flex items-center mb-20 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
                     {/* Número do passo - Centro da timeline */}
                     <div
                       className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl z-10"
                       style={{
-                        background: 'linear-gradient(135deg, #15803d, #166534)',
-                        color: '#ffffff',
-                        boxShadow: '0 4px 14px rgba(21, 128, 61, 0.4), 0 0 0 4px #ffffff',
+                        background: "linear-gradient(135deg, #15803d, #166534)",
+                        color: "#ffffff",
+                        boxShadow:
+                          "0 4px 14px rgba(21, 128, 61, 0.4), 0 0 0 4px #ffffff",
                       }}
                     >
                       {step.step}
                     </div>
 
                     {/* Conteúdo - Desktop: alternado; Mobile: sempre à direita */}
-                    <div className={`w-full md:w-5/12 ml-24 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                      <Card className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-all card-hover" style={{ borderColor: '#bbf7d0' }}>
+                    <div
+                      className={`w-full md:w-5/12 ml-24 md:ml-0 ${isEven ? "md:pr-16 md:text-right" : "md:pl-16"}`}
+                    >
+                      <Card
+                        className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-all card-hover"
+                        style={{ borderColor: "#bbf7d0" }}
+                      >
                         <CardHeader className="p-8">
-                          <div className={`inline-flex p-3 rounded-lg mb-3 ${isEven ? 'md:ml-auto' : ''}`} style={{ background: '#dcfce7', color: '#15803d' }}>
+                          <div
+                            className={`inline-flex p-3 rounded-lg mb-3 ${isEven ? "md:ml-auto" : ""}`}
+                            style={{ background: "#dcfce7", color: "#15803d" }}
+                          >
                             <step.icon className="w-6 h-6" />
                           </div>
-                          <CardTitle className="text-2xl mb-2 font-serif font-extrabold tracking-tight">{step.title}</CardTitle>
-                          <div className={`flex gap-2 flex-wrap ${isEven ? 'md:justify-end' : ''}`}>
-                            <Badge variant="outline" className="text-xs border-slate-300 text-muted-foreground">{step.time}</Badge>
-                            <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style={{ background: '#15803d', color: '#ffffff' }}>{step.highlight}</span>
+                          <CardTitle className="text-2xl mb-2 font-serif font-extrabold tracking-tight">
+                            {step.title}
+                          </CardTitle>
+                          <div
+                            className={`flex gap-2 flex-wrap ${isEven ? "md:justify-end" : ""}`}
+                          >
+                            <Badge
+                              variant="outline"
+                              className="text-xs border-slate-300 text-muted-foreground"
+                            >
+                              {step.time}
+                            </Badge>
+                            <span
+                              className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold"
+                              style={{
+                                background: "#15803d",
+                                color: "#ffffff",
+                              }}
+                            >
+                              {step.highlight}
+                            </span>
                           </div>
                         </CardHeader>
                         <CardContent className="px-8 pb-8">
-                          <p className="text-muted-foreground leading-loose max-w-prose">{step.description}</p>
+                          <p className="text-muted-foreground leading-loose max-w-prose">
+                            {step.description}
+                          </p>
                         </CardContent>
                       </Card>
                     </div>
 
                     {/* Preview visual - Desktop: alternado; Mobile: oculto */}
-                    <div className={`hidden md:block w-5/12 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}>
+                    <div
+                      className={`hidden md:block w-5/12 ${isEven ? "md:pl-16" : "md:pr-16"}`}
+                    >
                       {/* IMAGEM IA: Ilustração do passo - Caminho: /steps/ */}
-                      <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-card text-card-foreground" style={{ border: '4px solid #bbf7d0' }}>
+                      <div
+                        className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform bg-card text-card-foreground"
+                        style={{ border: "4px solid #bbf7d0" }}
+                      >
                         <div className="aspect-video relative">
                           <Image
                             src={step.image}
@@ -402,32 +523,57 @@ export default function Home() {
             </div>
 
             {/* CTA no final do fluxo */}
-            <div className="text-center mt-16 rounded-2xl p-10" style={{ background: 'linear-gradient(135deg, #f0fdf4, #ecfdf5)', border: '1px solid #bbf7d0' }}>
-              <h3 className="text-2xl font-extrabold mb-4 text-foreground font-serif tracking-tight">Pronto para começar?</h3>
+            <div
+              className="text-center mt-16 rounded-2xl p-10"
+              style={{
+                background: "linear-gradient(135deg, #f0fdf4, #ecfdf5)",
+                border: "1px solid #bbf7d0",
+              }}
+            >
+              <h3 className="text-2xl font-extrabold mb-4 text-foreground font-serif tracking-tight">
+                Pronto para começar?
+              </h3>
               <a
                 href="#lead-form"
                 className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white transition-all hover:scale-105"
-                style={{ background: 'linear-gradient(135deg, #15803d, #166534)', boxShadow: '0 10px 30px -5px rgba(21, 128, 61, 0.4)' }}
+                style={{
+                  background: "linear-gradient(135deg, #15803d, #166534)",
+                  boxShadow: "0 10px 30px -5px rgba(21, 128, 61, 0.4)",
+                }}
               >
                 Criar Minha Conta Grátis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
-              <p className="text-xs text-muted-foreground mt-3">Sem cartão de crédito -- Sem compromisso</p>
+              <p className="text-xs text-muted-foreground mt-3">
+                Sem cartão de crédito -- Sem compromisso
+              </p>
             </div>
           </section>
         </AnimatedSection>
 
         {/* 3a. Education Section (FAQ) */}
         <AnimatedSection>
-          <section id="faq" className="bg-gradient-to-br from-emerald-50 to-primary-50 py-32">
+          <section
+            id="faq"
+            className="bg-gradient-to-br from-emerald-50 to-primary-50 py-32"
+          >
             <div className="max-w-5xl mx-auto px-6">
               <div className="text-center mb-16">
-                <Badge variant="secondary" className="mb-4 bg-card text-card-foreground/50 backdrop-blur-sm">Para Iniciantes</Badge>
+                <Badge
+                  variant="secondary"
+                  className="mb-4 bg-card text-card-foreground/50 backdrop-blur-sm"
+                >
+                  Para Iniciantes
+                </Badge>
                 <h2 className="text-3xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
-                  Novo em Cannabis Medicinal? <span className="text-primary-600">Você Não Está Sozinho</span>
+                  Novo em Cannabis Medicinal?{" "}
+                  <span className="text-primary-600">
+                    Você Não Está Sozinho
+                  </span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-prose mx-auto leading-loose">
-                  Tire suas principais dúvidas sobre o tratamento legal no Brasil
+                  Tire suas principais dúvidas sobre o tratamento legal no
+                  Brasil
                 </p>
               </div>
 
@@ -446,9 +592,13 @@ export default function Home() {
                     ></iframe>
                   </div>
                   <CardContent className="p-8 bg-card text-card-foreground">
-                    <h3 className="font-bold text-xl mb-2">Como funciona a Cannabis Medicinal no Brasil?</h3>
+                    <h3 className="font-bold text-xl mb-2">
+                      Como funciona a Cannabis Medicinal no Brasil?
+                    </h3>
                     <p className="text-muted-foreground text-base leading-loose max-w-prose">
-                      Entenda como funciona o processo legal, quais condições podem ser tratadas e os passos para iniciar seu tratamento com segurança.
+                      Entenda como funciona o processo legal, quais condições
+                      podem ser tratadas e os passos para iniciar seu tratamento
+                      com segurança.
                     </p>
                   </CardContent>
                 </Card>
@@ -460,45 +610,48 @@ export default function Home() {
                   {
                     q: "É legal usar cannabis medicinal no Brasil?",
                     a: "Sim! Desde 2015 a ANVISA regula cannabis medicinal. Pacientes com prescrição médica podem importar produtos ou acessar através de associações autorizadas.",
-                    icon: Shield
+                    icon: Shield,
                   },
                   {
                     q: "Quais condições podem ser tratadas?",
                     a: "Dor crônica, ansiedade, depressão, insônia, epilepsia, autismo, Parkinson, Alzheimer, câncer (efeitos colaterais da quimioterapia), fibromialgia, artrite, entre outras.",
-                    icon: Stethoscope
+                    icon: Stethoscope,
                   },
                   {
                     q: "Preciso de receita médica?",
                     a: "Sim, sempre. Apenas médicos podem prescrever cannabis medicinal. Nossa plataforma conecta você a médicos especializados.",
-                    icon: BookOpen
+                    icon: BookOpen,
                   },
                   {
                     q: "Quanto custa o tratamento?",
                     a: "Varia conforme o caso. Consultas médicas: R$ 200-600. Planos de associação: R$ 50-300/mês. Produtos: R$ 150-800/frasco (dura 1-2 meses).",
-                    icon: DollarSign
+                    icon: DollarSign,
                   },
                   {
                     q: "Cannabis medicinal dá 'barato'?",
                     a: "Não. Produtos medicinais têm dosagens controladas de CBD (não psicoativo) e baixos níveis de THC. O objetivo é terapêutico, não recreativo.",
-                    icon: HelpCircle
+                    icon: HelpCircle,
                   },
                   {
                     q: "Como funcionam as associações?",
                     a: "São organizações sem fins lucrativos autorizadas a cultivar e distribuir cannabis para pacientes associados com prescrição médica válida.",
-                    icon: Building2
+                    icon: Building2,
                   },
                   {
                     q: "Posso dirigir usando cannabis medicinal?",
                     a: "Sim, se o produto for autorizado para uso e você seguir a dosagem prescrita. Recomenda-se sempre consultar seu médico sobre atividades específicas.",
-                    icon: Car
+                    icon: Car,
                   },
                   {
                     q: "Meu convênio cobre?",
                     a: "Atualmente poucos convênios cobrem. A maioria dos pacientes paga diretamente, mas há movimentos para inclusão futura na cobertura obrigatória.",
-                    icon: CreditCard
-                  }
+                    icon: CreditCard,
+                  },
                 ].map((faq, i) => (
-                  <details key={i} className="group bg-card text-card-foreground rounded-lg border border-border hover:border-primary-300 transition-colors open:shadow-md">
+                  <details
+                    key={i}
+                    className="group bg-card text-card-foreground rounded-lg border border-border hover:border-primary-300 transition-colors open:shadow-md"
+                  >
                     <summary className="cursor-pointer p-6 flex items-center gap-3 font-semibold text-foreground group-open:text-primary-700 select-none">
                       <faq.icon className="w-5 h-5 text-primary-500 shrink-0" />
                       <span className="flex-1">{faq.q}</span>
@@ -513,11 +666,17 @@ export default function Home() {
 
               {/* CTA Educacional */}
               <div className="mt-12 text-center">
-                <Button variant="outline" size="lg" className="border-primary-300 text-primary-700 hover:bg-primary-50 min-h-12">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-primary-300 text-primary-700 hover:bg-primary-50 min-h-12"
+                >
                   <BookOpen className="w-5 h-5 mr-2" />
                   Baixar Guia Completo em PDF
                 </Button>
-                <p className="text-xs text-muted-foreground mt-2">Material gratuito com tudo que você precisa saber</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Material gratuito com tudo que você precisa saber
+                </p>
               </div>
             </div>
           </section>
@@ -527,7 +686,9 @@ export default function Home() {
         <AnimatedSection>
           <section className="max-w-4xl mx-auto px-6 py-32">
             <div className="text-center mb-12">
-              <Badge variant="secondary" className="mb-4">Planejamento Financeiro</Badge>
+              <Badge variant="secondary" className="mb-4">
+                Planejamento Financeiro
+              </Badge>
               <h2 className="text-3xl font-extrabold text-foreground mb-4 font-serif tracking-tight">
                 Quanto Custa Meu Tratamento?
               </h2>
@@ -547,13 +708,23 @@ export default function Home() {
                     </label>
                     <div className="grid grid-cols-2 gap-4">
                       <button className="p-5 border-2 border-border rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all text-left group focus:ring-2 focus:ring-primary-500">
-                        <div className="font-semibold group-hover:text-primary-700">Sim</div>
-                        <div className="text-xs text-muted-foreground mt-1">Posso pular esta etapa</div>
+                        <div className="font-semibold group-hover:text-primary-700">
+                          Sim
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">
+                          Posso pular esta etapa
+                        </div>
                       </button>
                       <button className="p-5 border-2 border-primary-500 bg-primary-50 rounded-lg text-left shadow-inner ring-1 ring-primary-200">
-                        <div className="font-semibold text-primary-900">Não</div>
-                        <div className="text-xs text-primary-600 mt-1">Vou precisar de consulta</div>
-                        <div className="text-sm font-bold mt-2 text-primary-800">+ R$ 350</div>
+                        <div className="font-semibold text-primary-900">
+                          Não
+                        </div>
+                        <div className="text-xs text-primary-600 mt-1">
+                          Vou precisar de consulta
+                        </div>
+                        <div className="text-sm font-bold mt-2 text-primary-800">
+                          + R$ 350
+                        </div>
                       </button>
                     </div>
                   </div>
@@ -565,14 +736,29 @@ export default function Home() {
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {[
-                        { name: 'Básico', price: 80, desc: 'Produtos padrão' },
-                        { name: 'Intermediário', price: 150, desc: 'Mais variedade' },
-                        { name: 'Premium', price: 280, desc: 'Catálogo completo' }
+                        { name: "Básico", price: 80, desc: "Produtos padrão" },
+                        {
+                          name: "Intermediário",
+                          price: 150,
+                          desc: "Mais variedade",
+                        },
+                        {
+                          name: "Premium",
+                          price: 280,
+                          desc: "Catálogo completo",
+                        },
                       ].map((plan, i) => (
-                        <button key={plan.name} className={`p-5 border-2 rounded-lg transition-all text-center ${i === 0 ? 'border-primary-500 bg-primary-50' : 'border-border hover:border-primary-500 hover:bg-primary-50'}`}>
+                        <button
+                          key={plan.name}
+                          className={`p-5 border-2 rounded-lg transition-all text-center ${i === 0 ? "border-primary-500 bg-primary-50" : "border-border hover:border-primary-500 hover:bg-primary-50"}`}
+                        >
                           <div className="font-semibold">{plan.name}</div>
-                          <div className="text-xs text-muted-foreground mt-1">{plan.desc}</div>
-                          <div className="text-lg font-bold text-primary-700 mt-2">R$ {plan.price}/mês</div>
+                          <div className="text-xs text-muted-foreground mt-1">
+                            {plan.desc}
+                          </div>
+                          <div className="text-lg font-bold text-primary-700 mt-2">
+                            R$ {plan.price}/mês
+                          </div>
                         </button>
                       ))}
                     </div>
@@ -585,9 +771,19 @@ export default function Home() {
                     </label>
                     <div className="relative">
                       <select className="w-full px-5 py-4 border-2 border-border rounded-lg focus:border-primary-500 focus:outline-none appearance-none bg-card text-card-foreground text-foreground">
-                        <option>{'Uso diário (produtos duram ~1 mês) - R$ 350/mês'}</option>
-                        <option>{'Uso moderado (produtos duram ~2 meses) - R$ 175/mês'}</option>
-                        <option>{'Uso esporádico (produtos duram ~3 meses) - R$ 117/mês'}</option>
+                        <option>
+                          {"Uso diário (produtos duram ~1 mês) - R$ 350/mês"}
+                        </option>
+                        <option>
+                          {
+                            "Uso moderado (produtos duram ~2 meses) - R$ 175/mês"
+                          }
+                        </option>
+                        <option>
+                          {
+                            "Uso esporádico (produtos duram ~3 meses) - R$ 117/mês"
+                          }
+                        </option>
                       </select>
                       <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
                     </div>
@@ -599,31 +795,53 @@ export default function Home() {
                   <div className="bg-gradient-to-br from-primary-50 to-emerald-50 rounded-xl p-8 border-2 border-primary-200">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <div className="text-sm font-semibold text-muted-foreground mb-1">Custo Inicial (1o mês):</div>
-                        <div className="text-4xl font-extrabold text-foreground tracking-tight">R$ 780</div>
+                        <div className="text-sm font-semibold text-muted-foreground mb-1">
+                          Custo Inicial (1o mês):
+                        </div>
+                        <div className="text-4xl font-extrabold text-foreground tracking-tight">
+                          R$ 780
+                        </div>
                       </div>
-                      <Badge className="bg-primary-600 text-white hover:bg-primary-700">Estimativa</Badge>
+                      <Badge className="bg-primary-600 text-white hover:bg-primary-700">
+                        Estimativa
+                      </Badge>
                     </div>
 
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Consulta médica:</span>
-                        <span className="font-semibold text-foreground">R$ 350</span>
+                        <span className="text-muted-foreground">
+                          Consulta médica:
+                        </span>
+                        <span className="font-semibold text-foreground">
+                          R$ 350
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Mensalidade associação:</span>
-                        <span className="font-semibold text-foreground">R$ 80</span>
+                        <span className="text-muted-foreground">
+                          Mensalidade associação:
+                        </span>
+                        <span className="font-semibold text-foreground">
+                          R$ 80
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Produtos (1o mês):</span>
-                        <span className="font-semibold text-foreground">R$ 350</span>
+                        <span className="text-muted-foreground">
+                          Produtos (1o mês):
+                        </span>
+                        <span className="font-semibold text-foreground">
+                          R$ 350
+                        </span>
                       </div>
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-primary-300">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-semibold text-muted-foreground">Meses seguintes (média):</span>
-                        <span className="text-2xl font-extrabold text-primary-700 tracking-tight">R$ 430/mês</span>
+                        <span className="text-sm font-semibold text-muted-foreground">
+                          Meses seguintes (média):
+                        </span>
+                        <span className="text-2xl font-extrabold text-primary-700 tracking-tight">
+                          R$ 430/mês
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -633,14 +851,18 @@ export default function Home() {
                       Criar Conta e Começar
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
-                    <Button variant="outline" className="flex-1 border-slate-300 h-14">
+                    <Button
+                      variant="outline"
+                      className="flex-1 border-slate-300 h-14"
+                    >
                       <Download className="mr-2 w-5 h-5" />
                       Salvar Cálculo em PDF
                     </Button>
                   </div>
 
                   <p className="text-xs text-center text-muted-foreground mt-4 max-w-prose mx-auto">
-                    * Valores são estimativas baseadas em médias de mercado. O custo real varia conforme prescrição e produto escolhido.
+                    * Valores são estimativas baseadas em médias de mercado. O
+                    custo real varia conforme prescrição e produto escolhido.
                   </p>
                 </div>
               </CardContent>
@@ -650,11 +872,19 @@ export default function Home() {
 
         {/* 4. Target Audience Section */}
         <AnimatedSection>
-          <section id="para-quem" className="py-32 bg-card text-card-foreground relative">
+          <section
+            id="para-quem"
+            className="py-32 bg-card text-card-foreground relative"
+          >
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-foreground mb-4 tracking-tight">Um espaço para todo o ecossistema</h2>
-                <p className="text-muted-foreground text-lg leading-loose max-w-prose mx-auto">Soluções integradas para cada papel fundamental na terapia canábica.</p>
+                <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-foreground mb-4 tracking-tight">
+                  Um espaço para todo o ecossistema
+                </h2>
+                <p className="text-muted-foreground text-lg leading-loose max-w-prose mx-auto">
+                  Soluções integradas para cada papel fundamental na terapia
+                  canábica.
+                </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-12">
@@ -665,8 +895,12 @@ export default function Home() {
                     <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-primary-600 mb-4 group-hover:scale-110 transition-transform">
                       <User className="w-7 h-7" />
                     </div>
-                    <CardTitle className="text-2xl font-serif font-extrabold text-primary-900 tracking-tight">Pacientes</CardTitle>
-                    <CardDescription className="text-base text-muted-foreground">Jornada simplificada e segura</CardDescription>
+                    <CardTitle className="text-2xl font-serif font-extrabold text-primary-900 tracking-tight">
+                      Pacientes
+                    </CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">
+                      Jornada simplificada e segura
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -674,9 +908,12 @@ export default function Home() {
                         "Encontre médicos experientes",
                         "Descubra associações confiáveis",
                         "Transparência de custos",
-                        "Tudo em um só lugar"
+                        "Tudo em um só lugar",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-muted-foreground"
+                        >
                           <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-primary-600" />
                           </div>
@@ -701,8 +938,12 @@ export default function Home() {
                     <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-turquoise-600 mb-4 group-hover:scale-110 transition-transform">
                       <Stethoscope className="w-7 h-7" />
                     </div>
-                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">Médicos</CardTitle>
-                    <CardDescription className="text-base text-muted-foreground">Gestão eficiente</CardDescription>
+                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">
+                      Médicos
+                    </CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">
+                      Gestão eficiente
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -710,9 +951,12 @@ export default function Home() {
                         "Pacientes qualificados",
                         "Organização de prescrições",
                         "Encaminhamento direto",
-                        "Acompanhamento da evolução"
+                        "Acompanhamento da evolução",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-muted-foreground"
+                        >
                           <div className="w-6 h-6 rounded-full bg-turquoise-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-turquoise-600" />
                           </div>
@@ -723,7 +967,10 @@ export default function Home() {
                   </CardContent>
                   <CardFooter className="p-8 pt-4">
                     <Link href="/onboarding/doctor" className="w-full">
-                      <Button variant="outline" className="w-full rounded-xl border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 h-12">
+                      <Button
+                        variant="outline"
+                        className="w-full rounded-xl border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 h-12"
+                      >
                         Ver jornada do médico
                       </Button>
                     </Link>
@@ -737,8 +984,12 @@ export default function Home() {
                     <div className="w-14 h-14 rounded-2xl bg-card text-card-foreground shadow-sm flex items-center justify-center text-gold-600 mb-4 group-hover:scale-110 transition-transform">
                       <Building2 className="w-7 h-7" />
                     </div>
-                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">Associações</CardTitle>
-                    <CardDescription className="text-base text-muted-foreground">Visibilidade e gestão</CardDescription>
+                    <CardTitle className="text-2xl font-serif font-extrabold text-foreground tracking-tight">
+                      Associações
+                    </CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">
+                      Visibilidade e gestão
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="px-8 pb-4">
                     <ul className="space-y-4">
@@ -746,9 +997,12 @@ export default function Home() {
                         "Vitrine de produtos e planos",
                         "Gestão de associados",
                         "Avaliações transparentes",
-                        "Ferramentas de comunicação"
+                        "Ferramentas de comunicação",
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-muted-foreground"
+                        >
                           <div className="w-6 h-6 rounded-full bg-gold-100 flex items-center justify-center shrink-0">
                             <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
                           </div>
@@ -759,7 +1013,10 @@ export default function Home() {
                   </CardContent>
                   <CardFooter className="p-8 pt-4">
                     <Link href="/onboarding/association" className="w-full">
-                      <Button variant="outline" className="w-full rounded-xl border-gold-200 text-gold-700 hover:bg-gold-50 h-12">
+                      <Button
+                        variant="outline"
+                        className="w-full rounded-xl border-gold-200 text-gold-700 hover:bg-gold-50 h-12"
+                      >
                         Ver jornada da associação
                       </Button>
                     </Link>
@@ -777,10 +1034,17 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-6 relative">
               <div className="flex flex-col sm:flex-row justify-between items-end mb-16 gap-4">
                 <div>
-                  <h2 className="text-3xl font-serif font-extrabold text-foreground mb-2 tracking-tight">Associações Parceiras</h2>
-                  <p className="text-muted-foreground text-lg leading-loose">Conheça algumas das organizações presentes no hub.</p>
+                  <h2 className="text-3xl font-serif font-extrabold text-foreground mb-2 tracking-tight">
+                    Associações Parceiras
+                  </h2>
+                  <p className="text-muted-foreground text-lg leading-loose">
+                    Conheça algumas das organizações presentes no hub.
+                  </p>
                 </div>
-                <Button variant="ghost" className="text-primary-700 hover:text-primary-800 hover:bg-primary-50 font-medium">
+                <Button
+                  variant="ghost"
+                  className="text-primary-700 hover:text-primary-800 hover:bg-primary-50 font-medium"
+                >
                   Ver todas <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
@@ -796,7 +1060,7 @@ export default function Home() {
                     price: "150",
                     verified: true,
                     rating: 4.9,
-                    members: 2500
+                    members: 2500,
                   },
                   {
                     id: "cultive-saude",
@@ -807,7 +1071,7 @@ export default function Home() {
                     price: "120",
                     verified: true,
                     rating: 4.8,
-                    members: 1800
+                    members: 1800,
                   },
                   {
                     id: "cannativa",
@@ -818,10 +1082,13 @@ export default function Home() {
                     price: "180",
                     verified: true,
                     rating: 4.7,
-                    members: 1200
-                  }
+                    members: 1200,
+                  },
                 ].map((assoc, i) => (
-                  <Card key={i} className="group cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card text-card-foreground rounded-2xl overflow-hidden card-hover">
+                  <Card
+                    key={i}
+                    className="group cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card text-card-foreground rounded-2xl overflow-hidden card-hover"
+                  >
                     {/* Banner hero da associação */}
                     <div className="aspect-[3/1] bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
                       <div className="absolute inset-0 bg-organic-pattern opacity-20" />
@@ -842,7 +1109,9 @@ export default function Home() {
                           </Badge>
                           <div className="flex items-center gap-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            <span className="text-sm font-bold text-foreground">{assoc.rating}</span>
+                            <span className="text-sm font-bold text-foreground">
+                              {assoc.rating}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -857,10 +1126,16 @@ export default function Home() {
                     <CardContent className="pt-4 pb-4 px-8 space-y-4">
                       {/* Especialidades */}
                       <div>
-                        <div className="text-xs font-semibold text-muted-foreground mb-2">Especialidades:</div>
+                        <div className="text-xs font-semibold text-muted-foreground mb-2">
+                          Especialidades:
+                        </div>
                         <div className="flex flex-wrap gap-1">
                           {assoc.specialties.map((spec, idx) => (
-                            <Badge key={idx} variant="outline" className="text-xs border-primary-200 text-primary-700 bg-primary-50">
+                            <Badge
+                              key={idx}
+                              variant="outline"
+                              className="text-xs border-primary-200 text-primary-700 bg-primary-50"
+                            >
                               {spec}
                             </Badge>
                           ))}
@@ -870,20 +1145,32 @@ export default function Home() {
                       {/* Membros ativos */}
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Users className="w-4 h-4 text-primary-600" />
-                        <span>{assoc.members.toLocaleString('pt-BR')} associados ativos</span>
+                        <span>
+                          {assoc.members.toLocaleString("pt-BR")} associados
+                          ativos
+                        </span>
                       </div>
 
                       {/* Preço */}
                       <div className="pt-2 border-t border-slate-100">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-2xl font-extrabold text-foreground tracking-tight">R$ {assoc.price}</span>
-                          <span className="text-sm text-muted-foreground">/mês</span>
+                          <span className="text-2xl font-extrabold text-foreground tracking-tight">
+                            R$ {assoc.price}
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            /mês
+                          </span>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-1">+ produtos conforme prescrição</p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          + produtos conforme prescrição
+                        </p>
                       </div>
                     </CardContent>
                     <CardFooter className="pt-0 pb-8 px-8">
-                      <Link href={`/associations/${assoc.id}`} className="w-full">
+                      <Link
+                        href={`/associations/${assoc.id}`}
+                        className="w-full"
+                      >
                         <Button
                           size="sm"
                           className="w-full bg-card text-card-foreground border-2 border-primary-100 text-primary-700 hover:bg-primary-700 hover:text-white hover:border-primary-700 transition-all group-hover:shadow-lg min-h-12"
@@ -913,11 +1200,21 @@ export default function Home() {
                     { state: "BA", count: 5 },
                     { state: "DF", count: 4 },
                     { state: "PE", count: 3 },
-                    { state: "CE", count: 2 }
-                  ].map(region => (
-                    <div key={region.state} className="flex items-center justify-between p-4 bg-primary-50 rounded-lg border border-primary-100 hover:bg-primary-100 transition-colors cursor-default">
-                      <span className="font-bold text-primary-900">{region.state}</span>
-                      <Badge variant="secondary" className="text-xs bg-card text-card-foreground">{region.count}</Badge>
+                    { state: "CE", count: 2 },
+                  ].map((region) => (
+                    <div
+                      key={region.state}
+                      className="flex items-center justify-between p-4 bg-primary-50 rounded-lg border border-primary-100 hover:bg-primary-100 transition-colors cursor-default"
+                    >
+                      <span className="font-bold text-primary-900">
+                        {region.state}
+                      </span>
+                      <Badge
+                        variant="secondary"
+                        className="text-xs bg-card text-card-foreground"
+                      >
+                        {region.count}
+                      </Badge>
                     </div>
                   ))}
                 </div>
@@ -932,15 +1229,29 @@ export default function Home() {
         {/* 6. General Benefits */}
         <AnimatedSection>
           <section className="relative py-32 overflow-hidden">
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #052e16 0%, #14532d 50%, #1a3a2a 100%)' }} />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(135deg, #052e16 0%, #14532d 50%, #1a3a2a 100%)",
+              }}
+            />
             <div className="absolute inset-0 bg-grain-texture opacity-5 mix-blend-overlay" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
               <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight" style={{ color: '#ffffff' }}>
+                <h2
+                  className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight"
+                  style={{ color: "#ffffff" }}
+                >
                   Por Que Escolher a Dona Liamba?
                 </h2>
-                <div className="w-20 h-1 mx-auto mt-4 rounded-full" style={{ background: 'linear-gradient(90deg, #4ade80, #2dd4bf)' }} />
+                <div
+                  className="w-20 h-1 mx-auto mt-4 rounded-full"
+                  style={{
+                    background: "linear-gradient(90deg, #4ade80, #2dd4bf)",
+                  }}
+                />
               </div>
 
               <div className="grid md:grid-cols-3 gap-10">
@@ -948,41 +1259,56 @@ export default function Home() {
                   {
                     icon: ShieldCheck,
                     title: "Segurança e Legalidade",
-                    description: "Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.",
-                    color: "#4ade80"
+                    description:
+                      "Todas as associações e médicos passam por rigorosa verificação para garantir um tratamento dentro das normas da ANVISA.",
+                    color: "#4ade80",
                   },
                   {
                     icon: HeartPulse,
                     title: "Acolhimento Real",
-                    description: "Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.",
-                    color: "#2dd4bf"
+                    description:
+                      "Foco no bem-estar do paciente com suporte contínuo das associações e acompanhamento médico humanizado.",
+                    color: "#2dd4bf",
                   },
                   {
                     icon: Leaf,
                     title: "Qualidade Garantida",
-                    description: "Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.",
-                    color: "#a3e635"
-                  }
+                    description:
+                      "Acesso a produtos de qualidade controlada e transparência nas informações de concentração e dosagem.",
+                    color: "#a3e635",
+                  },
                 ].map((item, i) => (
                   <div
                     key={i}
                     className="rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
                     style={{
-                      background: 'rgba(255,255,255,0.06)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      backdropFilter: 'blur(8px)',
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      backdropFilter: "blur(8px)",
                     }}
                   >
                     <div
                       className="inline-flex p-4 rounded-2xl mb-6"
-                      style={{ background: `${item.color}15`, border: `1px solid ${item.color}30` }}
+                      style={{
+                        background: `${item.color}15`,
+                        border: `1px solid ${item.color}30`,
+                      }}
                     >
-                      <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                      <item.icon
+                        className="w-8 h-8"
+                        style={{ color: item.color }}
+                      />
                     </div>
-                    <h3 className="text-2xl font-serif font-extrabold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
+                    <h3
+                      className="text-2xl font-serif font-extrabold mb-4 tracking-tight"
+                      style={{ color: "#ffffff" }}
+                    >
                       {item.title}
                     </h3>
-                    <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{ color: "rgba(255,255,255,0.75)" }}
+                    >
                       {item.description}
                     </p>
                   </div>
@@ -994,33 +1320,56 @@ export default function Home() {
 
         {/* 6b. Lead Capture */}
         <AnimatedSection>
-          <section id="lead-form" className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20">
+          <section
+            id="lead-form"
+            className="max-w-4xl mx-auto px-6 py-20 -mb-20 relative z-20"
+          >
             <div
               className="rounded-3xl shadow-2xl relative overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%)',
+                background:
+                  "linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%)",
               }}
             >
               {/* Elementos decorativos */}
-              <div className="absolute top-0 right-0 w-64 h-64 rounded-full -mr-32 -mt-32 blur-3xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
-              <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full -ml-24 -mb-24 blur-2xl" style={{ background: 'rgba(255,255,255,0.08)' }} />
+              <div
+                className="absolute top-0 right-0 w-64 h-64 rounded-full -mr-32 -mt-32 blur-3xl"
+                style={{ background: "rgba(255,255,255,0.08)" }}
+              />
+              <div
+                className="absolute bottom-0 left-0 w-48 h-48 rounded-full -ml-24 -mb-24 blur-2xl"
+                style={{ background: "rgba(255,255,255,0.08)" }}
+              />
 
               <div className="p-8 md:p-12 relative z-10">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-3 rounded-full backdrop-blur-sm shadow-inner" style={{ background: 'rgba(255,255,255,0.2)' }}>
-                    <Gift className="w-8 h-8" style={{ color: '#ffffff' }} />
+                  <div
+                    className="p-3 rounded-full backdrop-blur-sm shadow-inner"
+                    style={{ background: "rgba(255,255,255,0.2)" }}
+                  >
+                    <Gift className="w-8 h-8" style={{ color: "#ffffff" }} />
                   </div>
                 </div>
-                <h3 className="text-3xl font-extrabold text-center mb-3 font-serif tracking-tight" style={{ color: '#ffffff' }}>
+                <h3
+                  className="text-3xl font-extrabold text-center mb-3 font-serif tracking-tight"
+                  style={{ color: "#ffffff" }}
+                >
                   Guia Gratuito: Como Iniciar Seu Tratamento
                 </h3>
-                <p className="text-center mb-8 max-w-prose mx-auto text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Receba por email um guia completo com checklist, lista de documentos necessários, custos médios e direitos do paciente
+                <p
+                  className="text-center mb-8 max-w-prose mx-auto text-lg leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.85)" }}
+                >
+                  Receba por email um guia completo com checklist, lista de
+                  documentos necessários, custos médios e direitos do paciente
                 </p>
 
                 <LeadCaptureForm />
 
-                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                <div
+                  className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 text-sm font-medium"
+                  style={{ color: "rgba(255,255,255,0.9)" }}
+                >
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4" />
                     <span>100% Gratuito</span>
@@ -1035,7 +1384,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <p className="text-center text-xs mt-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <p
+                  className="text-center text-xs mt-6"
+                  style={{ color: "rgba(255,255,255,0.6)" }}
+                >
                   +3.847 pessoas já receberam este guia esta semana
                 </p>
               </div>
@@ -1050,15 +1402,17 @@ export default function Home() {
               Pronto para organizar seu tratamento?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-prose mx-auto font-light leading-loose">
-              Junte-se a milhares de pacientes que já encontraram o caminho para uma vida com mais qualidade.
+              Junte-se a milhares de pacientes que já encontraram o caminho para
+              uma vida com mais qualidade.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a
                 href="#lead-form"
                 className="group relative inline-flex items-center justify-center h-16 px-12 text-lg font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, #15803d 0%, #166534 100%)',
-                  boxShadow: '0 12px 40px -8px rgba(21, 128, 61, 0.45)',
+                  background:
+                    "linear-gradient(135deg, #15803d 0%, #166534 100%)",
+                  boxShadow: "0 12px 40px -8px rgba(21, 128, 61, 0.45)",
                 }}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
@@ -1069,10 +1423,10 @@ export default function Home() {
                 href="/onboarding/doctor"
                 className="inline-flex items-center justify-center h-16 px-12 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
                 style={{
-                  background: '#ffffff',
-                  color: '#1e293b',
-                  border: '2px solid #1e293b',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  background: "#ffffff",
+                  color: "#1e293b",
+                  border: "2px solid #1e293b",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
                 }}
               >
                 Sou Profissional
@@ -1080,7 +1434,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
 
       {/* Footer */}
@@ -1090,26 +1443,75 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <Leaf className="w-6 h-6 text-primary-600" />
-                <span className="text-xl font-serif font-extrabold text-primary-900 tracking-tight">Dona Liamba</span>
+                <span className="text-xl font-serif font-extrabold text-primary-900 tracking-tight">
+                  Dona Liamba
+                </span>
               </div>
               <p className="text-muted-foreground max-w-xs leading-loose">
-                Conectando pacientes, médicos e associações para democratizar o acesso à saúde canábica no Brasil.
+                Conectando pacientes, médicos e associações para democratizar o
+                acesso à saúde canábica no Brasil.
               </p>
             </div>
             <div>
-              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">Plataforma</h4>
+              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">
+                Plataforma
+              </h4>
               <ul className="space-y-4 text-muted-foreground">
-                <li><Link href="/cadastro-paciente" className="hover:text-primary-600 transition-colors">Para Pacientes</Link></li>
-                <li><Link href="/onboarding/doctor" className="hover:text-primary-600 transition-colors">Para Médicos</Link></li>
-                <li><Link href="/onboarding/association" className="hover:text-primary-600 transition-colors">Para Associações</Link></li>
+                <li>
+                  <Link
+                    href="/cadastro-paciente"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Para Pacientes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/onboarding/doctor"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Para Médicos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/onboarding/association"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Para Associações
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">Legal</h4>
+              <h4 className="font-extrabold text-foreground mb-6 tracking-tight">
+                Legal
+              </h4>
               <ul className="space-y-4 text-muted-foreground">
-                <li><a href="#" className="hover:text-primary-600 transition-colors">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-primary-600 transition-colors">Privacidade</a></li>
-                <li><a href="#" className="hover:text-primary-600 transition-colors">Sobre Nós</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-primary-600 transition-colors"
+                  >
+                    Sobre Nós
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -1117,9 +1519,15 @@ export default function Home() {
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm">
             <p>© 2024 Dona Liamba. Todos os direitos reservados.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary-600">Instagram</a>
-              <a href="#" className="hover:text-primary-600">LinkedIn</a>
-              <a href="#" className="hover:text-primary-600">Twitter</a>
+              <a href="#" className="hover:text-primary-600">
+                Instagram
+              </a>
+              <a href="#" className="hover:text-primary-600">
+                LinkedIn
+              </a>
+              <a href="#" className="hover:text-primary-600">
+                Twitter
+              </a>
             </div>
           </div>
         </div>

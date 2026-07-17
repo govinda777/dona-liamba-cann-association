@@ -19,6 +19,7 @@ O Brasil possui hoje a maior concentração de dentistas do mundo. São mais de 
 Isso significa que estamos diante de um "Oceano Azul" de oportunidades e cura.
 
 ### Por que a sua boca ama canabinoides?
+
 1.  **Bruxismo e DTM:** O estresse das metrópoles de 2025 transformou nossas mandíbulas em britadeiras noturnas. O CBD (Canabidiol) atua como um relaxante muscular potente e ansiolítico, tratando a causa raiz, não apenas o sintoma.
 2.  **Dor Orofacial Crônica:** Quando os analgésicos comuns falham, o efeito analgésico da Cannabis entra em cena, modulando a dor de forma sistêmica.
 3.  **Inflamação e Cicatrização:** O SEC está presente nas suas gengivas! Canabinoides auxiliam na modulação da resposta inflamatória pós-cirúrgica, acelerando a recuperação de implantes e extrações.
@@ -38,13 +39,14 @@ Para navegar nessa nova fronteira, você não pode ser um amador. Excelência t�
 
 O mercado brasileiro não está apenas crescendo; ele está explodindo. Veja o que os números de 2025 nos dizem:
 
-*   **R$ 971 Milhões:** É o valor projetado para o mercado de cannabis medicinal no Brasil até o fim de 2025 ([Fonte: Kaya Mind/CNN Agro](https://www.cnnbrasil.com.br/agro/mercado-de-cannabis-medicinal-atinge-r-971-milhoes-no-brasil-em-2025/)).
-*   **194.682 Autorizações:** O recorde histórico de importações via ANVISA foi batido, com um crescimento de 16,3% em relação ao ano anterior.
-*   **O Marco de 2026:** Com a decisão do STJ no IAC 16, o cultivo de cânhamo industrial (THC < 0,3%) tem prazo de regulamentação até **31 de março de 2026**. Isso vai baratear os insumos odontológicos de forma drástica.
+- **R$ 971 Milhões:** É o valor projetado para o mercado de cannabis medicinal no Brasil até o fim de 2025 ([Fonte: Kaya Mind/CNN Agro](https://www.cnnbrasil.com.br/agro/mercado-de-cannabis-medicinal-atinge-r-971-milhoes-no-brasil-em-2025/)).
+- **194.682 Autorizações:** O recorde histórico de importações via ANVISA foi batido, com um crescimento de 16,3% em relação ao ano anterior.
+- **O Marco de 2026:** Com a decisão do STJ no IAC 16, o cultivo de cânhamo industrial (THC < 0,3%) tem prazo de regulamentação até **31 de março de 2026**. Isso vai baratear os insumos odontológicos de forma drástica.
 
 ## A Excentricidade da Cura: Além do Óleo 🧪🦷
 
 A ousadia de 2025 está nas formas farmacêuticas. Esqueça apenas as gotinhas embaixo da língua. Já estamos vendo:
+
 - **Géis Transdérmicos** para aplicação direta na ATM (Articulação Temporomandibular).
 - **Enxaguatórios Bucais Canabinoides** para controle de periodontite crônica.
 - **Pastas de Dente com Terpenos** específicos para redução de sensibilidade.
@@ -54,6 +56,7 @@ O dentista do futuro não trata apenas dentes; ele equilibra a homeostase do seu
 ### Desafio Interativo: Você é um "Early Adopter"? 🤔
 
 Responda com sinceridade:
+
 - 😫 Você acorda com a mandíbula cansada ou dor de cabeça?
 - 💊 Já tomou anti-inflamatórios que agrediram seu estômago sem resolver a dor dente?
 - 🌿 Teria coragem de trocar um analgésico sintético por um fitoterápico de alta performance?
@@ -65,7 +68,9 @@ Responda com sinceridade:
 A odontologia canábica é a união perfeita entre a biotecnologia e a saúde integrativa. Em um país com quase meio milhão de dentistas, quem dominar o Sistema Endocanabinoide hoje será o líder do mercado amanhã.
 
 ---
-*Fontes de Poder e Conhecimento:*
+
+_Fontes de Poder e Conhecimento:_
+
 - [Kaya Mind: Anuário da Cannabis Medicinal 2024/2025](https://kayamind.com)
 - [CFO: Dados Estatísticos dos Profissionais de Odontologia](https://cfo.org.br)
 - [CNN Brasil: Recorde de Importação de Cannabis em 2025](https://www.cnnbrasil.com.br/agro/importacao-de-cannabis-por-brasileiros-bateu-recorde-em-2025/)

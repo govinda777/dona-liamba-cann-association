@@ -1,27 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { CheckCircle2, User, Mail, Phone, FileText } from 'lucide-react';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { CheckCircle2, User, Mail, Phone, FileText } from "lucide-react";
 
 export function PatientRegistrationForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    hasPrescription: false
+    name: "",
+    email: "",
+    phone: "",
+    hasPrescription: false,
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form data:', formData);
+    console.log("Form data:", formData);
     setSubmitted(true);
   };
 
@@ -32,11 +39,18 @@ export function PatientRegistrationForm() {
           <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle2 className="w-8 h-8 text-primary-600" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-900">Cadastro Recebido!</h3>
+          <h3 className="text-2xl font-bold text-slate-900">
+            Cadastro Recebido!
+          </h3>
           <p className="text-slate-600">
-            Obrigado, {formData.name}. Em breve entraremos em contato no e-mail {formData.email} para seguir com sua jornada terapêutica.
+            Obrigado, {formData.name}. Em breve entraremos em contato no e-mail{" "}
+            {formData.email} para seguir com sua jornada terapêutica.
           </p>
-          <Button onClick={() => setSubmitted(false)} variant="outline" className="mt-4">
+          <Button
+            onClick={() => setSubmitted(false)}
+            variant="outline"
+            className="mt-4"
+          >
             Voltar
           </Button>
         </CardContent>
@@ -47,7 +61,9 @@ export function PatientRegistrationForm() {
   return (
     <Card className="max-w-md mx-auto border-primary-200 shadow-xl bg-white">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center text-primary-900">Criar Conta</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center text-primary-900">
+          Criar Conta
+        </CardTitle>
         <CardDescription className="text-center">
           Preencha seus dados para iniciar sua jornada
         </CardDescription>
@@ -55,7 +71,10 @@ export function PatientRegistrationForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="name"
+              className="text-sm font-medium text-slate-700 flex items-center gap-2"
+            >
               <User className="w-4 h-4 text-primary-500" /> Nome Completo
             </label>
             <input
@@ -71,7 +90,10 @@ export function PatientRegistrationForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-slate-700 flex items-center gap-2"
+            >
               <Mail className="w-4 h-4 text-primary-500" /> E-mail
             </label>
             <input
@@ -87,7 +109,10 @@ export function PatientRegistrationForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="phone"
+              className="text-sm font-medium text-slate-700 flex items-center gap-2"
+            >
               <Phone className="w-4 h-4 text-primary-500" /> Telefone / WhatsApp
             </label>
             <input
@@ -118,12 +143,16 @@ export function PatientRegistrationForm() {
             </label>
           </div>
 
-          <Button type="submit" className="w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 mt-4">
+          <Button
+            type="submit"
+            className="w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 mt-4"
+          >
             Cadastrar Gratuitamente
           </Button>
 
           <p className="text-xs text-center text-slate-500 mt-4">
-            Seus dados estão protegidos e não serão compartilhados sem sua autorização.
+            Seus dados estão protegidos e não serão compartilhados sem sua
+            autorização.
           </p>
         </form>
       </CardContent>

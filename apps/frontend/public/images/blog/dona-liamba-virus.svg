@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#1a2f23" />
+      <stop offset="100%" stop-color="#0a120e" />
+    </radialGradient>
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="60%" stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#14532d" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- Grid for tech feel -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#22c55e" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Tech connections -->
+  <g stroke="#22c55e" stroke-width="1.5" opacity="0.6" filter="url(#glow)">
+    <line x1="400" y1="300" x2="200" y2="150" />
+    <line x1="400" y1="300" x2="600" y2="150" />
+    <line x1="400" y1="300" x2="200" y2="450" />
+    <line x1="400" y1="300" x2="600" y2="450" />
+    <line x1="400" y1="300" x2="400" y2="100" />
+    <line x1="400" y1="300" x2="400" y2="500" />
+    <line x1="400" y1="300" x2="150" y2="300" />
+    <line x1="400" y1="300" x2="650" y2="300" />
+  </g>
+
+  <!-- Virus nodes/proteins (DAO Web3 Nodes) -->
+  <g fill="#16a34a" filter="url(#glow)">
+    <circle cx="200" cy="150" r="15" />
+    <circle cx="600" cy="150" r="15" />
+    <circle cx="200" cy="450" r="15" />
+    <circle cx="600" cy="450" r="15" />
+    <circle cx="400" cy="100" r="15" />
+    <circle cx="400" cy="500" r="15" />
+    <circle cx="150" cy="300" r="15" />
+    <circle cx="650" cy="300" r="15" />
+  </g>
+
+  <!-- Connection text/labels -->
+  <g fill="#4ade80" font-family="monospace" font-size="12" text-anchor="middle">
+    <text x="200" y="130">SMART_CONTRACT</text>
+    <text x="600" y="130">OFF_CHAIN_VOTING</text>
+    <text x="200" y="480">OPEN_SOURCE</text>
+    <text x="600" y="480">SOULBOUND_TOKEN</text>
+    <text x="400" y="75">TREASURY_SAFE</text>
+    <text x="400" y="535">DECENTRALIZED_GOV</text>
+    <text x="150" y="275">TRANSPARENCY</text>
+    <text x="650" y="275">TRUTH_VERIFIED</text>
+  </g>
+
+  <!-- Outer shell (Capsid) -->
+  <polygon points="400,200 486,250 486,350 400,400 314,350 314,250" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+  <polygon points="400,170 513,235 513,365 400,430 287,365 287,235" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6"/>
+
+  <!-- Core (Nucleic Acid / Web3 Protocol) -->
+  <circle cx="400" cy="300" r="60" fill="url(#coreGrad)" filter="url(#glow)" />
+
+  <!-- Hemp Leaf Motif inside the core -->
+  <g transform="translate(400, 305) scale(1.2)" fill="#064e3b" stroke="#10b981" stroke-width="1" opacity="0.9">
+    <!-- Center leaf -->
+    <path d="M 0 0 Q -10 -20 0 -40 Q 10 -20 0 0" />
+    <!-- Left leaves -->
+    <path d="M 0 0 Q -15 -15 -20 -30 Q -5 -15 0 0" transform="rotate(-30)" />
+    <path d="M 0 0 Q -15 -10 -25 -15 Q -10 -5 0 0" transform="rotate(-60)" />
+    <!-- Right leaves -->
+    <path d="M 0 0 Q 15 -15 20 -30 Q 5 -15 0 0" transform="rotate(30)" />
+    <path d="M 0 0 Q 15 -10 25 -15 Q 10 -5 0 0" transform="rotate(60)" />
+    <!-- Stem -->
+    <path d="M 0 0 Q -2 15 0 25" fill="none" stroke-width="2" />
+  </g>
+
+  <!-- Title / Holographic Overlay -->
+  <text x="400" y="580" fill="#4ade80" font-family="monospace" font-size="24" font-weight="bold" text-anchor="middle" letter-spacing="3" opacity="0.9">DONA_LIAMBA_PROTOCOL_v1.0</text>
+  <text x="400" y="40" fill="#16a34a" font-family="monospace" font-size="14" text-anchor="middle" opacity="0.7">ANATOMY OF THE OPEN-SOURCE VIRUS</text>
+
+</svg>

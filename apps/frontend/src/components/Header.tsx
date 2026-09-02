@@ -45,6 +45,9 @@ export function Header() {
             <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Blog
             </Link>
+            <Link href="/dao" className="text-sm font-medium text-emerald-600 hover:text-emerald-500 transition-colors">
+              Comunidade DAO
+            </Link>
             <Link href="/membro" className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-yellow-500 text-white text-sm font-bold hover:shadow-lg transition-all hover:scale-105 group">
               <span>Seja Membro</span>
             </Link>
@@ -85,6 +88,9 @@ export function Header() {
               </a>
               <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
                 Blog
+              </Link>
+              <Link href="/dao" className="text-sm font-medium text-emerald-600 hover:text-emerald-500" onClick={() => setMobileMenuOpen(false)}>
+                Comunidade DAO
               </Link>
               <Link href="/membro" className="flex items-center w-fit gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-yellow-500 text-white text-sm font-bold" onClick={() => setMobileMenuOpen(false)}>
                 <span>Seja Membro</span>

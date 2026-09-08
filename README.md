@@ -1,5 +1,11 @@
 # Dona Liamba Cann Association
 
+<p align="left">
+  <img src="docs/Ecossistema_Dona_Liamba_Web2.5.png" alt="Bunner" width="600" />
+</p>
+
+
+
 Uma plataforma Web3 nativa para conectar médicos prescritores, associações e pacientes no ecossistema de cannabis medicinal.
 
 <p align="left">

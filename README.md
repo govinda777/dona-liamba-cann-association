@@ -23,3 +23,13 @@ Uma plataforma Web3 nativa para conectar médicos prescritores, associações e 
 </p>
 
 [📄 Visualizar Dona Liamba OS Transparent Motor (PDF)](docs/Dona_Liamba_OS_Transparent_Motor.pdf)
+
+
+<p align="left">
+  <a href="https://youtu.be/2kec-L9_RgU" target="_blank">
+    <img src="https://img.youtube.com/vi/2kec-L9_RgU/maxresdefault.jpg" alt="Assista ao vídeo" width="600" />
+  </a>
+</p>
+
+[📄 Visualizar Dona_Liamba_OS_Web_2.5_Jornada_(PDF)](docs/Dona_Liamba_OS_Web_2.5_Jornada.pdf)
+

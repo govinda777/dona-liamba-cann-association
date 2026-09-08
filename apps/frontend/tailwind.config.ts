@@ -6,9 +6,28 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        // "Luz" (UX Humanizada) - Temas claros, acolhedores
+        luz: {
+          background: '#FAFAFA', // Off-White/Cream
+          surface: '#FFFFFF',
+          primary: '#228B22', // Forest Green (Saúde/Calma)
+          sage: '#8F9779', // Verde sálvia
+          earth: '#D2B48C', // Tons terrosos suaves
+          text: '#333333',
+        },
+        // "Sombra" (Infra Web3 / Tech) - Dark Mode Profundo
+        sombra: {
+          background: '#0B0C10', // Preto absoluto / profundo
+          surface: '#1F2833', // Gris ardósia
+          matrix: '#00FF41', // Verde matriz
+          blockchain: '#8A2BE2', // Roxo blockchain
+          electric: '#0FF0FC', // Azul elétrico
+          text: '#C5C6C7',
+        },
         primary: {
           DEFAULT: '#228b22', // Forest Green
           foreground: '#ffffff',
@@ -116,10 +135,13 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'var(--font-montserrat)', 'sans-serif'],
         serif: ['var(--font-playfair)', 'serif'],
+        mono: ['var(--font-fira-code)', 'monospace'],
         montserrat: ['Montserrat', 'sans-serif'],
-        playfair: ['Playfair Display', 'serif']
+        playfair: ['Playfair Display', 'serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        firacode: ['var(--font-fira-code)', 'monospace'],
       },
       backgroundImage: {
         'organic-gradient': 'radial-gradient(circle at top left, var(--tw-gradient-stops))',

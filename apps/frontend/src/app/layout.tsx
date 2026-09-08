@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Montserrat, Playfair_Display, Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Providers from "../providers";
 
@@ -12,6 +12,18 @@ const montserrat = Montserrat({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-fira-code",
   display: "swap",
 });
 
@@ -82,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} font-montserrat antialiased bg-background text-foreground`}>
+      <body className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${firaCode.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {children}
         </Providers>

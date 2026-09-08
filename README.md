@@ -1,7 +1,7 @@
 # Dona Liamba Cann Association
 
 <p align="left">
-  <img src="docs/Ecossistema_Dona_Liamba_Web2.5.png" alt="Bunner" width="600" />
+  <img src="docs/Ecossistema_Dona_Liamba_Web2.5.png" alt="Bunner" width="1000" />
 </p>
 
 
